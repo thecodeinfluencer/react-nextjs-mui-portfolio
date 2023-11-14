@@ -1,15 +1,15 @@
 "use client";
 
 import {
+  ArrowForwardRounded,
   DarkModeOutlined,
-  FileDownloadOutlined,
   LightModeOutlined,
 } from "@mui/icons-material";
 import {
-  Box,
   Button,
   Container,
   IconButton,
+  AppBar as MuiAppBar,
   Paper,
   Stack,
   useTheme,
@@ -46,7 +46,7 @@ export default function AppBar() {
   if (!isClient) return null;
 
   return (
-    <Box style={{ position: "fixed", top: 0, width: "100%" }}>
+    <MuiAppBar sx={{ backgroundColor: "transparent" }} elevation={0}>
       <Container maxWidth="md">
         <Paper
           sx={{
@@ -65,14 +65,25 @@ export default function AppBar() {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Button onClick={() => router.push("/")}>@thecodeinfluencer</Button>
-            <Stack direction="row" alignItems="center" spacing={2}>
+            <Button
+              sx={{ display: { xs: "none", sm: "block" } }}
+              onClick={() => router.push("/")}
+            >
+              @thecodeinfluencer
+            </Button>
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={2}
+              justifyContent={{ xs: "space-between", sm: "flex-start" }}
+              sx={{ width: { xs: "100%", sm: "inherit" } }}
+            >
               <Button
                 variant="outlined"
-                endIcon={<FileDownloadOutlined />}
-                onClick={() => window.open("/assets/Resume-Mark-Aloo.pdf")}
+                endIcon={<ArrowForwardRounded />}
+                onClick={() => router.push("/work")}
               >
-                Resume
+                Work & CV
               </Button>
               <IconButton
                 onClick={() =>
@@ -89,6 +100,6 @@ export default function AppBar() {
           </Stack>
         </Paper>
       </Container>
-    </Box>
+    </MuiAppBar>
   );
 }

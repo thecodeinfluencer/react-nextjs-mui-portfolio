@@ -24,7 +24,7 @@ export default function CTASection() {
       }}
     >
       <Container maxWidth="md">
-        <Typography sx={{ textAlign: "center", mb: 2 }} variant="h5">
+        <Typography sx={{ textAlign: "center", mb: 2 }} variant="h6">
           Wanna do coffe and chat?
         </Typography>
         <SocialsSection />

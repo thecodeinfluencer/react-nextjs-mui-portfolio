@@ -1,9 +1,9 @@
-import { Feed, Profile, Testimonial } from "./definitions";
+import { Experience, Feed, Profile, Testimonial } from "./definitions";
 
 export const profile: Profile = {
   name: "Mark Aloo",
   title: "Mark Aloo - Portfolio",
-  tagline: "Frontend developer and UI/UX designer",
+  tagline: "Frontend developer and Designer",
   work: "Frontend Engineer at Safaricom PLC",
   description:
     "I design and create beautiful web and mobile apps, speak, tweet and blog a lot about tech",
@@ -124,19 +124,22 @@ export const testimonials: Testimonial[] = [
 ];
 
 // https://www.linkedin.com/in/thecodeinfluencer/
-export const experience = [
+export const experience: Experience[] = [
   {
     role: "Software Engineer",
     company: "Safaricom PLC",
     startDate: "Jan 2023",
     endDate: "Present",
-    highlights: [""],
-    tags: ["React", "Next.js", "Typescript", "Cybersecurity", "ENVs"],
+    duration: "3 Mos",
+    type: "Contract",
+    location: "Nairobi, Kenya",
+    highlights: [
+      "Built a web portal to help team managers manage field engineers and site details",
+      "Built a web portal to help manage changes and rollbacks",
+    ],
+    tags: ["React", "Next.js", "Typescript", "OpenShift", "UIPath"],
     links: [
-      {
-        label: "DigiSOC",
-        url: "https://diginoc.safaricom.co.ke/",
-      },
+      { label: "DigiSOC", url: "https://diginoc.safaricom.co.ke/" },
       {
         label: "Change Enablement",
         url: "https://change-enablement-portal.safaricom.co.ke/",
@@ -148,12 +151,74 @@ export const experience = [
     company: "Minet Kenya",
     startDate: "Sep 2022",
     endDate: "Dec 2022",
-    highlights: [""],
-    tags: ["React", "Next.js", "Typescript", "Cybersecurity", "ENVs"],
+    duration: "4 Mos",
+    type: "Contract",
+    location: "Nairobi, Kenya",
+    highlights: [
+      "Built a web application to manage insurance",
+      "Built a cross platform mobile app for members to get insurance services",
+    ],
+    tags: ["React", "React Native", "Typescript", "AntDesign"],
     links: [
       {
         label: "Faru Health",
         url: "https://faru.health/",
+      },
+    ],
+  },
+  {
+    role: "Software Developer",
+    company: "Safaricom PLC",
+    startDate: "Mar 2022",
+    endDate: "Aug 2022",
+    duration: "6 Mos",
+    type: "Contract",
+    location: "Nairobi, Kenya",
+    highlights: [
+      "Developed `Mali` investment MPesa mini app ",
+      "Developed UI/UX for Daraja developers' portal",
+      "Architectured solutions for Daraja developers' portal",
+    ],
+    tags: ["JavaScript", "Solutions Architecture", "UI/UX", "Figma"],
+    links: [
+      {
+        label: "Daraja Developers' Portal",
+        url: "https://developer.safaricom.co.ke/",
+      },
+    ],
+  },
+  {
+    role: "Lead Frontend Developer",
+    company: "BitNorm",
+    startDate: "Feb 2022",
+    endDate: "Apr 2021",
+    duration: "11 Mos",
+    type: "Full-time",
+    location: "Netherlands . Remote",
+    highlights: [
+      "Built the bitnorm.com website (17k active users)",
+      "Led, defined and prioritized projects and tasks for 5 team members",
+    ],
+    tags: ["JavaScript", "Solutions Architecture", "UI/UX", "Figma"],
+    links: [{ label: "BitNorm Website", url: "https://bitnorm.com/" }],
+  },
+  {
+    role: "Frontend Developer",
+    company: "Spacious Place",
+    startDate: "Sep 2020",
+    endDate: "Nov 2020",
+    duration: "3 Mos",
+    type: "Internship",
+    location: "Nairobi, Kenya",
+    highlights: [
+      "Built and maintained the company website and graphics",
+      "Provided thoughtful consultancy on technical issues and opportunities",
+    ],
+    tags: ["JavaScript", "HTML", "CSS", "Graphic Design", "Figma"],
+    links: [
+      {
+        label: "Spacious Place Website",
+        url: "http://www.spaciousplace.co.ke/",
       },
     ],
   },

@@ -53,3 +53,18 @@ export type Profile = {
 export type SlugPage = {
   params: { slug: string };
 };
+
+export type ExpLink = { label: string; url: string };
+
+export type Experience = {
+  company: string;
+  role: string;
+  duration: string;
+  type: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  highlights: string[];
+  tags: string[];
+  links: ExpLink[];
+};

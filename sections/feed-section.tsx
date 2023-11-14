@@ -27,7 +27,7 @@ export default function FeedSection() {
     >
       <Container maxWidth="md">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
-          Feed
+          Featured
         </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
           {feed.map((feed) => (

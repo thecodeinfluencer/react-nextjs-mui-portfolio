@@ -27,7 +27,7 @@ export default function FooterSection() {
   return (
     <Box
       sx={{
-        py: 10,
+        py: 5,
         backgroundColor:
           resolvedTheme == "dark"
             ? palette.grey[900]
@@ -36,8 +36,8 @@ export default function FooterSection() {
     >
       <Container maxWidth="md">
         <Grid container spacing={1}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Stack>
+          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+            <Stack sx={{ px: 2 }}>
               <TypoLink internal href="/projects">
                 Projects
               </TypoLink>
@@ -49,15 +49,15 @@ export default function FooterSection() {
               </TypoLink>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Stack>
+          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+            <Stack sx={{ px: 2 }}>
               <TypoLink href={profile.socials.twitter}>X (Twitter)</TypoLink>
               <TypoLink href={profile.socials.linkedIn}>LinkedIn</TypoLink>
               <TypoLink href={profile.socials.github}>GitHub</TypoLink>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Stack>
+          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+            <Stack sx={{ px: 2 }}>
               <TypoLink href={profile.socials.devto}>Dev.to</TypoLink>
               <TypoLink href={profile.socials.medium}>Medium</TypoLink>
               <TypoLink href={profile.socials.hashnode}>Hashnode</TypoLink>

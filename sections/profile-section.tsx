@@ -2,7 +2,14 @@
 
 import { appBarHeight } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
-import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useTheme as useNextTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -16,7 +23,8 @@ export default function ProfileSection() {
   const { palette } = useTheme();
   const { resolvedTheme } = useNextTheme();
 
-  const imageSize = 280;
+  const below600 = useMediaQuery("(max-width: 600px)");
+  const imageSize = below600 ? 180 : 280;
 
   useEffect(() => setIsClient(true), []);
 
@@ -44,8 +52,12 @@ export default function ProfileSection() {
             style={{ borderRadius: "50%" }}
           />
           <Stack spacing={0.5} alignItems="center">
-            <Typography variant="h5">{name}</Typography>
-            <Typography variant="h6">{tagline}</Typography>
+            <Typography variant="h5" sx={{ textAlign: "center" }}>
+              {name}
+            </Typography>
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              {tagline}
+            </Typography>
             <Typography sx={{ maxWidth: 500, textAlign: "center" }}>
               {description}
             </Typography>

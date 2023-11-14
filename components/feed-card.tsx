@@ -26,7 +26,7 @@ export default function FeedCard({ feed }: Props) {
   const { title, summary, type } = feed;
 
   return (
-    <Card>
+    <Card variant="outlined">
       <CardActionArea
         onClick={() => {
           if (type == "project") router.push("/projects/" + feed.id);
@@ -56,7 +56,7 @@ export default function FeedCard({ feed }: Props) {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundColor: "rgba(0,0,0,.5)",
-              backgroundBlendMode: "multiply",
+              backgroundBlendMode: "soft-light",
             }}
           />
         </CardContent>

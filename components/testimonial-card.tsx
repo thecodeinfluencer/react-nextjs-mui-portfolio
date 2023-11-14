@@ -11,19 +11,24 @@ import {
   ListItemText,
   Stack,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { useState } from "react";
+import { useTheme as useNextTheme } from "next-themes";
 
 type Props = { testimonial: Testimonial };
 
 export default function TestimonialCard({ testimonial }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const { resolvedTheme } = useNextTheme();
+  const btnColumn = useMediaQuery("(max-width: 320px)");
+
   const { comment, linkedIn, name, role, image } = testimonial;
 
   return (
     <>
-      <Card>
+      <Card elevation={resolvedTheme == "light" ? 0 : 4}>
         <CardContent>
           <ListItem sx={{ px: 0 }}>
             <ListItemAvatar>
@@ -32,7 +37,11 @@ export default function TestimonialCard({ testimonial }: Props) {
             <ListItemText primary={name} secondary={role} />
           </ListItem>
           <Typography>{comment.slice(0, 200)}...</Typography>
-          <Stack direction="row" sx={{ mt: 2 }}>
+          <Stack
+            direction={btnColumn ? "column" : "row"}
+            sx={{ mt: 2 }}
+            spacing={1}
+          >
             <Button onClick={() => setModalOpen(true)}>Read More</Button>
             <Button onClick={() => window.open(linkedIn, "_blank")}>
               View on LinkedIn <OpenInNewRounded />

@@ -19,7 +19,7 @@ export default function TestimonialsModal({
           border: "none",
           boxShadow: 24,
           padding: 4,
-          width: { xs: "80%", sm: "70%", md: "55%", lg: "45%" },
+          width: { xs: "70%", sm: "70%", md: "55%", lg: "45%" },
           maxWidth: 580,
           maxHeight: "80vh",
           overflowY: "auto",

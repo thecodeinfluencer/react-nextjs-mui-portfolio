@@ -18,14 +18,18 @@ import {
   ListItemText,
   Stack,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTheme as useNextTheme } from "next-themes";
 
 export default function ViewProjectPage({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
 
   const router = useRouter();
+  const { resolvedTheme } = useNextTheme();
+  const { palette } = useTheme();
 
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
 
@@ -36,7 +40,13 @@ export default function ViewProjectPage({ params }: SlugPage) {
 
   return (
     <main>
-      <Box sx={{ py: 10 }}>
+      <Box
+        sx={{
+          py: 10,
+          backgroundColor:
+            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+        }}
+      >
         <Container maxWidth="md">
           <Stack direction="row" spacing={2} justifyContent="space-between">
             <Button
@@ -60,7 +70,7 @@ export default function ViewProjectPage({ params }: SlugPage) {
               mt: 2,
               borderRadius: 1,
               width: "100%",
-              height: 400,
+              height: { xs: 200, sm: 300, md: 400 },
               backgroundImage: `url(${thisFeed?.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -76,7 +86,7 @@ export default function ViewProjectPage({ params }: SlugPage) {
               />
             ))}
           </Box>
-          <Card sx={{ mt: 2 }}>
+          <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
             <CardContent>
               <Grid container spacing={2}>
                 <Grid item xs={6}>

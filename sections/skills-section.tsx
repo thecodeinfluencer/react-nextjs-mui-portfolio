@@ -19,7 +19,7 @@ export default function SkillsSection() {
 
   const { resolvedTheme } = useNextTheme();
   const {
-    palette: { primary, grey, background },
+    palette: { grey, background, success, warning, info },
   } = useTheme();
 
   useEffect(() => setIsClient(true), []);
@@ -40,9 +40,12 @@ export default function SkillsSection() {
         </Typography>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={4}>
-            <Card elevation={resolvedTheme == "dark" ? 0 : 4}>
+            <Card variant="outlined">
               <CardContent>
-                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
+                <Typography
+                  color={info.main}
+                  sx={{ fontWeight: "bold", mb: 2 }}
+                >
                   Languages
                 </Typography>
                 {profile.skills
@@ -54,8 +57,8 @@ export default function SkillsSection() {
                       sx={{
                         mr: 1,
                         mb: 1,
-                        color: primary.main,
-                        bgcolor: `${primary.main}22`,
+                        color: info.main,
+                        bgcolor: `${info.main}22`,
                       }}
                     />
                   ))}
@@ -63,9 +66,12 @@ export default function SkillsSection() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card elevation={resolvedTheme == "dark" ? 0 : 4}>
+            <Card variant="outlined">
               <CardContent>
-                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
+                <Typography
+                  color={success.main}
+                  sx={{ fontWeight: "bold", mb: 2 }}
+                >
                   Frameworks and Libraries
                 </Typography>
                 {profile.skills
@@ -77,8 +83,8 @@ export default function SkillsSection() {
                       sx={{
                         mr: 1,
                         mb: 1,
-                        color: primary.main,
-                        bgcolor: `${primary.main}22`,
+                        color: success.main,
+                        bgcolor: `${success.main}22`,
                       }}
                     />
                   ))}
@@ -86,9 +92,12 @@ export default function SkillsSection() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card elevation={resolvedTheme == "dark" ? 0 : 4}>
+            <Card variant="outlined">
               <CardContent>
-                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
+                <Typography
+                  color={warning.main}
+                  sx={{ fontWeight: "bold", mb: 2 }}
+                >
                   Tools and Databases
                 </Typography>
                 {profile.skills
@@ -100,8 +109,8 @@ export default function SkillsSection() {
                       sx={{
                         mr: 1,
                         mb: 1,
-                        color: primary.main,
-                        bgcolor: `${primary.main}22`,
+                        color: warning.main,
+                        bgcolor: `${warning.main}22`,
                       }}
                     />
                   ))}

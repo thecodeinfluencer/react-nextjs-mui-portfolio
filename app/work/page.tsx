@@ -3,7 +3,11 @@
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { experience, profile } from "@/utilities/content";
-import { OpenInNew } from "@mui/icons-material";
+import {
+  ArrowBackRounded,
+  FileDownloadOutlined,
+  OpenInNew,
+} from "@mui/icons-material";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -13,11 +17,25 @@ import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import { Box, Button, Chip, Container, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Chip,
+  Container,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTheme as useNextTheme } from "next-themes";
 
 export default function LeftAlignedTimeline() {
   const [isClient, setIsClient] = useState(false);
+
+  const router = useRouter();
+  const { resolvedTheme } = useNextTheme();
+  const { palette } = useTheme();
 
   useEffect(() => setIsClient(true), []);
 
@@ -25,8 +43,32 @@ export default function LeftAlignedTimeline() {
 
   return (
     <main>
-      <Box sx={{ py: 10 }}>
+      <Box
+        sx={{
+          py: 10,
+          backgroundColor:
+            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+        }}
+      >
         <Container maxWidth="md">
+          <Stack
+            sx={{ mb: 8 }}
+            direction="row"
+            alignItems="center"
+            spacing={2}
+            justifyContent="space-between"
+          >
+            <Button
+              startIcon={<ArrowBackRounded />}
+              onClick={() => router.replace("/")}
+            >
+              Home
+            </Button>
+            <Typography sx={{ textAlign: "center" }} variant="h5">
+              Work
+            </Typography>
+            <Box />
+          </Stack>
           <Timeline
             sx={{
               [`& .${timelineOppositeContentClasses.root}`]: {
@@ -37,7 +79,7 @@ export default function LeftAlignedTimeline() {
             <TimelineItem>
               <TimelineOppositeContent
                 color="textSecondary"
-                sx={{ minWidth: 100 }}
+                sx={{ minWidth: 200, display: { xs: "none", sm: "block" } }}
               >
                 Summary
               </TimelineOppositeContent>
@@ -50,37 +92,61 @@ export default function LeftAlignedTimeline() {
                   {profile.name}
                 </Typography>
                 <Typography>{profile.work}</Typography>
-                <Typography color="textSecondary" sx={{ mb: 2 }}>
+                <Typography color="textSecondary">
                   {profile.description}
                 </Typography>
+                <Button
+                  sx={{ mb: 2, mt: 1.5 }}
+                  variant="contained"
+                  endIcon={<FileDownloadOutlined />}
+                  onClick={() =>
+                    window.open("/assets/Resume-Mark-Aloo.pdf", "_blank")
+                  }
+                >
+                  Resume
+                </Button>
               </TimelineContent>
             </TimelineItem>
             {experience.map((exp, idx) => (
               <TimelineItem key={exp.startDate}>
                 <TimelineOppositeContent
                   color="textSecondary"
-                  sx={{ minWidth: 100 }}
+                  sx={{ minWidth: 200, display: { xs: "none", sm: "block" } }}
                 >
-                  {exp.startDate} - {exp.endDate}
+                  <Typography>
+                    {exp.startDate} - {exp.endDate}
+                  </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineDot />
                   {experience.length != idx + 1 && <TimelineConnector />}
                 </TimelineSeparator>
                 <TimelineContent>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    sx={{ display: { xs: "block", sm: "none" } }}
+                  >
+                    {exp.startDate} - {exp.endDate}
+                  </Typography>
                   <Typography>{exp.role}</Typography>
-                  <Typography color="textSecondary">{exp.company}</Typography>
-                  <Stack>
+                  <Typography color="textSecondary">
+                    {exp.company} . {exp.type} . {exp.duration}
+                  </Typography>
+                  <Typography color="textSecondary">{exp.location}</Typography>
+                  <ul style={{ paddingLeft: 20 }}>
                     {exp.highlights.map((h) => (
-                      <Typography key={h}>{h}</Typography>
+                      <li key={h}>
+                        <Typography variant="body2">{h}</Typography>
+                      </li>
                     ))}
-                  </Stack>
+                  </ul>
                   <Box sx={{ my: 1.5 }}>
                     {exp.tags.map((t) => (
                       <Chip key={t} label={t} sx={{ mr: 0.5, mb: 0.5 }} />
                     ))}
                   </Box>
-                  <Box sx={{ mb: 2 }}>
+                  <Box sx={{ mb: 2.5 }}>
                     {exp.links.map((link) => (
                       <Button
                         key={link.url}
