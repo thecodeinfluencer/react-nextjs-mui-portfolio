@@ -4,3 +4,4 @@
 4. Project type (personal, work, client)
 5. Add blogs page
 6. Add (Projects, Talks, Blogs) to feature section with links - Check responsiveness
+7. SEO
