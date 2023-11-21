@@ -1,22 +1,49 @@
-export type Feed = {
-  id: number | string;
-  title: string;
-  summary: string;
-  description: string;
-
-  type: "blog" | "talk" | "project";
-  image: string;
-  tags?: string[];
-  blogLink?: string;
-  slidesLink?: string;
-  githubLink?: string;
-  productLink?: string;
-  details?: {
-    event: string;
-    location: string;
-    community: string;
-  };
-};
+export type Feed =
+  | {
+      id: number | string;
+      title: string;
+      summary: string;
+      description: string;
+      featured: boolean;
+      type: "project";
+      image: string;
+      tags?: string[];
+      blogLink?: string;
+      slidesLink?: string;
+      githubLink?: string;
+      productLink?: string;
+      details?: { event: string; location: string; community: string };
+    }
+  | {
+      id: number | string;
+      title: string;
+      summary: string;
+      description: string;
+      featured: boolean;
+      type: "talk";
+      image: string;
+      tags?: string[];
+      blogLink?: string;
+      slidesLink?: string;
+      githubLink?: string;
+      productLink?: string;
+      links: { label: string; url: string }[];
+      details?: { event: string; location: string; community: string };
+    }
+  | {
+      id: number | string;
+      title: string;
+      summary: string;
+      featured: boolean;
+      type: "blog";
+      image: string;
+      tags?: string[];
+      blogLink?: string;
+      slidesLink?: string;
+      githubLink?: string;
+      productLink?: string;
+      details?: { event: string; location: string; community: string };
+    };
 
 export type Skill = {
   label: string;
