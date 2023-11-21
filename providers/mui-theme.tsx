@@ -8,7 +8,7 @@ export const MUIThemeProvider = ({ children }: any) => {
 
   const appTheme: Theme = createTheme({
     palette: {
-      primary: { main: "#0064e0" },
+      primary: { main: "#22C55E" },
       mode: resolvedTheme as PaletteMode | undefined,
     },
     shape: { borderRadius: 10 },
