@@ -44,6 +44,9 @@ export default function FooterSection() {
               <TypoLink internal href="/talks">
                 Talks
               </TypoLink>
+              <TypoLink internal href="/blogs">
+                Blogs
+              </TypoLink>
               <TypoLink internal href="/work">
                 Work
               </TypoLink>

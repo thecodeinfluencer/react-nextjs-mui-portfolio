@@ -3,9 +3,9 @@
 import WrongResource from "@/components/wrong-resource";
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
-import { feed } from "@/utilities/content";
+import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
-import { ArrowBackRounded, OpenInNew } from "@mui/icons-material";
+import { ArrowBackRounded, OpenInNew, ShareRounded } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -14,15 +14,15 @@ import {
   Chip,
   Container,
   Grid,
-  ListItem,
+  IconButton,
   ListItemText,
   Stack,
   Typography,
   useTheme,
 } from "@mui/material";
+import { useTheme as useNextTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useTheme as useNextTheme } from "next-themes";
 
 export default function ViewProjectPage({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
@@ -55,14 +55,27 @@ export default function ViewProjectPage({ params }: SlugPage) {
             >
               Talks
             </Button>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={2} alignItems="center">
               <Button
                 variant="outlined"
                 endIcon={<OpenInNew />}
-                onClick={() => window.open(thisFeed.slidesLink)}
+                onClick={() => window.open(thisFeed.slidesLink, "_blank")}
               >
                 Slides
               </Button>
+              <IconButton
+                onClick={() => {
+                  const data = {
+                    url: window.location.href,
+                    title: `${thisFeed.title} | Talks | ${profile.name}`,
+                    text: `View ${profile.name}'s talk (${thisFeed.title}) on ${window.location.href}`,
+                  };
+                  window.navigator.canShare(data) &&
+                    window.navigator.share(data);
+                }}
+              >
+                <ShareRounded />
+              </IconButton>
             </Stack>
           </Stack>
           <Box
@@ -86,40 +99,60 @@ export default function ViewProjectPage({ params }: SlugPage) {
               />
             ))}
           </Box>
-          <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <ListItem>
-                    <ListItemText
-                      primary={thisFeed.details?.location}
-                      secondary="Location"
-                    />
-                  </ListItem>
-                </Grid>
-                <Grid item xs={6}>
-                  <ListItem>
-                    <ListItemText
-                      primary={thisFeed.details?.event}
-                      secondary="Event"
-                    />
-                  </ListItem>
-                </Grid>
-                <Grid item xs={6}>
-                  <ListItem>
-                    <ListItemText
-                      primary={thisFeed.details?.community}
-                      secondary="Community"
-                    />
-                  </ListItem>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
           <Typography variant="h5" sx={{ fontWeight: "bold", mt: 2 }}>
             {thisFeed?.title}
           </Typography>
           <Typography sx={{ mt: 2 }}>{thisFeed?.description}</Typography>
+          <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
+            <CardContent>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <ListItemText
+                    primary={thisFeed.details?.event}
+                    secondary="Event"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <ListItemText
+                    primary={thisFeed.details?.location}
+                    secondary="Location"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <ListItemText
+                    primary={thisFeed.details?.community}
+                    secondary="Community"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <ListItemText
+                    primary={thisFeed.details.date}
+                    secondary="Date"
+                  />
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+          {thisFeed.links?.length > 0 && (
+            <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
+              <CardContent>
+                <Typography variant="h6" sx={{ mb: 2 }}>
+                  Associated Links
+                </Typography>
+                {thisFeed.links?.map((link) => (
+                  <Button
+                    key={link.label}
+                    onClick={() => window.open(link.url)}
+                    endIcon={<OpenInNew />}
+                    sx={{ mr: 1, mb: 1 }}
+                    variant="outlined"
+                  >
+                    {link.label}
+                  </Button>
+                ))}
+              </CardContent>
+            </Card>
+          )}
         </Container>
       </Box>
       <FooterSection />

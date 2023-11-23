@@ -5,6 +5,7 @@ import { feed } from "@/utilities/content";
 import { Masonry } from "@mui/lab";
 import { Box, Container, Typography, useTheme } from "@mui/material";
 import { useTheme as useNextTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function FeedSection() {
@@ -27,7 +28,9 @@ export default function FeedSection() {
     >
       <Container maxWidth="md">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
-          Featured
+          Featured (<SectionLink href="/projects">Projects</SectionLink>,{" "}
+          <SectionLink href="/blogs">Blogs</SectionLink>,{" "}
+          <SectionLink href="/talks">Talks</SectionLink>,)
         </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
           {feed.map((feed) => (
@@ -38,3 +41,23 @@ export default function FeedSection() {
     </Box>
   );
 }
+
+type Props = { href: string; children: React.ReactNode };
+
+const SectionLink = ({ href, children }: Props) => {
+  const router = useRouter();
+  const { palette } = useTheme();
+
+  return (
+    <span
+      style={{
+        textDecoration: "underline",
+        color: palette.primary.main,
+        cursor: "pointer",
+      }}
+      onClick={() => router.replace(href)}
+    >
+      {children}
+    </span>
+  );
+};

@@ -23,7 +23,7 @@ export default function FeedCard({ feed }: Props) {
     palette: { primary },
   } = useTheme();
 
-  const { title, summary, type } = feed;
+  const { title, summary, type, details } = feed;
 
   return (
     <Card variant="outlined">
@@ -42,9 +42,15 @@ export default function FeedCard({ feed }: Props) {
             />
             <OpenInNewRounded />
           </Stack>
-
           <ListItem sx={{ px: 0 }}>
-            <ListItemText primary={title} secondary={summary} />
+            <ListItemText
+              primary={title}
+              secondary={`${summary} (${
+                type != "project"
+                  ? details.date
+                  : details.releasedDate || details.endDate
+              })`}
+            />
           </ListItem>
           <Box
             sx={{
