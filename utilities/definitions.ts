@@ -1,48 +1,51 @@
 export type Feed =
   | {
-      id: number | string;
-      title: string;
-      summary: string;
-      description: string;
-      featured: boolean;
       type: "project";
-      image: string;
-      tags?: string[];
-      blogLink?: string;
-      slidesLink?: string;
-      githubLink?: string;
-      productLink?: string;
-      details?: { event: string; location: string; community: string };
-    }
-  | {
       id: number | string;
       title: string;
       summary: string;
       description: string;
       featured: boolean;
-      type: "talk";
       image: string;
-      tags?: string[];
-      blogLink?: string;
-      slidesLink?: string;
-      githubLink?: string;
-      productLink?: string;
+      tags: string[];
+      githubLink: string;
+      productLink: string;
       links: { label: string; url: string }[];
-      details?: { event: string; location: string; community: string };
+      details: {
+        startDate: string;
+        endDate: string;
+        releasedDate?: string;
+        projectType: "Personal" | "Client" | "Workplace";
+      };
     }
   | {
+      type: "talk";
+      id: number | string;
+      title: string;
+      summary: string;
+      description: string;
+      featured: boolean;
+      image: string;
+      tags: string[];
+      slidesLink: string;
+      links: { label: string; url: string }[];
+      details: {
+        event: string;
+        location: string;
+        community: string;
+        date: string;
+      };
+    }
+  | {
+      type: "blog";
       id: number | string;
       title: string;
       summary: string;
       featured: boolean;
-      type: "blog";
       image: string;
-      tags?: string[];
-      blogLink?: string;
-      slidesLink?: string;
-      githubLink?: string;
-      productLink?: string;
-      details?: { event: string; location: string; community: string };
+      tags: string[];
+      blogLink: string;
+      details: { date: string };
     };
 
 export type Skill = {
@@ -59,6 +62,7 @@ export type Testimonial = {
 };
 
 export type Profile = {
+  url: string;
   name: string;
   title: string;
   tagline: string;
