@@ -1,6 +1,7 @@
 import { MUIThemeProvider } from "@/providers/mui-theme";
 import { NextThemeProvider } from "@/providers/next-theme";
 import "@/styles/global.css";
+import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -9,17 +10,23 @@ const inter = Inter({ subsets: ["latin"] });
 const { title, description } = profile;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(appURL),
   title,
   description,
   openGraph: {
     images: [
-      { url: `/images/hero.png`, width: 1200, height: 630, alt: "Mark Aloo" },
+      {
+        url: `${appURL}/images/hero.png`,
+        width: 1200,
+        height: 630,
+        alt: "Mark Aloo",
+      },
     ],
     type: "website",
     siteName: title,
   },
   twitter: { card: "summary_large_image", creator: "@codeinfluencer" },
-  authors: [{ name: "Code Influencer", url: "https://thecodeinfluencer.dev/" }],
+  authors: [{ name: "Mark Aloo", url: "https://thecodeinfluencer.dev/" }],
 };
 
 type Props = { children: React.ReactNode };
