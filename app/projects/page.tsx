@@ -1,6 +1,6 @@
 import ProjectsPageClient from "@/client/projects";
 import { appURL } from "@/utilities/constants";
-import { feed, profile } from "@/utilities/content";
+import { profile } from "@/utilities/content";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   title: `Projects | ${profile.name}`,
   description: `A list of projects built by ${profile.name} including project demos and GitHub links where available.`,
   openGraph: {
-    images: feed
-      .filter((feed) => feed.type == "project")
-      .map((feed) => ({ url: feed.image, alt: feed.title })),
+    images: [{ url: `${appURL}/images/projects.png`, alt: "blogs" }],
   },
 };
 
