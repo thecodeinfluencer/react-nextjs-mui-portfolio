@@ -13,6 +13,7 @@ import {
   Stack,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 type Props = { feed: Feed };
@@ -25,8 +26,17 @@ export default function FeedCard({ feed }: Props) {
 
   const { title, summary, type, details } = feed;
 
+  const arrow = {
+    initial: { scale: 1, rotate: 45, opacity: 0 },
+    whileHover: { scale: 1.05, rotate: 0, opacity: 1 },
+  };
+
   return (
-    <Card variant="outlined">
+    <Card
+      component={motion.div}
+      variant="outlined"
+      whileHover={{ scale: 1.02 }}
+    >
       <CardActionArea
         onClick={() => {
           if (type == "project") router.push("/projects/" + feed.id);
@@ -34,13 +44,19 @@ export default function FeedCard({ feed }: Props) {
           if (type == "blog") window.open(feed?.blogLink, "_blank");
         }}
       >
-        <CardContent>
+        <CardContent
+          component={motion.div}
+          initial="initial"
+          whileHover="whileHover"
+        >
           <Stack direction="row" justifyContent="space-between" sx={{ mb: 2 }}>
             <Chip
               label={type}
               sx={{ color: primary.main, backgroundColor: primary.main + "22" }}
             />
-            <OpenInNewRounded />
+            <motion.div variants={arrow}>
+              <OpenInNewRounded />
+            </motion.div>
           </Stack>
           <ListItem sx={{ px: 0 }}>
             <ListItemText

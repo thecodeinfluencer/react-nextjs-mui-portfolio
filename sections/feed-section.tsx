@@ -32,10 +32,12 @@ export default function FeedSection() {
           <SectionLink href="/blogs">Blogs</SectionLink>,{" "}
           <SectionLink href="/talks">Talks</SectionLink>,)
         </Typography>
-        <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
-          {feed.map((feed) => (
-            <FeedCard key={feed.title} feed={feed} />
-          ))}
+        <Masonry spacing={2} columns={{ xs: 1, sm: 2, md: 3 }}>
+          {feed
+            .filter(({ featured }) => featured)
+            .map((feed) => (
+              <FeedCard key={feed.title} feed={feed} />
+            ))}
         </Masonry>
       </Container>
     </Box>

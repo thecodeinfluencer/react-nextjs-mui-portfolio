@@ -20,9 +20,10 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
+import { useTheme as useNextTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useTheme as useNextTheme } from "next-themes";
 
 export default function ViewProjectPageClient({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
@@ -106,7 +107,14 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
             {thisFeed?.title}
           </Typography>
           <Typography sx={{ mt: 2 }}>{thisFeed?.description}</Typography>
-          <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
+          <Card
+            component={motion.div}
+            initial={{ opacity: 0, bottom: -200 }}
+            whileInView={{ opacity: 1, bottom: 0, transition: { delay: 0.4 } }}
+            viewport={{ once: true }}
+            elevation={resolvedTheme == "light" ? 0 : 4}
+            sx={{ mt: 2 }}
+          >
             <CardContent>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
@@ -139,7 +147,18 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
             </CardContent>
           </Card>
           {thisFeed.links?.length > 0 && (
-            <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
+            <Card
+              component={motion.div}
+              initial={{ opacity: 0, bottom: -200 }}
+              whileInView={{
+                opacity: 1,
+                bottom: 0,
+                transition: { delay: 0.4 },
+              }}
+              viewport={{ once: true }}
+              elevation={resolvedTheme == "light" ? 0 : 4}
+              sx={{ mt: 2 }}
+            >
               <CardContent>
                 <Typography variant="h6" sx={{ mb: 2 }}>
                   Associated Links
