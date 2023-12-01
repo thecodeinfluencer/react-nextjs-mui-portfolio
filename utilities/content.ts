@@ -37,6 +37,7 @@ export const profile: Profile = {
     hashnode: "https://hashnode.com/@thecodeinfluencer/",
     devto: "https://dev.to/thecodeinfluencer/",
     telegram: "https://t.me/thecodeinfluencer/",
+    sessionize: "https://sessionize.com/thecodeinfluencer",
   },
   skills: [
     { label: "React", category: "frameworks" },
@@ -164,7 +165,7 @@ export const experience: Experience[] = [
 export const feed: Feed[] = [
   {
     id: "project-quotez-motivation",
-    featured: false,
+    featured: true,
     title: "Quotez App",
     githubLink: "",
     productLink:
@@ -214,7 +215,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-assistall",
-    featured: false,
+    featured: true,
     title: "AssistALL (Mini App)",
     githubLink: "",
     productLink: "https://assistallapp.com/",
@@ -290,7 +291,7 @@ export const feed: Feed[] = [
   },
   {
     id: "blog-nextjs-envs",
-    featured: false,
+    featured: true,
     title: "Next JS might be exposing your backend environment variables.",
     summary:
       "Find out if Next.JS might be exposing your backend environment variables.",
@@ -346,7 +347,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-firebase-data-modeling-101",
-    featured: false,
+    featured: true,
     title: "Firebase data modeling 101",
     summary:
       "Discover key strategies for structuring your data in Firebase to unlock full optimization.",
@@ -377,7 +378,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-power-of-pwas-arusha",
-    featured: false,
+    featured: true,
     title: "How powerful are PWAs?",
     summary: "Explore the power and potential of Progressive Web Applications.",
     description:
@@ -428,7 +429,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-frontend-dev-panoramic",
-    featured: false,
+    featured: true,
     title: "A Panoramic view of Frontend Development",
     summary: "A conclusive overview of the Frontend Development Landscape.",
     description: "A conclusive overview of the Frontend Development Landscape.",

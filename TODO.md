@@ -5,4 +5,4 @@
 5. ?Product image updates
 6. ?Gumzo project
 7. ?Work projects
-8. Sessionize https://sessionize.com/thecodeinfluencer
+8.

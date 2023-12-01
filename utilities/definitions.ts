@@ -78,6 +78,7 @@ export type Profile = {
     medium: string;
     hashnode: string;
     telegram: string;
+    sessionize: string;
   };
 };
 

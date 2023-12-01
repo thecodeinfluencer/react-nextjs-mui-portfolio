@@ -64,6 +64,7 @@ export default function FooterSection() {
               <TypoLink href={profile.socials.devto}>Dev.to</TypoLink>
               <TypoLink href={profile.socials.medium}>Medium</TypoLink>
               <TypoLink href={profile.socials.hashnode}>Hashnode</TypoLink>
+              <TypoLink href={profile.socials.sessionize}>Sessionize</TypoLink>
             </Stack>
           </Grid>
         </Grid>
