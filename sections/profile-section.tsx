@@ -14,6 +14,7 @@ import { useTheme as useNextTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SocialsSection from "./socials-section";
+import { motion } from "framer-motion";
 
 const { name, tagline, description, gravatarUrl } = profile;
 
@@ -52,13 +53,30 @@ export default function ProfileSection() {
             style={{ borderRadius: "50%" }}
           />
           <Stack spacing={0.5} alignItems="center">
-            <Typography variant="h5" sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h5"
+              sx={{ textAlign: "center" }}
+              component={motion.div}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1, bottom: 200 }}
+            >
               {name}
             </Typography>
-            <Typography variant="h6" sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h6"
+              sx={{ textAlign: "center" }}
+              component={motion.div}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1, bottom: 200 }}
+            >
               {tagline}
             </Typography>
-            <Typography sx={{ maxWidth: 500, textAlign: "center" }}>
+            <Typography
+              sx={{ maxWidth: 500, textAlign: "center" }}
+              component={motion.div}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1, bottom: 200 }}
+            >
               {description}
             </Typography>
           </Stack>

@@ -171,7 +171,7 @@ export const feed: Feed[] = [
     productLink:
       "https://play.google.com/store/apps/details?id=com.appeazy.quotez",
     summary:
-      "An android app built with React Native to get motivational quote.",
+      "An android app built with React Native to get motivational quotes.",
     description:
       "Available on PlayStore, Quotez is a mobile app crafted with TypeScript and React Native Expo, seamlessly delivering a motivational boost. Leveraging an external API, it dynamically loads curated quotes. The app embraces user preferences with both light and dark themes, ensuring a personalized and visually pleasing experience. Immerse yourself in motivation with this technically sophisticated and visually adaptable application.",
     type: "project",
