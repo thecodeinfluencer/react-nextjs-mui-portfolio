@@ -57,6 +57,7 @@ export default function FooterSection() {
               <TypoLink href={profile.socials.twitter}>X (Twitter)</TypoLink>
               <TypoLink href={profile.socials.linkedIn}>LinkedIn</TypoLink>
               <TypoLink href={profile.socials.github}>GitHub</TypoLink>
+              <TypoLink href={profile.socials.sessionize}>Sessionize</TypoLink>
             </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
@@ -64,7 +65,13 @@ export default function FooterSection() {
               <TypoLink href={profile.socials.devto}>Dev.to</TypoLink>
               <TypoLink href={profile.socials.medium}>Medium</TypoLink>
               <TypoLink href={profile.socials.hashnode}>Hashnode</TypoLink>
-              <TypoLink href={profile.socials.sessionize}>Sessionize</TypoLink>
+              <TypoLink
+                href={
+                  "https://codeinfluencer.gumroad.com/l/nextjs-mui-framer-portfolio"
+                }
+              >
+                Get Template
+              </TypoLink>
             </Stack>
           </Grid>
         </Grid>
