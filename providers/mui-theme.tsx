@@ -1,6 +1,8 @@
 "use client";
 
+import { profile } from "@/utilities/content";
 import { createTheme, ThemeProvider, PaletteMode, Theme } from "@mui/material";
+
 import { useTheme as useNextTheme } from "next-themes";
 
 export const MUIThemeProvider = ({ children }: any) => {
@@ -8,7 +10,7 @@ export const MUIThemeProvider = ({ children }: any) => {
 
   const appTheme: Theme = createTheme({
     palette: {
-      primary: { main: "#22C55E" },
+      primary: { main: profile.primaryColor },
       mode: resolvedTheme as PaletteMode | undefined,
     },
     shape: { borderRadius: 10 },

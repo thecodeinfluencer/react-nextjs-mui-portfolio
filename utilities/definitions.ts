@@ -20,6 +20,7 @@ export type Feed =
     }
   | {
       type: "talk";
+      bgTheme: string;
       id: number | string;
       title: string;
       summary: string;
@@ -62,6 +63,7 @@ export type Testimonial = {
 };
 
 export type Profile = {
+  primaryColor: string;
   url: string;
   name: string;
   title: string;
