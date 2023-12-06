@@ -42,23 +42,29 @@ export const profile: Profile = {
   skills: [
     { label: "React", category: "frameworks" },
     { label: "Next.js", category: "frameworks" },
-    { label: "Node.js", category: "frameworks" },
     { label: "Express", category: "frameworks" },
     { label: "React Native", category: "frameworks" },
+    { label: "Apollo GraphQL", category: "frameworks" },
+
     { label: "Git", category: "tools" },
     { label: "MongoDB", category: "tools" },
     { label: "Firebase", category: "tools" },
     { label: "OpenShift", category: "tools" },
     { label: "Docker", category: "tools" },
-    { label: "GraphQL", category: "tools" },
     { label: "Figma", category: "tools" },
     { label: "AWS", category: "tools" },
-    { label: "MUI", category: "tools" },
+
     { label: "JavaScript", category: "languages" },
     { label: "TypeScript", category: "languages" },
     { label: "HTML", category: "languages" },
     { label: "CSS", category: "languages" },
     { label: "Java", category: "languages" },
+    { label: "Python", category: "languages" },
+    { label: "Node.js", category: "languages" },
+
+    // { label: "Azure", category: "tools" },
+    // { label: "PostgreSQL", category: "tools" },
+    // { label: "C#", category: "languages" },
   ],
 };
 
