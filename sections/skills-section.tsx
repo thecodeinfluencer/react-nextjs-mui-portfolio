@@ -19,7 +19,7 @@ export default function SkillsSection() {
 
   const { resolvedTheme } = useNextTheme();
   const {
-    palette: { grey, background, success, warning, info },
+    palette: { grey, background },
   } = useTheme();
 
   useEffect(() => setIsClient(true), []);
@@ -42,10 +42,7 @@ export default function SkillsSection() {
           <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined">
               <CardContent>
-                <Typography
-                  color={info.main}
-                  sx={{ fontWeight: "bold", mb: 2 }}
-                >
+                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
                   Languages
                 </Typography>
                 {profile.skills
@@ -54,12 +51,8 @@ export default function SkillsSection() {
                     <Chip
                       key={skill.label}
                       label={skill.label}
-                      sx={{
-                        mr: 1,
-                        mb: 1,
-                        color: info.main,
-                        bgcolor: `${info.main}22`,
-                      }}
+                      sx={{ mr: 1, mb: 1 }}
+                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
                     />
                   ))}
               </CardContent>
@@ -68,10 +61,7 @@ export default function SkillsSection() {
           <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined">
               <CardContent>
-                <Typography
-                  color={success.main}
-                  sx={{ fontWeight: "bold", mb: 2 }}
-                >
+                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
                   Frameworks and Libraries
                 </Typography>
                 {profile.skills
@@ -80,12 +70,8 @@ export default function SkillsSection() {
                     <Chip
                       key={skill.label}
                       label={skill.label}
-                      sx={{
-                        mr: 1,
-                        mb: 1,
-                        color: success.main,
-                        bgcolor: `${success.main}22`,
-                      }}
+                      sx={{ mr: 1, mb: 1 }}
+                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
                     />
                   ))}
               </CardContent>
@@ -94,10 +80,7 @@ export default function SkillsSection() {
           <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined">
               <CardContent>
-                <Typography
-                  color={warning.main}
-                  sx={{ fontWeight: "bold", mb: 2 }}
-                >
+                <Typography sx={{ fontWeight: "bold", mb: 2 }}>
                   Tools and Databases
                 </Typography>
                 {profile.skills
@@ -106,12 +89,8 @@ export default function SkillsSection() {
                     <Chip
                       key={skill.label}
                       label={skill.label}
-                      sx={{
-                        mr: 1,
-                        mb: 1,
-                        color: warning.main,
-                        bgcolor: `${warning.main}22`,
-                      }}
+                      sx={{ mr: 1, mb: 1 }}
+                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
                     />
                   ))}
               </CardContent>

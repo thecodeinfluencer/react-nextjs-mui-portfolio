@@ -22,6 +22,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const profile: Profile = {
+  primaryColor: "#22C55E",
   url: "thecodeinfluencer.dev",
   name: "Mark Aloo",
   title: "Mark Aloo - Portfolio",
@@ -42,10 +43,11 @@ export const profile: Profile = {
     sessionize: "https://sessionize.com/thecodeinfluencer",
   },
   skills: [
-    { label: "React", category: "frameworks" },
+    { label: "React.js", category: "frameworks" },
     { label: "Next.js", category: "frameworks" },
-    { label: "Express", category: "frameworks" },
+    { label: "Express.js", category: "frameworks" },
     { label: "React Native", category: "frameworks" },
+    { label: "Expo", category: "frameworks" },
     { label: "Apollo GraphQL", category: "frameworks" },
 
     { label: "Git", category: "tools" },
@@ -301,8 +303,7 @@ export const feed: Feed[] = [
     id: "blog-nextjs-envs",
     featured: true,
     title: "Next JS might be exposing your backend environment variables.",
-    summary:
-      "Find out if Next.JS might be exposing your backend environment variables.",
+    summary: "Find out if you are exposed!",
     type: "blog",
     image:
       "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -355,6 +356,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-firebase-data-modeling-101",
+    bgTheme: "#F9AB00",
     featured: true,
     title: "Firebase data modeling 101",
     summary:
@@ -386,6 +388,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-power-of-pwas-arusha",
+    bgTheme: "#4285F4",
     featured: true,
     title: "How powerful are PWAs?",
     summary: "Explore the power and potential of Progressive Web Applications.",
@@ -407,6 +410,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-next.js-portfolio",
+    bgTheme: "#3D1F5B",
     featured: false,
     title: "Why you should build a portfolio around your tech stack",
     summary:
@@ -437,14 +441,15 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-frontend-dev-panoramic",
+    bgTheme: "#3CB54F",
     featured: true,
     title: "A Panoramic view of Frontend Development",
-    summary: "A conclusive overview of the Frontend Development Landscape.",
+    summary: "A conclusive overview of Frontend Development.",
     description: "A conclusive overview of the Frontend Development Landscape.",
     type: "talk",
     slidesLink:
       "https://docs.google.com/presentation/d/1rNJa_6qjFU_zlCHagRd0qCosZ98TqMVINcJqTZvNeXE/edit?usp=sharing",
-    image: "https://img.youtube.com/vi/HmfNSLyJTfA/0.jpg",
+    image: "https://pbs.twimg.com/media/F62vQ5zXgAAGkvC?format=jpg&name=small",
     tags: ["HTML", "CSS", "JavaScript", "Frameworks", "Career"],
     details: {
       event: "Safaricom PLC Chapter Boost",
@@ -457,14 +462,11 @@ export const feed: Feed[] = [
         label: "Talk Summary by Koding & Kahawa",
         url: "https://www.linkedin.com/posts/koding-kahawa_a-panoramic-view-of-frontend-development-activity-7114199617977655297-1BtI?utm_source=share&utm_medium=member_desktop",
       },
-      {
-        label: "Youtube Recording",
-        url: "https://www.youtube.com/watch?v=HmfNSLyJTfA",
-      },
     ],
   },
   {
     id: "talk-power-of-pwas-kisii",
+    bgTheme: "#4285F4",
     featured: false,
     title: "How powerful are PWAs?",
     summary: "Explore the power and potential of Progressive Web Applications.",
@@ -495,6 +497,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-understanding-apis",
+    bgTheme: "#4FABCC",
     featured: false,
     title: "Understanding APIs",
     summary: "Find valuable insights into the world of APIs.",
@@ -502,8 +505,7 @@ export const feed: Feed[] = [
     type: "talk",
     slidesLink:
       "https://docs.google.com/presentation/d/1uPL1NnyXWxhBJWy_gD79-ChoK-55DwNUNuq8v-kJp2I/edit?usp=sharing",
-    image:
-      "https://media.licdn.com/dms/image/D4D22AQE0u8tS5OXUmw/feedshare-shrink_2048_1536/0/1683448533708?e=1703721600&v=beta&t=nABXJm3SRTbWMIb5_r7KpPUWfB_UqHrwGcHv0-Pnws0",
+    image: "https://pbs.twimg.com/media/FvVmOTvWIAILskV?format=jpg&name=small",
     tags: ["APIs", "REST", "JSON", "Frameworks", "HTTP"],
     details: {
       event: "Safaricom PLC Chapter Boost",
@@ -524,6 +526,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-firebase-usecases",
+    bgTheme: "#FFBA00",
     featured: false,
     title: "You can do that in Firebase!",
     summary:
@@ -551,6 +554,7 @@ export const feed: Feed[] = [
   },
   {
     id: "talk-mpesa-miniapp",
+    bgTheme: "#4E91F0",
     featured: false,
     title: "Mini Apps (ft M-Pesa)",
     summary:
