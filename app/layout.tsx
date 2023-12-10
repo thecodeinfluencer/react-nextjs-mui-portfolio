@@ -4,9 +4,16 @@ import "@/styles/global.css";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const prompt = Nunito({
+  variable: "--font-prompt",
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const { title, description } = profile;
 
 export const metadata: Metadata = {
@@ -34,7 +41,7 @@ type Props = { children: React.ReactNode };
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={prompt.className}>
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"

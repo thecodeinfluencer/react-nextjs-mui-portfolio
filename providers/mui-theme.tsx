@@ -1,6 +1,6 @@
 "use client";
 
-import { createTheme, ThemeProvider, PaletteMode, Theme } from "@mui/material";
+import { PaletteMode, Theme, ThemeProvider, createTheme } from "@mui/material";
 import { useTheme as useNextTheme } from "next-themes";
 
 export const MUIThemeProvider = ({ children }: any) => {
@@ -12,7 +12,7 @@ export const MUIThemeProvider = ({ children }: any) => {
       mode: resolvedTheme as PaletteMode | undefined,
     },
     shape: { borderRadius: 10 },
-    typography: { fontFamily: "Futura Bk BT" },
+    typography: { fontFamily: "var(--font-prompt)" },
     components: {
       MuiButton: {
         styleOverrides: { root: { textTransform: "none", borderRadius: 70 } },

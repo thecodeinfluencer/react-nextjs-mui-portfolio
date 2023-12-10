@@ -1,18 +1,3 @@
-@font-face {
-  font-family: "Futura";
-  src: url("/fonts/FutuHv.ttf");
-}
-
-@font-face {
-  font-family: "Futura Hv BT";
-  src: url("/fonts/FuturaHeavyBT.ttf");
-}
-
-@font-face {
-  font-family: "Futura Bk BT";
-  src: url("/fonts/FuturaBookBT.ttf");
-}
-
 html,
 body {
   padding: 0;
@@ -26,21 +11,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Futura Bk BT", sans-serif !important;
+  font-family: var(--font-prompt), sans-serif !important;
 }
 
 .data-table .MuiDataGrid-columnHeadersInner {
-  font-family: "Futura Hv BT", sans-serif !important;
-  /* color: #262626; */
+  font-family: var(--font-prompt), sans-serif !important;
 }
 
 .data-table .MuiDataGrid-virtualScrollerRenderZone {
-  font-family: "Futura Hv Bk", sans-serif !important;
-  /* color: #262626; */
+  font-family: var(--font-prompt), sans-serif !important;
 }
 
 #app-navbar * {
-  font-family: "Futura Hv BT", sans-serif !important;
+  font-family: var(--font-prompt), sans-serif !important;
   color: #262626;
 }
 

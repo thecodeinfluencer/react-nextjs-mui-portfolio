@@ -28,8 +28,9 @@ To customize this template to fit your needs, follow the steps below:
 2. Go to `styles/global.css` to chnge the font and basic styles.
 3. Go to `public/assets` and change the `portfolio.pdf`.
 4. Change the theme settings inside `providers/mui-theme`
-5. Under `public/images`, you can change the images that appear on SEO (`hero.png`, `work.png`, `talks.png`, `blogs.png`, `projects.png` ...)
-6. Under `utilities/constants.ts`, change `appURL` to the working URL (**localhost** when debugging)
+5. Under `utilities/constants.ts`, change `appURL` to the working URL (**localhost** when debugging)
+6. Under `public/images`, you can change the images that appear on SEO (`hero.png`, `work.png`, `talks.png`, `blogs.png`, `projects.png` ...)
+7. Fonts (`next/fonts`) are configured under `app/layout.tsx`
 
 ## Learn More
 
