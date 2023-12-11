@@ -1,11 +1,9 @@
 "use client";
 
-import FeedCard from "@/components/feed-card";
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
-import { feed } from "@/utilities/content";
+import { appURL } from "@/utilities/constants";
 import { ArrowBackRounded } from "@mui/icons-material";
-import { Masonry } from "@mui/lab";
 import {
   Box,
   Button,
@@ -14,10 +12,9 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import { useTheme as useNextTheme } from "next-themes";
-import { appURL } from "@/utilities/constants";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function GetPage() {
   const [isClient, setIsClient] = useState(false);
@@ -70,10 +67,17 @@ export default function GetPage() {
               backgroundPosition: "center",
             }}
           />
-          <Typography sx={{ mt: 2 }}>
-            This template is available to fork and/or downloadfor free! I only
-            ask that you star it and/or contribute to it. You can also buy this
-            template on Gumroad to support me. Thanks!
+          <Typography sx={{ mt: 2 }} variant="h6">
+            This template is available to <b>fork </b>
+            on GitHub! I only ask that you <b>star</b> it. I would love if you{" "}
+            <Link href="https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/CONTRIBUTING.md">
+              contributed
+            </Link>{" "}
+            to it. You can also buy this template on{" "}
+            <Link href="https://codeinfluencer.gumroad.com/l/nextjs-mui-framer-portfolio">
+              Gumroad{" "}
+            </Link>{" "}
+            to support me. Thanks!
           </Typography>
           {/* <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
             {feed
@@ -89,3 +93,23 @@ export default function GetPage() {
     </>
   );
 }
+
+type Props = { href: string; children: React.ReactNode };
+
+const Link = ({ href, children }: Props) => {
+  const [isShown, setIsShown] = useState(false);
+
+  return (
+    <Typography
+      variant="h6"
+      color="primary.main"
+      component="span"
+      sx={{ cursor: "pointer", textDecoration: isShown ? "underline" : "none" }}
+      onClick={() => window.open(href, "_blank")}
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
+    >
+      {children}
+    </Typography>
+  );
+};
