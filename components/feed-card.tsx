@@ -11,6 +11,7 @@ import {
   ListItem,
   ListItemText,
   Stack,
+  Typography,
   useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
@@ -49,7 +50,7 @@ export default function FeedCard({ feed }: Props) {
           initial="initial"
           whileHover="whileHover"
         >
-          <Stack direction="row" justifyContent="space-between" sx={{ mb: 2 }}>
+          <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
             <Chip
               label={type}
               sx={{ color: primary.main, backgroundColor: primary.main + "22" }}
@@ -58,16 +59,14 @@ export default function FeedCard({ feed }: Props) {
               <OpenInNewRounded />
             </motion.div>
           </Stack>
-          <ListItem sx={{ px: 0 }}>
-            <ListItemText
-              primary={title}
-              secondary={`${summary} (${
-                type != "project"
-                  ? details.date
-                  : details.releasedDate || details.endDate
-              })`}
-            />
+          <ListItem sx={{ px: 0, py: 0 }}>
+            <ListItemText primary={title} secondary={`${summary}`} />
           </ListItem>
+          <Typography variant="body2" color="GrayText">
+            {type != "project"
+              ? details.date
+              : details.releasedDate || details.endDate}
+          </Typography>
           <Box
             sx={{
               mt: 2,
