@@ -57,7 +57,7 @@ export default function BlogsPageClient() {
             </Typography>
             <Box />
           </Stack>
-          <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
+          <Masonry spacing={2} columns={{ xs: 1, sm: 2, md: 3 }}>
             {feed
               .filter((feed) => feed.type == "blog")
               .map((feed) => (

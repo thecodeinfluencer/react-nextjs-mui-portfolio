@@ -79,13 +79,6 @@ export default function GetPage() {
             </Link>{" "}
             to support me. Thanks!
           </Typography>
-          {/* <Masonry columns={{ xs: 1, sm: 2, md: 3 }}>
-            {feed
-              .filter((feed) => feed.type == "project")
-              .map((feed) => (
-                <FeedCard key={feed.title} feed={feed} />
-              ))}
-          </Masonry> */}
         </Container>
       </Box>
       <FooterSection />
