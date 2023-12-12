@@ -7,6 +7,7 @@ import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
 import { ArrowBackRounded, OpenInNew, ShareRounded } from "@mui/icons-material";
 import {
+  Alert,
   Box,
   Button,
   Card,
@@ -24,6 +25,7 @@ import { motion } from "framer-motion";
 import { useTheme as useNextTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 
 export default function ViewProjectPageClient({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
@@ -103,10 +105,19 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
               />
             ))}
           </Box>
+
           <Typography variant="h5" sx={{ fontWeight: "bold", mt: 2 }}>
             {thisFeed?.title}
           </Typography>
-          <Typography sx={{ mt: 2 }}>{thisFeed?.description}</Typography>
+          <Typography component="span" sx={{ mt: 2 }}>
+            <Markdown>{thisFeed?.description}</Markdown>
+          </Typography>
+          {thisFeed.details.projectType == "Workplace" && (
+            <Alert severity="info" sx={{ mt: 2 }}>
+              This project is a work project and most of its details are
+              confidential.
+            </Alert>
+          )}
           <Card
             component={motion.div}
             initial={{ opacity: 0, bottom: -200 }}
@@ -146,6 +157,7 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
               </Grid>
             </CardContent>
           </Card>
+
           {thisFeed.links?.length > 0 && (
             <Card
               component={motion.div}
