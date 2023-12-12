@@ -259,7 +259,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-quotez-motivation",
-    featured: true,
+    featured: false,
     title: "Quotez App",
     githubLink: "",
     productLink:
@@ -336,7 +336,7 @@ export const feed: Feed[] = [
     details: {
       startDate: "Sep 2022",
       endDate: "Sep 2023",
-      releasedDate: "Sep 30, 2023",
+      releasedDate: "Sep 2023",
       projectType: "Client",
     },
   },
@@ -344,8 +344,7 @@ export const feed: Feed[] = [
     id: "project-my-kanisa",
     featured: false,
     title: "My kanisa",
-    summary:
-      "Your one stop Church companion app with post feed, services, payments crusades and more.",
+    summary: "Church app with feed, services, payments, crusades and more.",
     description:
       "Discover churches and ministers, interact with video, audio and image devotional posts, listen to live virtual crusade, have your own personal bible, register and login to your church account. Experiencing fellowship and devotion is faster and easier than ever. Join and follow churches and online ministers respectively, like and share your my Kanisa App favorite devotional contents and stay connected to your church",
     type: "project",
@@ -364,7 +363,7 @@ export const feed: Feed[] = [
     details: {
       startDate: "Mar 2021",
       endDate: "Nov 2022",
-      releasedDate: "Jun 5, 2021",
+      releasedDate: "Jun 2021",
       projectType: "Client",
     },
   },
@@ -412,10 +411,9 @@ export const feed: Feed[] = [
   },
   {
     id: "blog-mpesa-express-stk",
-    featured: false,
-    title:
-      "Integrating payments with Lipa na M-Pesa online (M-Pesa Express/STK/NI Push) API the right way.",
-    summary: "Here are the steps to follow to get the M-Pesa integation right.",
+    featured: true,
+    title: "M-Pesa Online/STK Push",
+    summary: "This is how to get the M-Pesa integation right.",
     type: "blog",
     image:
       "https://miro.medium.com/v2/resize:fit:720/format:webp/1*w0PHU3n6HZ_OvpUNSfWRhg.png",
@@ -443,8 +441,7 @@ export const feed: Feed[] = [
     bgTheme: "#F9AB00",
     featured: true,
     title: "Firebase data modeling 101",
-    summary:
-      "Discover key strategies for structuring your data in Firebase to unlock full optimization.",
+    summary: "Key strategies for structuring your data in Firebase.",
     description:
       "Discover key strategies for structuring your data in Firebase to optimize performance, enhance scalability, and ensure data integrity. From designing efficient data hierarchies to leveraging Firebase's real-time database capabilities, this talk provides essential tips and best practices for building robust and scalable applications.",
     type: "talk",
@@ -496,9 +493,8 @@ export const feed: Feed[] = [
     id: "talk-next.js-portfolio",
     bgTheme: "#3D1F5B",
     featured: false,
-    title: "Why you should build a portfolio around your tech stack",
-    summary:
-      "Learn the importance of crafting a portfolio that showcases your expertise and proficiency.",
+    title: "Building a portfolio in your stack",
+    summary: "Importance of a portfolio that showcases your expertise.",
     description:
       "In this talk, I will delve into the importance of crafting a portfolio that showcases your expertise and proficiency in a specific tech stack, focusing on my chosen stack of Next.js and Tailwind CSS. A well-designed portfolio not only demonstrates your technical skills but also serves as a live example of your problem-solving abilities and creativity. I will discuss the benefits of aligning your portfolio with your preferred tech stack, such as deepening your understanding, enhancing your marketability, and attracting projects that align with your interests.",
     type: "talk",
@@ -526,9 +522,9 @@ export const feed: Feed[] = [
   {
     id: "talk-frontend-dev-panoramic",
     bgTheme: "#3CB54F",
-    featured: true,
+    featured: false,
     title: "A Panoramic view of Frontend Development",
-    summary: "A conclusive overview of Frontend Development.",
+    summary: "A conclusive overview.",
     description: "A conclusive overview of the Frontend Development Landscape.",
     type: "talk",
     slidesLink:
@@ -613,8 +609,7 @@ export const feed: Feed[] = [
     bgTheme: "#FFBA00",
     featured: false,
     title: "You can do that in Firebase!",
-    summary:
-      "Discover key strategies for structuring your data in Firebase to unlock full optimization.",
+    summary: "Key strategies for structuring your data in Firebase.",
     description:
       "Firebase is an immensely powerful platform with a set of hosting services for any type of application. It offers NoSQL and real-time hosting of databases, content, social authentication, and notifications, or services, such as a real-time communication server. In this session, we look at how powerful Firebase is, firebase extensions and features, getting started with firebase, serverless architecture with Firebase, what's new in Firebase and why you should use it in your next project.",
     type: "talk",
