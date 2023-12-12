@@ -174,6 +174,90 @@ export const experience: Experience[] = [
 
 export const feed: Feed[] = [
   {
+    id: "project-portfolio-nextjs",
+    featured: true,
+    title: "Next.js Portfolio",
+    githubLink: "",
+    productLink: "",
+    summary: "A portfolio template built with Next.js, MUI and TypeScript.",
+    description:
+      "A portfolio template built with Next.js, MUI and TypeScript. It is a simple, beautiful, and responsive portfolio template for developers. It is a perfect template for beginner and advanced developers. It is built using Next.js, Material UI, and TypeScript. It is easy to edit and is fully customizable. It is well-structured and is easily customizable via the theme file. It is built with SEO in mind and is fully responsive. It is a perfect template for a developer's portfolio. ",
+    type: "project",
+    image: "https://thecodeinfluencer.dev/images/hero.png",
+    links: [],
+    tags: ["React", "Next", "Typescript", "MUI", "Node"],
+    details: {
+      startDate: "Nov 2023",
+      endDate: "Dec 2023",
+      releasedDate: "Dec 2023",
+      projectType: "Workplace",
+    },
+  },
+  {
+    id: "project-digisoc-web",
+    featured: false,
+    title: "DigiSOC Portal",
+    githubLink: "",
+    productLink: "",
+    summary:
+      "A web app to help field engineers and the NOC with network monitoring.",
+    description:
+      "In today's technology-run world, digitisation has made a significant impact on the telecommunication industry. [Safaricom]() has fully embraced this direction and has developed a solution that will support how Field Engineers maintain the company's network landscape in order to achieve 99.9% network availability.\n\n The DigiSOC web app is a solution that will help Field Engineers and the NOC with network monitoring. The app will provide a platform for Field Engineers to view all alarms related to Sites Down, Sectors Down and environmental irregularities. The app will also provide a platform to manage the fiels engineers and site allocation details.\n\nThe web app complements an android app. Through the DigiSOC app, Safaricom's Field Engineers will have access to all of the following features:  \n- Visibility of all alarms related to Sites Down, Sectors Down and environmental irregularities.\n- Details outlining the specific cause of an alarm failure.   \n- Ability to check the alarm status; whether resolved or unresolved.   \n- Ability to enter and exit any site within the app.  \n- Access to the exact location of all sites through google maps.\n\n Overall, the DigiSOC suite of apps empower Field Engineers with real-time information, streamlined workflows, and enhanced tools to address and resolve network issues promptly.",
+    type: "project",
+    image:
+      "https://drive.google.com/uc?export=view&id=1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
+    links: [],
+    tags: ["React", "Next", "Typescript", "MUI", "Node"],
+    details: {
+      startDate: "Jan 2023",
+      endDate: "Ongoing",
+      releasedDate: "",
+      projectType: "Workplace",
+    },
+  },
+  {
+    id: "project-change-web",
+    featured: false,
+    title: "Change Enablement Portal",
+    githubLink: "",
+    productLink: "",
+    summary: "A web app to digitize the change enablement process.",
+    description:
+      "The Change Enablement Portal is a powerful web application designed to revolutionize and streamline the change enablement process within organizations. Developed using cutting-edge technologies such as React, Next.js, Material-UI (MUI), and Node.js, this portal offers a robust and user-friendly platform for managing organizational changes efficiently. The portal provides a centralized location for managing all change requests, approvals, and rollbacks. It also offers a comprehensive dashboard for tracking the status of all changes and rollbacks. The portal is designed to enhance collaboration and communication between stakeholders, thereby ensuring that all changes are implemented successfully.",
+    type: "project",
+    image:
+      "https://drive.google.com/uc?export=view&id=1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
+    links: [],
+    tags: ["React", "Next", "Typescript", "MUI", "Node"],
+    details: {
+      startDate: "Apr 2023",
+      endDate: "Ongoing",
+      releasedDate: "",
+      projectType: "Workplace",
+    },
+  },
+  {
+    id: "project-mtandao-web",
+    featured: false,
+    title: "Mtandao Portal",
+    githubLink: "",
+    productLink: "",
+    summary: "A web app to show network coverage and complaints.",
+    description:
+      "Mtandao Portal is a comprehensive web application designed to enhance the user's experience in understanding and interacting with network coverage data. The app provides a user-friendly interface that allows users to visualize network coverage on an interactive map. Users can easily identify areas with strong signals, weak signals, or dead zones, enabling them to make informed decisions about connectivity.\n\nOne of the key features of Mtandao Portal is its ability to display network Key Performance Indicators (KPIs) in a clear and understandable manner. Through intuitive charts and graphs, users can analyze data related to network performance, such as signal strength, data speed, and reliability. This empowers both consumers and network administrators to assess the quality of service and identify areas for improvement.\n\nAdditionally, Mtandao Portal serves as a centralized hub for customer complaints and feedback. Users can submit and track their connectivity-related issues, allowing network providers to address concerns promptly. The portal streamlines the customer support process, fostering improved communication between users and service providers.",
+    type: "project",
+    image:
+      "https://drive.google.com/uc?export=view&id=1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
+    links: [],
+    tags: ["React", "Next", "Typescript", "MUI", "Node"],
+    details: {
+      startDate: "Jun 2023",
+      endDate: "Ongoing",
+      releasedDate: "",
+      projectType: "Workplace",
+    },
+  },
+  {
     id: "project-quotez-motivation",
     featured: true,
     title: "Quotez App",
@@ -196,8 +280,8 @@ export const feed: Feed[] = [
     tags: ["React Native", "JavaScript", "Typescript", "Android", "Expo"],
     details: {
       startDate: "Nov 2023",
-      endDate: "Nov 2023",
-      releasedDate: "Nov 22, 2023",
+      endDate: "Ongoing",
+      releasedDate: "",
       projectType: "Personal",
     },
   },
