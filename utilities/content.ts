@@ -1,5 +1,19 @@
 import { Experience, Feed, Profile, Testimonial } from "./definitions";
 
+export const contributing = [
+  {
+    project: "react-email",
+    image: "https://react.email/static/favicon.svg",
+    link: "https://github.com/resend/react-email/commits?author=thecodeinfluencer",
+  },
+  {
+    project: "react-nextjs-mui-portfolio",
+    image:
+      "https://raw.githubusercontent.com/thecodeinfluencer/react-nextjs-mui-portfolio/main/app/favicon.ico",
+    link: "https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/commits?author=thecodeinfluencer",
+  },
+];
+
 export const testimonials: Testimonial[] = [
   {
     name: "Caroline Thuo",

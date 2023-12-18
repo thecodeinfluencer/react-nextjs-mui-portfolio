@@ -50,6 +50,9 @@ export default function FooterSection() {
               <TypoLink internal href="/work">
                 Work
               </TypoLink>
+              <TypoLink internal href="/contributing">
+                Contributing
+              </TypoLink>
             </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
@@ -65,8 +68,8 @@ export default function FooterSection() {
               <TypoLink href={profile.socials.devto}>Dev.to</TypoLink>
               <TypoLink href={profile.socials.medium}>Medium</TypoLink>
               <TypoLink href={profile.socials.hashnode}>Hashnode</TypoLink>
-              <TypoLink internal href="/get">
-                Get Template
+              <TypoLink color internal href="/get">
+                Get Free Template
               </TypoLink>
             </Stack>
           </Grid>
@@ -76,9 +79,14 @@ export default function FooterSection() {
   );
 }
 
-type Props = { href: string; children: React.ReactNode; internal?: boolean };
+type Props = {
+  href: string;
+  children: React.ReactNode;
+  internal?: boolean;
+  color?: boolean;
+};
 
-const TypoLink = ({ href, children, internal }: Props) => {
+const TypoLink = ({ href, children, internal, color }: Props) => {
   const [isShown, setIsShown] = useState(false);
 
   const router = useRouter();
@@ -91,6 +99,7 @@ const TypoLink = ({ href, children, internal }: Props) => {
       sx={{ mb: 1, textDecoration: isShown ? "underline" : "none" }}
     >
       <Typography
+        color={color ? "primary.main" : "text.primary"}
         sx={{ cursor: "pointer" }}
         onClick={() =>
           internal ? router.replace(`${href}`) : window.open(href, "_blank")
@@ -101,7 +110,13 @@ const TypoLink = ({ href, children, internal }: Props) => {
         {children}
       </Typography>
       {internal ? (
-        <ArrowForwardRounded sx={{ width: 20, height: 20 }} />
+        <ArrowForwardRounded
+          sx={{
+            width: 20,
+            height: 20,
+            color: color ? "primary.main" : "inherit",
+          }}
+        />
       ) : (
         <OpenInNew sx={{ width: 16, height: 16 }} />
       )}
