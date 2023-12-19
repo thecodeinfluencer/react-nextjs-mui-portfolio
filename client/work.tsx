@@ -107,7 +107,7 @@ export default function WorkPageClient() {
                 </Button>
               </TimelineContent>
             </TimelineItem>
-            {experience.map((exp, idx) => (
+            {experience.map((exp) => (
               <TimelineItem key={exp.startDate}>
                 <TimelineOppositeContent
                   color="textSecondary"
@@ -119,7 +119,7 @@ export default function WorkPageClient() {
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineDot />
-                  {experience.length != idx + 1 && <TimelineConnector />}
+                  <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
                   <Typography
