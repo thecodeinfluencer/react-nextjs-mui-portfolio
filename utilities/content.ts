@@ -92,7 +92,7 @@ export const experience: Experience[] = [
     company: "Safaricom PLC",
     startDate: "Jan 2023",
     endDate: "Present",
-    duration: "3 Mos",
+    duration: "12 Mos",
     type: "Contract",
     location: "Nairobi, Kenya",
     highlights: [
