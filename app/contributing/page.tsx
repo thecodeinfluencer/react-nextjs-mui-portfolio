@@ -73,7 +73,7 @@ export default function ContributingPage() {
             What do you know? I also contribute to open source! In this section,
             you&apos;ll find a glimpse into my coding adventures, where
             I&apos;ve collaborated on various open-source repositories. These
-            projects reflect my passion for community-driven development
+            projects reflect my passion for community-driven development!
           </Typography>
           <Card sx={{ mt: 2 }}>
             <CardContent>
