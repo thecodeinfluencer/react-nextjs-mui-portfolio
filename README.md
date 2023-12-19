@@ -1,5 +1,7 @@
 # Developer Portfolio
 
+![Portfolio Cover](/public/images/hero.png)
+
 ## Getting Started
 
 First, run the development server:
