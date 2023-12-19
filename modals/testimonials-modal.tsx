@@ -1,13 +1,29 @@
-import { Box, Modal, Paper, Typography } from "@mui/material";
+import { Testimonial } from "@/utilities/definitions";
+import {
+  Avatar,
+  Box,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Modal,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React from "react";
 
-type Props = { open: boolean; comment: string; handleClose: () => void };
+type Props = {
+  open: boolean;
+  testimonial: Testimonial;
+  handleClose: () => void;
+};
 
 export default function TestimonialsModal({
   open,
-  comment,
+  testimonial,
   handleClose,
 }: Props) {
+  const { comment, name, role, image } = testimonial;
+
   return (
     <Modal sx={{ border: "none" }} open={open} onClose={handleClose}>
       <Box
@@ -26,6 +42,12 @@ export default function TestimonialsModal({
         }}
         component={Paper}
       >
+        <ListItem sx={{ px: 0 }}>
+          <ListItemAvatar>
+            <Avatar src={image} />
+          </ListItemAvatar>
+          <ListItemText primary={name} secondary={role} />
+        </ListItem>
         <Typography>{comment}</Typography>
       </Box>
     </Modal>

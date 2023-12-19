@@ -51,7 +51,7 @@ export default function TestimonialCard({ testimonial }: Props) {
       </Card>
       <TestimonialsModal
         open={modalOpen}
-        comment={comment}
+        testimonial={testimonial}
         handleClose={() => setModalOpen(false)}
       />
     </>
