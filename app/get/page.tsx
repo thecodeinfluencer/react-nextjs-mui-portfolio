@@ -68,16 +68,18 @@ export default function GetPage() {
             }}
           />
           <Typography sx={{ mt: 2 }} variant="h6">
-            This template is available to <b>fork </b>
-            on GitHub! I only ask that you <b>star</b> it. I would love if you{" "}
+            Feel free to <b></b>fork this template on <b></b>GitHub! Just a
+            gentle request to give it a <b></b>star. I&apos;d be delighted if
+            you added your{" "}
             <Link href="https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/CONTRIBUTING.md">
-              contributed
-            </Link>{" "}
-            to it. You can also buy this template on{" "}
+              contributions
+            </Link>
+            . For those looking to show some extra love, you can even snag this
+            template on{" "}
             <Link href="https://codeinfluencer.gumroad.com/l/nextjs-mui-framer-portfolio">
-              Gumroad{" "}
+              Gumroad
             </Link>{" "}
-            to support me. Thanks!
+            to support my caffeinated coding sessions. Many thanks in advance!
           </Typography>
         </Container>
       </Box>
