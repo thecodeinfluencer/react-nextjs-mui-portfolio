@@ -71,7 +71,7 @@ export default function GetPage() {
             Feel free to <b></b>fork this template on <b></b>GitHub! Just a
             gentle request to give it a <b></b>star. I&apos;d be delighted if
             you added your{" "}
-            <Link href="https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/CONTRIBUTING.md">
+            <Link href="https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/blob/main/CONTRIBUTING.md">
               contributions
             </Link>
             . For those looking to show some extra love, you can even snag this
