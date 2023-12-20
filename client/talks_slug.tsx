@@ -46,9 +46,9 @@ export default function ViewTalkPageClient({ params }: SlugPage) {
           backgroundImage: `url(${thisFeed.image})`,
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
-          background: `linear-gradient(${
-            thisFeed.bgTheme || profile.primaryColor
-          }22 ,${
+          background: `linear-gradient(to bottom, 
+            ${thisFeed.bgTheme || profile.primaryColor}22,
+          ${
             resolvedTheme == "light"
               ? "#f8f8f8"
               : palette.background.paper + "dd"
@@ -84,8 +84,9 @@ export default function ViewTalkPageClient({ params }: SlugPage) {
                       title: `${thisFeed.title} | Talks | ${profile.name}`,
                       text: `View ${profile.name}'s talk (${thisFeed.title}) on ${window.location.href}`,
                     };
-                    window.navigator.canShare(data) &&
-                      window.navigator.share(data);
+                    window?.navigator?.share &&
+                      window?.navigator?.canShare(data) &&
+                      window?.navigator?.share(data);
                   }}
                 >
                   <ShareRounded />
