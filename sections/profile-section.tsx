@@ -2,6 +2,7 @@
 
 import { appBarHeight } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
+import { cardItem, textContainer } from "@/utilities/framer";
 import {
   Box,
   Container,
@@ -10,11 +11,11 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTheme as useNextTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SocialsSection from "./socials-section";
-import { motion } from "framer-motion";
 
 const { name, tagline, description, gravatarUrl } = profile;
 
@@ -60,14 +61,19 @@ export default function ProfileSection() {
               height={imageSize}
               style={{ borderRadius: "50%" }}
             />
-            <Stack spacing={0.5} alignItems="center">
+            <Stack
+              component={motion.div}
+              variants={textContainer}
+              initial="hidden"
+              animate="visible"
+              spacing={0.5}
+              alignItems="center"
+            >
               <Typography
                 variant="h4"
                 sx={{ textAlign: "center" }}
                 component={motion.div}
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1, bottom: 200 }}
-                // fontWeight="bold"
+                variants={cardItem}
               >
                 {name}
               </Typography>
@@ -75,16 +81,14 @@ export default function ProfileSection() {
                 variant="h6"
                 sx={{ textAlign: "center" }}
                 component={motion.div}
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1, bottom: 200 }}
+                variants={cardItem}
               >
                 {tagline}
               </Typography>
               <Typography
                 sx={{ maxWidth: 500, textAlign: "center" }}
                 component={motion.div}
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1, bottom: 200 }}
+                variants={cardItem}
               >
                 {description}
               </Typography>
