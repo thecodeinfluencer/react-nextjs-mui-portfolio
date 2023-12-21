@@ -1,8 +1,9 @@
 import { MUIThemeProvider } from "@/providers/mui-theme";
 import { NextThemeProvider } from "@/providers/next-theme";
 import "@/styles/global.css";
-import { appURL } from "@/utilities/constants";
+import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: Props) {
           <MUIThemeProvider>{children}</MUIThemeProvider>
         </NextThemeProvider>
       </body>
+      <GoogleTagManager gtmId={analyticsID} />
     </html>
   );
 }
