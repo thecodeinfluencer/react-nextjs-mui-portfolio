@@ -26,11 +26,11 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To customize this template to fit your needs, follow the steps below:
 
-1. Edit the file `utilities/constants.ts` and add your content there.
+1. Edit the file `utilities/contents.ts` and add your content there.
 2. Go to `styles/global.css` to chnge the font and basic styles.
 3. Go to `public/assets` and change the `portfolio.pdf`.
 4. Change the theme settings inside `providers/mui-theme`
-5. Under `utilities/constants.ts`, change `appURL` to the working URL (**localhost** when debugging)
+5. Under `utilities/constants.ts`, change `appURL` to the working URL (**localhost** when debugging) and `analyticsID` from [Google Analytics](https://analytics.google.com/analytics/web)
 6. Under `public/images`, you can change the images that appear on SEO (`hero.png`, `work.png`, `talks.png`, `blogs.png`, `projects.png` ...)
 7. Fonts (`next/fonts`) are configured under `app/layout.tsx`
 
