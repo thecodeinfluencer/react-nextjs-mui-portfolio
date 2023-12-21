@@ -47,9 +47,9 @@ export const profile: Profile = {
   gravatarUrl:
     "https://gravatar.com/avatar/7a76f3703c41097061ed71d0139ba9396c8470c6e27c88bafd5c0190d50d3641?size=1024",
   spotify: {
-    track: "https://open.spotify.com/track/2wmyzZUVCXLQTgJvFsh5ef",
-    artist: "Marioo",
-    album: "Love Song",
+    track: "https://open.spotify.com/track/5mhM7bfzv52bzfCzlq8vH1",
+    artist: "Crayon, Ayra Starr",
+    album: "Ngozi",
   },
   socials: {
     twitter: "https://twitter.com/codeinfluencer/",

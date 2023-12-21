@@ -117,7 +117,7 @@ export default function FooterSection() {
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                  primary={`${profile.spotify.album} . ${profile.spotify.artist}`}
+                  primary={`${profile.spotify.album} - ${profile.spotify.artist}`}
                   secondary="Currently Listening (On Repeat)"
                 />
               </ListItem>
