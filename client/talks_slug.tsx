@@ -159,7 +159,7 @@ export default function ViewTalkPageClient({ params }: SlugPage) {
                     </Grid>
                   </Grid>
                 </CardContent>
-              </Card>{" "}
+              </Card>
             </motion.div>
             {thisFeed.links?.length > 0 && (
               <motion.div
