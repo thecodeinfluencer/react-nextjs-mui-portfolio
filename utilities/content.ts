@@ -189,6 +189,7 @@ export const experience: Experience[] = [
 export const feed: Feed[] = [
   {
     id: "project-portfolio-nextjs",
+    bgTheme: "#dddddd",
     featured: true,
     title: "Next.js Portfolio",
     githubLink: "",
@@ -209,6 +210,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-digisoc-web",
+    bgTheme: "#3CB54F",
     featured: false,
     title: "DigiSOC Portal",
     githubLink: "",
@@ -231,6 +233,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-change-web",
+    bgTheme: "#3CB54F",
     featured: false,
     title: "Change Enablement Portal",
     githubLink: "",
@@ -252,6 +255,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-mtandao-web",
+    bgTheme: "#3CB54F",
     featured: false,
     title: "Mtandao Portal",
     githubLink: "",
@@ -273,6 +277,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-quotez-motivation",
+    bgTheme: "#DDDDDD",
     featured: false,
     title: "Quotez App",
     githubLink: "",
@@ -301,6 +306,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-crib-hunt",
+    bgTheme: "#DDDDDD",
     featured: false,
     title: "Crib Hunt",
     summary:
@@ -323,6 +329,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-assistall",
+    bgTheme: "#6f42c1",
     featured: true,
     title: "AssistALL (Mini App)",
     githubLink: "",
@@ -356,6 +363,7 @@ export const feed: Feed[] = [
   },
   {
     id: "project-my-kanisa",
+    bgTheme: "#0d6efd",
     featured: false,
     title: "My kanisa",
     summary: "Church app with feed, services, payments, crusades and more.",

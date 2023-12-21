@@ -46,8 +46,16 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
       <Box
         sx={{
           py: 10,
-          backgroundColor:
-            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+          backgroundImage: `url(${thisFeed.image})`,
+          backgroundSize: "cover",
+          backgroundBlendMode: "multiply",
+          background: `linear-gradient(to bottom, 
+            ${thisFeed.bgTheme || profile.primaryColor}22,
+          ${
+            resolvedTheme == "light"
+              ? "#f8f8f8"
+              : palette.background.paper + "dd"
+          } )`,
         }}
       >
         <Container maxWidth="md">

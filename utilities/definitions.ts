@@ -1,6 +1,7 @@
 export type Feed =
   | {
       type: "project";
+      bgTheme: string;
       id: number | string;
       title: string;
       summary: string;
