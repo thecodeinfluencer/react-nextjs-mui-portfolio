@@ -46,6 +46,11 @@ export const profile: Profile = {
     "I design and create beautiful web and mobile apps, speak, tweet and blog a lot about tech",
   gravatarUrl:
     "https://gravatar.com/avatar/7a76f3703c41097061ed71d0139ba9396c8470c6e27c88bafd5c0190d50d3641?size=1024",
+  spotify: {
+    track: "https://open.spotify.com/track/2wmyzZUVCXLQTgJvFsh5ef",
+    artist: "Marioo",
+    album: "Love Song",
+  },
   socials: {
     twitter: "https://twitter.com/codeinfluencer/",
     linkedIn: "https://www.linkedin.com/in/thecodeinfluencer/",
@@ -55,6 +60,7 @@ export const profile: Profile = {
     devto: "https://dev.to/thecodeinfluencer/",
     telegram: "https://t.me/thecodeinfluencer/",
     sessionize: "https://sessionize.com/thecodeinfluencer",
+    figma: "https://www.figma.com/@codeinfluencer/",
   },
   skills: [
     { label: "React.js", category: "frameworks" },

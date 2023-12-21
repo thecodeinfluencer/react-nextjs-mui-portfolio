@@ -73,6 +73,7 @@ export type Profile = {
   work: string;
   gravatarUrl: string;
   skills: Skill[];
+  spotify: { track: string; artist: string; album: string };
   socials: {
     twitter: string;
     github: string;
@@ -82,6 +83,7 @@ export type Profile = {
     hashnode: string;
     telegram: string;
     sessionize: string;
+    figma: string;
   };
 };
 
