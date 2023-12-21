@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 
 type Props = { feed: Feed };
 
-export default function FeedCard({ feed }: Props) {
+export default function FeedCard({ feed, ...other }: Props) {
   const router = useRouter();
   const {
     palette: { primary },
@@ -36,7 +36,8 @@ export default function FeedCard({ feed }: Props) {
     <Card
       component={motion.div}
       variant="outlined"
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ scale: 1.015 }}
+      {...other}
     >
       <CardActionArea
         onClick={() => {
