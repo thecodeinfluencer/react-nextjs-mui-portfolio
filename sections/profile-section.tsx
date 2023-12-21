@@ -35,84 +35,63 @@ export default function ProfileSection() {
     <Box
       component={motion.div}
       sx={{
-        background: `radial-gradient(circle, ${
+        background:
           resolvedTheme == "dark"
-            ? palette.grey[900]
-            : palette.background.default
-        }, ${profile.primaryColor})`,
+            ? profile.primaryColor
+            : `${profile.primaryColor}22`,
       }}
     >
       <Box
-        component={motion.div}
-        initial={{
-          background: `linear-gradient(0deg, ${
+        sx={{
+          py: 10,
+          background:
             resolvedTheme == "dark"
-              ? palette.grey[900]
-              : palette.background.default
-          }66, ${profile.primaryColor}66)`,
+              ? `${palette.grey[900]}EE`
+              : `${palette.background.default}22`,
         }}
-        animate={{
-          background: `linear-gradient(180deg, ${profile.primaryColor}, ${
-            resolvedTheme == "dark"
-              ? palette.grey[900]
-              : palette.background.default
-          })`,
-          transition: { duration: 10, repeat: Infinity },
-        }}
-        sx={{ borderRadius: 0 }}
       >
-        <Box
-          sx={{
-            py: 10,
-            background: `${
-              resolvedTheme == "dark"
-                ? palette.grey[900]
-                : palette.background.default
-            }EE`,
-          }}
-        >
-          <Container maxWidth="md">
-            <Box sx={{ height: appBarHeight }} />
-            <Stack spacing={2} alignItems="center">
-              <Image
-                src={gravatarUrl}
-                alt="Vercel Logo"
-                width={imageSize}
-                height={imageSize}
-                style={{ borderRadius: "50%" }}
-              />
-              <Stack spacing={0.5} alignItems="center">
-                <Typography
-                  variant="h5"
-                  sx={{ textAlign: "center" }}
-                  component={motion.div}
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: 1, bottom: 200 }}
-                >
-                  {name}
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ textAlign: "center" }}
-                  component={motion.div}
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: 1, bottom: 200 }}
-                >
-                  {tagline}
-                </Typography>
-                <Typography
-                  sx={{ maxWidth: 500, textAlign: "center" }}
-                  component={motion.div}
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: 1, bottom: 200 }}
-                >
-                  {description}
-                </Typography>
-              </Stack>
-              <SocialsSection />
+        <Container maxWidth="md">
+          <Box sx={{ height: appBarHeight }} />
+          <Stack spacing={2} alignItems="center">
+            <Image
+              src={gravatarUrl}
+              alt="Vercel Logo"
+              width={imageSize}
+              height={imageSize}
+              style={{ borderRadius: "50%" }}
+            />
+            <Stack spacing={0.5} alignItems="center">
+              <Typography
+                variant="h4"
+                sx={{ textAlign: "center" }}
+                component={motion.div}
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1, bottom: 200 }}
+                // fontWeight="bold"
+              >
+                {name}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{ textAlign: "center" }}
+                component={motion.div}
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1, bottom: 200 }}
+              >
+                {tagline}
+              </Typography>
+              <Typography
+                sx={{ maxWidth: 500, textAlign: "center" }}
+                component={motion.div}
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1, bottom: 200 }}
+              >
+                {description}
+              </Typography>
             </Stack>
-          </Container>
-        </Box>
+            <SocialsSection />
+          </Stack>
+        </Container>
       </Box>
     </Box>
   );
