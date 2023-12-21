@@ -17,6 +17,8 @@ import {
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useTheme as useNextTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { cardContainer, cardItem } from "@/utilities/framer";
 
 export default function ProjectsPageClient() {
   const [isClient, setIsClient] = useState(false);
@@ -57,11 +59,20 @@ export default function ProjectsPageClient() {
             </Typography>
             <Box />
           </Stack>
-          <Masonry spacing={2} columns={{ xs: 1, sm: 2, md: 3 }}>
+          <Masonry
+            component={motion.div}
+            variants={cardContainer}
+            initial="hidden"
+            animate="visible"
+            spacing={2}
+            columns={{ xs: 1, sm: 2, md: 3 }}
+          >
             {feed
               .filter((feed) => feed.type == "project")
               .map((feed) => (
-                <FeedCard key={feed.title} feed={feed} />
+                <motion.div key={feed.title} variants={cardItem}>
+                  <FeedCard key={feed.title} feed={feed} />
+                </motion.div>
               ))}
           </Masonry>
         </Container>

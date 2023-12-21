@@ -5,6 +5,7 @@ import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
+import { cardPopup } from "@/utilities/framer";
 import { ArrowBackRounded, OpenInNew, ShareRounded } from "@mui/icons-material";
 import {
   Alert,
@@ -126,86 +127,89 @@ export default function ViewProjectPageClient({ params }: SlugPage) {
               confidential.
             </Alert>
           )}
-          <Card
-            component={motion.div}
-            initial={{ opacity: 0, bottom: -200 }}
-            whileInView={{ opacity: 1, bottom: 0, transition: { delay: 0.4 } }}
-            viewport={{ once: true }}
-            elevation={resolvedTheme == "light" ? 0 : 4}
-            sx={{ mt: 2 }}
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
           >
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <ListItemText
-                    primary={thisFeed.details?.startDate}
-                    secondary="Start Date"
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <ListItemText
-                    primary={thisFeed.details?.endDate}
-                    secondary="End Date"
-                  />
-                </Grid>
-                {thisFeed.details?.releasedDate && (
-                  <Grid item xs={12} sm={6}>
-                    <ListItemText
-                      primary={thisFeed.details?.releasedDate}
-                      secondary="Released"
-                    />
-                  </Grid>
-                )}
-                <Grid item xs={12} sm={6}>
-                  <ListItemText
-                    primary={thisFeed.details?.projectType + " Project"}
-                    secondary="Type"
-                  />
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-
-          {thisFeed.links?.length > 0 && (
             <Card
               component={motion.div}
-              initial={{ opacity: 0, bottom: -200 }}
-              whileInView={{
-                opacity: 1,
-                bottom: 0,
-                transition: { delay: 0.4 },
-              }}
-              viewport={{ once: true }}
+              variants={cardPopup}
               elevation={resolvedTheme == "light" ? 0 : 4}
               sx={{ mt: 2 }}
             >
               <CardContent>
-                <Typography variant="h6" sx={{ mb: 2 }}>
-                  Associated Links
-                </Typography>
-                {thisFeed.githubLink && (
-                  <Button
-                    onClick={() => window.open(thisFeed.githubLink)}
-                    endIcon={<OpenInNew />}
-                    sx={{ mr: 1, mb: 1 }}
-                    variant="outlined"
-                  >
-                    Github
-                  </Button>
-                )}
-                {thisFeed.links?.map((link) => (
-                  <Button
-                    key={link.label}
-                    onClick={() => window.open(link.url)}
-                    endIcon={<OpenInNew />}
-                    sx={{ mr: 1, mb: 1 }}
-                    variant="outlined"
-                  >
-                    {link.label}
-                  </Button>
-                ))}
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <ListItemText
+                      primary={thisFeed.details?.startDate}
+                      secondary="Start Date"
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <ListItemText
+                      primary={thisFeed.details?.endDate}
+                      secondary="End Date"
+                    />
+                  </Grid>
+                  {thisFeed.details?.releasedDate && (
+                    <Grid item xs={12} sm={6}>
+                      <ListItemText
+                        primary={thisFeed.details?.releasedDate}
+                        secondary="Released"
+                      />
+                    </Grid>
+                  )}
+                  <Grid item xs={12} sm={6}>
+                    <ListItemText
+                      primary={thisFeed.details?.projectType + " Project"}
+                      secondary="Type"
+                    />
+                  </Grid>
+                </Grid>
               </CardContent>
             </Card>
+          </motion.div>
+          {thisFeed.links?.length > 0 && (
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <Card
+                component={motion.div}
+                variants={cardPopup}
+                elevation={resolvedTheme == "light" ? 0 : 4}
+                sx={{ mt: 2 }}
+              >
+                <CardContent>
+                  <Typography variant="h6" sx={{ mb: 2 }}>
+                    Associated Links
+                  </Typography>
+                  {thisFeed.githubLink && (
+                    <Button
+                      onClick={() => window.open(thisFeed.githubLink)}
+                      endIcon={<OpenInNew />}
+                      sx={{ mr: 1, mb: 1 }}
+                      variant="outlined"
+                    >
+                      Github
+                    </Button>
+                  )}
+                  {thisFeed.links?.map((link) => (
+                    <Button
+                      key={link.label}
+                      onClick={() => window.open(link.url)}
+                      endIcon={<OpenInNew />}
+                      sx={{ mr: 1, mb: 1 }}
+                      variant="outlined"
+                    >
+                      {link.label}
+                    </Button>
+                  ))}
+                </CardContent>
+              </Card>
+            </motion.div>
           )}
         </Container>
       </Box>

@@ -5,6 +5,7 @@ import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
+import { cardPopup } from "@/utilities/framer";
 import { ArrowBackRounded, OpenInNew, ShareRounded } from "@mui/icons-material";
 import {
   Box,
@@ -20,6 +21,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTheme as useNextTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -118,55 +120,77 @@ export default function ViewTalkPageClient({ params }: SlugPage) {
               {thisFeed?.title}
             </Typography>
             <Typography sx={{ mt: 2 }}>{thisFeed?.description}</Typography>
-            <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
-              <CardContent sx={{ backgroundColor: "transparent" }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <ListItemText
-                      primary={thisFeed.details?.event}
-                      secondary="Event"
-                    />
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <Card
+                component={motion.div}
+                variants={cardPopup}
+                elevation={resolvedTheme == "light" ? 0 : 4}
+                sx={{ mt: 2 }}
+              >
+                <CardContent sx={{ backgroundColor: "transparent" }}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                      <ListItemText
+                        primary={thisFeed.details?.event}
+                        secondary="Event"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <ListItemText
+                        primary={thisFeed.details?.location}
+                        secondary="Location"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <ListItemText
+                        primary={thisFeed.details?.community}
+                        secondary="Community"
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <ListItemText
+                        primary={thisFeed.details.date}
+                        secondary="Date"
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <ListItemText
-                      primary={thisFeed.details?.location}
-                      secondary="Location"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <ListItemText
-                      primary={thisFeed.details?.community}
-                      secondary="Community"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <ListItemText
-                      primary={thisFeed.details.date}
-                      secondary="Date"
-                    />
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
-            {thisFeed.links?.length > 0 && (
-              <Card elevation={resolvedTheme == "light" ? 0 : 4} sx={{ mt: 2 }}>
-                <CardContent>
-                  <Typography variant="h6" sx={{ mb: 2 }}>
-                    Associated Links
-                  </Typography>
-                  {thisFeed.links?.map((link) => (
-                    <Button
-                      key={link.label}
-                      onClick={() => window.open(link.url)}
-                      endIcon={<OpenInNew />}
-                      sx={{ mr: 1, mb: 1 }}
-                      variant="outlined"
-                    >
-                      {link.label}
-                    </Button>
-                  ))}
                 </CardContent>
-              </Card>
+              </Card>{" "}
+            </motion.div>
+            {thisFeed.links?.length > 0 && (
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+              >
+                <Card
+                  component={motion.div}
+                  variants={cardPopup}
+                  elevation={resolvedTheme == "light" ? 0 : 4}
+                  sx={{ mt: 2 }}
+                >
+                  <CardContent>
+                    <Typography variant="h6" sx={{ mb: 2 }}>
+                      Associated Links
+                    </Typography>
+                    {thisFeed.links?.map((link) => (
+                      <Button
+                        key={link.label}
+                        onClick={() => window.open(link.url)}
+                        endIcon={<OpenInNew />}
+                        sx={{ mr: 1, mb: 1 }}
+                        variant="outlined"
+                      >
+                        {link.label}
+                      </Button>
+                    ))}
+                  </CardContent>
+                </Card>
+              </motion.div>
             )}
           </Container>
         </Box>
