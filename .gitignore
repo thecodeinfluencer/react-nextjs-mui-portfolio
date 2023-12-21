@@ -39,3 +39,9 @@ firebase.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# envs
+.env
+.env.local
+
