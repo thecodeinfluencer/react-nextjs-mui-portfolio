@@ -282,6 +282,46 @@ export const feed: Feed[] = [
     },
   },
   {
+    id: "project-gumzo-ai",
+    bgTheme: "#008b8b",
+    featured: true,
+    title: "Gumzo AI",
+    githubLink: "",
+    productLink: "https://gumzoai.web.app/",
+    summary: "AI chat simulation use-cases using React.js and Node.js",
+    description:
+      "The Gumzo AI Chat project is a sophisticated chat simulation built on OpenAI technology, offering users an interactive and personalized experience. Leveraging cutting-edge technologies such as React, JavaScript, TypeScript, MUI, Node, Firebase, Express, and Google Cloud, the application provides a seamless and responsive interface for users to engage with different AI chatbots. The utilization of React and MUI ensures a modern and visually appealing frontend, while JavaScript and TypeScript enable efficient and maintainable code. The backend, powered by Node and Express, facilitates the seamless communication between the user interface and the underlying AI engine. This project showcases a strong technical foundation, combining frontend and backend technologies to create a robust and interactive chat application.",
+    type: "project",
+    image:
+      "https://drive.google.com/uc?export=view&id=1QkOs8BfqfG9MnttiJb_IkpOvzgQLWplq",
+    links: [
+      {
+        label: "Gumzo Chat",
+        url: "https://gumzoai.web.app/",
+      },
+      {
+        label: "Gumzo API",
+        url: "https://gumzoai.el.r.appspot.com/",
+      },
+    ],
+    tags: [
+      "React",
+      "JavaScript",
+      "Typescript",
+      "MUI",
+      "Node",
+      "Firebase",
+      "Express",
+      "Google Cloud",
+    ],
+    details: {
+      startDate: "Jan 2023",
+      endDate: "Feb 2023",
+      releasedDate: "",
+      projectType: "Personal",
+    },
+  },
+  {
     id: "project-quotez-motivation",
     bgTheme: "#DDDDDD",
     featured: false,
@@ -336,7 +376,7 @@ export const feed: Feed[] = [
   {
     id: "project-assistall",
     bgTheme: "#6f42c1",
-    featured: true,
+    featured: false,
     title: "AssistALL (Mini App)",
     githubLink: "",
     productLink: "https://assistallapp.com/",
