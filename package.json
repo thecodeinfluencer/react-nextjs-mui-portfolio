@@ -15,6 +15,8 @@
     "@mui/lab": "^5.0.0-alpha.152",
     "@mui/material": "^5.14.17",
     "@next/third-parties": "^14.0.4",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.12",
     "next": "14.0.2",

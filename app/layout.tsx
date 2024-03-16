@@ -4,6 +4,8 @@ import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
@@ -49,7 +51,11 @@ export default function RootLayout({ children }: Props) {
           enableSystem
           disableTransitionOnChange
         >
-          <MUIThemeProvider>{children}</MUIThemeProvider>
+          <MUIThemeProvider>
+            <Analytics />
+            <SpeedInsights />
+            {children}
+          </MUIThemeProvider>
         </NextThemeProvider>
       </body>
       <GoogleTagManager gtmId={analyticsID} />
