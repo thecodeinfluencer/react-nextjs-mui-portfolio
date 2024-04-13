@@ -3,12 +3,7 @@
 const nextConfig = {
   output: "standalone",
   images: {
-    domains: [
-      "gravatar.com",
-      "media.licdn.com",
-      "lh3.googleusercontent.com",
-      "pbs.twimg.com",
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "gravatar.com" }],
   },
 };
 
