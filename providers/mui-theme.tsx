@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider, PaletteMode, Theme } from "@mui/material";
 
 import { useTheme as useNextTheme } from "next-themes";
 
-export const MUIThemeProvider = ({ children }: any) => {
+export default function MUIThemeProvider({ children }: any) {
   const { resolvedTheme } = useNextTheme();
 
   const appTheme: Theme = createTheme({
@@ -23,8 +23,4 @@ export const MUIThemeProvider = ({ children }: any) => {
   });
 
   return <ThemeProvider theme={appTheme}>{children}</ThemeProvider>;
-};
-
-export default function Cover() {
-  return <>DigiSOC App</>;
 }

@@ -1,5 +1,5 @@
-import { MUIThemeProvider } from "@/providers/mui-theme";
-import { NextThemeProvider } from "@/providers/next-theme";
+import MUIThemeProvider from "@/providers/mui-theme";
+import NextThemeProvider from "@/providers/next-theme";
 import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
