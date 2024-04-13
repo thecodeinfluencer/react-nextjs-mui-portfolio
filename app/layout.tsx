@@ -1,5 +1,4 @@
 import MUIThemeProvider from "@/providers/mui-theme";
-import NextThemeProvider from "@/providers/next-theme";
 import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
@@ -45,18 +44,11 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={prompt.className}>
-        <NextThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <MUIThemeProvider>
-            <Analytics />
-            <SpeedInsights />
-            {children}
-          </MUIThemeProvider>
-        </NextThemeProvider>
+        <MUIThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+          {children}
+        </MUIThemeProvider>
       </body>
       <GoogleTagManager gtmId={analyticsID} />
     </html>
