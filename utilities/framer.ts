@@ -1,5 +1,3 @@
-// Framer Motion Variants
-
 import { Variants } from "framer-motion";
 
 export const textContainer: Variants = {
