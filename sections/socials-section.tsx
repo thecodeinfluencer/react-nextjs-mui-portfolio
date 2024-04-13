@@ -1,7 +1,6 @@
 import { profile } from "@/utilities/content";
 import { LinkedIn, Telegram, Twitter } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
-import React from "react";
 
 export default function SocialsSection() {
   return (
