@@ -1,15 +1,18 @@
 import { Testimonial } from "@/utilities/definitions";
+import { CloseRounded } from "@mui/icons-material";
 import {
   Avatar,
   Box,
+  Container,
+  IconButton,
   ListItem,
   ListItemAvatar,
   ListItemText,
   Modal,
   Paper,
+  Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
 
 type Props = {
   open: boolean;
@@ -27,28 +30,23 @@ export default function TestimonialsModal({
   return (
     <Modal sx={{ border: "none" }} open={open} onClose={handleClose}>
       <Box
-        sx={{
-          position: "absolute" as "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          border: "none",
-          boxShadow: 24,
-          padding: 4,
-          width: { xs: "70%", sm: "70%", md: "55%", lg: "45%" },
-          maxWidth: 580,
-          maxHeight: "80vh",
-          overflowY: "auto",
-        }}
+        sx={{ border: "none", padding: 4, height: "100vh" }}
         component={Paper}
       >
-        <ListItem sx={{ px: 0 }}>
-          <ListItemAvatar>
-            <Avatar src={image} />
-          </ListItemAvatar>
-          <ListItemText primary={name} secondary={role} />
-        </ListItem>
-        <Typography>{comment}</Typography>
+        <Stack direction="row" justifyContent="end">
+          <IconButton onClick={handleClose}>
+            <CloseRounded />
+          </IconButton>
+        </Stack>
+        <Container maxWidth="md">
+          <ListItem sx={{ px: 0 }}>
+            <ListItemAvatar>
+              <Avatar src={image} />
+            </ListItemAvatar>
+            <ListItemText primary={name} secondary={role} />
+          </ListItem>
+          <Typography>{comment}</Typography>
+        </Container>
       </Box>
     </Modal>
   );
