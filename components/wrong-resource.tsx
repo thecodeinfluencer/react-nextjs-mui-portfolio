@@ -3,7 +3,6 @@
 import { ArrowBackRounded } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 type Props = { resource?: string };
 
