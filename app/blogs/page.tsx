@@ -1,4 +1,4 @@
-import BlogsPageClient from "@/client/blogs";
+import Blogs from "./blogs";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function BlogsPage() {
   return (
     <main>
-      <BlogsPageClient />
+      <Blogs />
     </main>
   );
 }
