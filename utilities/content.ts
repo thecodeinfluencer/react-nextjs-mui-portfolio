@@ -85,10 +85,6 @@ export const profile: Profile = {
     { label: "Java", category: "languages" },
     { label: "Python", category: "languages" },
     { label: "Node.js", category: "languages" },
-
-    // { label: "Azure", category: "tools" },
-    // { label: "PostgreSQL", category: "tools" },
-    // { label: "C#", category: "languages" },
   ],
 };
 
