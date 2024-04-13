@@ -7,37 +7,18 @@ import { feed } from "@/utilities/content";
 import { cardContainer, cardItem } from "@/utilities/framer";
 import { ArrowBackRounded } from "@mui/icons-material";
 import { Masonry } from "@mui/lab";
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { useTheme as useNextTheme } from "next-themes";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function BlogsPageClient() {
-  const [isClient, setIsClient] = useState(false);
-
-  const router = useRouter();
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return null;
-
+export default function Blogs() {
   return (
     <>
       <Box
         sx={{
           py: 10,
-          backgroundColor:
-            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+          bgcolor: ({ palette }) =>
+            palette.mode == "light" ? "#f8f8f8" : palette.background.paper,
         }}
       >
         <Container maxWidth="md">
@@ -50,7 +31,8 @@ export default function BlogsPageClient() {
           >
             <Button
               startIcon={<ArrowBackRounded />}
-              onClick={() => router.replace("/")}
+              LinkComponent={Link}
+              href="/"
             >
               Home
             </Button>
