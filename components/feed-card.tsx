@@ -15,12 +15,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Props = { feed: Feed };
 
 export default function FeedCard({ feed, ...other }: Props) {
-  const router = useRouter();
   const {
     palette: { primary },
   } = useTheme();
@@ -32,6 +31,15 @@ export default function FeedCard({ feed, ...other }: Props) {
     whileHover: { scale: 1.05, rotate: 0, opacity: 1 },
   };
 
+  const getLink: () => string = () => {
+    if (type == "project") return "/projects/" + feed.id;
+    if (type == "talk") return "/talks/" + feed.id;
+    if (type == "blog") return feed?.blogLink;
+    return "";
+  };
+
+  const link = getLink();
+
   return (
     <Card
       component={motion.div}
@@ -40,11 +48,9 @@ export default function FeedCard({ feed, ...other }: Props) {
       {...other}
     >
       <CardActionArea
-        onClick={() => {
-          if (type == "project") router.push("/projects/" + feed.id);
-          if (type == "talk") router.push("/talks/" + feed.id);
-          if (type == "blog") window.open(feed?.blogLink, "_blank");
-        }}
+        href={link}
+        LinkComponent={Link}
+        target={type == "blog" ? "_blank" : undefined}
       >
         <CardContent
           component={motion.div}

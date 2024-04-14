@@ -20,7 +20,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function FooterSection() {
@@ -125,8 +125,6 @@ type Props = {
 const TypoLink = ({ href, children, internal, color }: Props) => {
   const [isShown, setIsShown] = useState(false);
 
-  const router = useRouter();
-
   return (
     <Stack
       direction="row"
@@ -135,13 +133,13 @@ const TypoLink = ({ href, children, internal, color }: Props) => {
       sx={{ mb: 1, textDecoration: isShown ? "underline" : "none" }}
     >
       <Typography
-        color={color ? "primary.main" : "text.primary"}
+        href={href}
+        component={Link}
         sx={{ cursor: "pointer" }}
-        onClick={() =>
-          internal ? router.replace(`${href}`) : window.open(href, "_blank")
-        }
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
+        target={internal ? undefined : "_blank"}
+        color={color ? "primary.main" : "text.primary"}
       >
         {children}
       </Typography>
