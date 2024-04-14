@@ -1,4 +1,4 @@
-import TalksPageClient from "@/client/talks";
+import Talks from "@/app/talks/talks";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function TalksPage() {
   return (
     <main>
-      <TalksPageClient />
+      <Talks />
     </main>
   );
 }

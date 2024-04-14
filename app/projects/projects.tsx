@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Blogs() {
+export default function Projects() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => setIsClient(true), []);
@@ -28,7 +28,7 @@ export default function Blogs() {
 
   return (
     <>
-      <Paper sx={{ py: 10 }}>
+      <Paper square sx={{ py: 10 }}>
         <Container maxWidth="md">
           <Stack
             sx={{ mb: 8 }}
@@ -45,7 +45,7 @@ export default function Blogs() {
               Home
             </Button>
             <Typography sx={{ textAlign: "center" }} variant="h5">
-              Blogs
+              Projects
             </Typography>
             <Box />
           </Stack>
@@ -58,10 +58,10 @@ export default function Blogs() {
             columns={{ xs: 1, sm: 2, md: 3 }}
           >
             {feed
-              .filter((feed) => feed.type == "blog")
+              .filter((feed) => feed.type == "project")
               .map((feed) => (
                 <motion.div key={feed.title} variants={cardItem}>
-                  <FeedCard feed={feed} />
+                  <FeedCard key={feed.title} feed={feed} />
                 </motion.div>
               ))}
           </Masonry>

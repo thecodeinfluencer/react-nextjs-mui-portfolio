@@ -1,4 +1,4 @@
-import WorkPageClient from "@/client/work";
+import Work from "@/app/work/work";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 
@@ -17,7 +17,7 @@ export async function generateMetadata() {
 export default function WorkPage() {
   return (
     <main>
-      <WorkPageClient />
+      <Work />
     </main>
   );
 }

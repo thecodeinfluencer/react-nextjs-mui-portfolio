@@ -1,14 +1,10 @@
-"use client";
-
 import { ArrowBackRounded } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Props = { resource?: string };
 
 export default function WrongResource({ resource = "item" }: Props) {
-  const router = useRouter();
-
   return (
     <Stack
       alignItems="center"
@@ -17,7 +13,7 @@ export default function WrongResource({ resource = "item" }: Props) {
       spacing={2}
     >
       <Typography variant="h5">This {resource} does not exist</Typography>
-      <Button startIcon={<ArrowBackRounded />} onClick={() => router.push("/")}>
+      <Button startIcon={<ArrowBackRounded />} LinkComponent={Link} href="/">
         Back to Home
       </Button>
     </Stack>

@@ -9,7 +9,6 @@ import {
 } from "@mui/icons-material";
 import {
   Avatar,
-  Box,
   Card,
   Container,
   Grid,
@@ -17,33 +16,24 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Paper,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function FooterSection() {
   const [isClient, setIsClient] = useState(false);
 
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
-
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
-    <Box
-      sx={{
-        py: 5,
-        backgroundColor:
-          resolvedTheme == "dark"
-            ? palette.grey[900]
-            : palette.background.default,
-      }}
+    <Paper
+      square
+      sx={{ py: 5, borderTop: ({ palette }) => `2px solid ${palette.divider}` }}
     >
       <Container maxWidth="md">
         <Grid container spacing={1}>
@@ -88,15 +78,11 @@ export default function FooterSection() {
         </Grid>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={8} md={6} sx={{ my: 2 }}>
-            <Card>
+            <Card variant="outlined">
               <ListItem
                 button
                 onClick={() => window.open(profile.spotify.track, "_blank")}
-                sx={{
-                  borderWidth: 1,
-                  borderColor: palette.divider,
-                  borderRadius: 1,
-                }}
+                sx={{ borderWidth: 1, borderRadius: 1 }}
                 secondaryAction={
                   <IconButton disabled aria-label="delete">
                     <OpenInNewRounded />
@@ -118,14 +104,14 @@ export default function FooterSection() {
                 </ListItemAvatar>
                 <ListItemText
                   primary={`${profile.spotify.album} - ${profile.spotify.artist}`}
-                  secondary="Currently Listening (On Repeat)"
+                  secondary="On Repeat"
                 />
               </ListItem>
             </Card>
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </Paper>
   );
 }
 

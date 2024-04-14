@@ -1,4 +1,6 @@
+import MUICacheProvider from "@/providers/mui-cache";
 import MUIThemeProvider from "@/providers/mui-theme";
+import { NextThemeProvider } from "@/providers/next-themes";
 import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
@@ -44,13 +46,22 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={prompt.className}>
-        <MUIThemeProvider>
-          <Analytics />
-          <SpeedInsights />
-          {children}
-        </MUIThemeProvider>
+        <MUICacheProvider>
+          <NextThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <MUIThemeProvider>
+              <Analytics />
+              <SpeedInsights />
+              <GoogleTagManager gtmId={analyticsID} />
+              {children}
+            </MUIThemeProvider>
+          </NextThemeProvider>
+        </MUICacheProvider>
       </body>
-      <GoogleTagManager gtmId={analyticsID} />
     </html>
   );
 }

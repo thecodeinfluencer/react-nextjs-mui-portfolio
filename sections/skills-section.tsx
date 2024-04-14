@@ -2,36 +2,29 @@
 
 import { profile } from "@/utilities/content";
 import {
-  Box,
   Card,
   CardContent,
   Chip,
   Container,
   Grid,
+  Paper,
   Typography,
-  useTheme,
 } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function SkillsSection() {
   const [isClient, setIsClient] = useState(false);
 
-  const { resolvedTheme } = useNextTheme();
-  const {
-    palette: { grey, background },
-  } = useTheme();
-
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
-    <Box
+    <Paper
+      square
       sx={{
         py: 10,
-        backgroundColor:
-          resolvedTheme == "dark" ? grey[900] : background.default,
+        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
       <Container maxWidth="md">
@@ -52,7 +45,7 @@ export default function SkillsSection() {
                       key={skill.label}
                       label={skill.label}
                       sx={{ mr: 1, mb: 1 }}
-                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
+                      variant="outlined"
                     />
                   ))}
               </CardContent>
@@ -71,7 +64,7 @@ export default function SkillsSection() {
                       key={skill.label}
                       label={skill.label}
                       sx={{ mr: 1, mb: 1 }}
-                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
+                      variant="outlined"
                     />
                   ))}
               </CardContent>
@@ -90,7 +83,7 @@ export default function SkillsSection() {
                       key={skill.label}
                       label={skill.label}
                       sx={{ mr: 1, mb: 1 }}
-                      variant={resolvedTheme == "dark" ? "outlined" : "filled"}
+                      variant="outlined"
                     />
                   ))}
               </CardContent>
@@ -98,6 +91,6 @@ export default function SkillsSection() {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </Paper>
   );
 }

@@ -12,38 +12,31 @@ import {
   AppBar as MuiAppBar,
   Paper,
   Stack,
-  useTheme,
 } from "@mui/material";
 import { useTheme as useNextTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AppBar() {
-  const [isClient, setIsClient] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const { resolvedTheme, setTheme } = useNextTheme();
-  const { palette } = useTheme();
-  const router = useRouter();
 
-  useEffect(() => setIsClient(true), []);
-
-  // add scroll listener to change appbar background color
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > 5) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      if (currentScrollY > 5) setIsScrolled(true);
+      else setIsScrolled(false);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!isClient) return null;
+  useEffect(() => setIsClient(true), []);
+
+  if (!isClient) return <div></div>;
 
   return (
     <MuiAppBar sx={{ backgroundColor: "transparent" }} elevation={0}>
@@ -54,9 +47,8 @@ export default function AppBar() {
             py: 2,
             px: 3,
             borderRadius: 24,
-            backgroundColor: !isScrolled
-              ? "transparent"
-              : palette.background.paper,
+            bgcolor: ({ palette }) =>
+              !isScrolled ? "transparent" : palette.background.paper,
           }}
           elevation={isScrolled ? 4 : 0}
         >
@@ -67,7 +59,8 @@ export default function AppBar() {
           >
             <Button
               sx={{ display: { xs: "none", sm: "block" } }}
-              onClick={() => router.push("/")}
+              LinkComponent={Link}
+              href="/"
             >
               @thecodeinfluencer
             </Button>
@@ -81,7 +74,8 @@ export default function AppBar() {
               <Button
                 variant="outlined"
                 endIcon={<ArrowForwardRounded />}
-                onClick={() => router.push("/work")}
+                LinkComponent={Link}
+                href="/work"
               >
                 Work & CV
               </Button>

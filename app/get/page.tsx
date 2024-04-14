@@ -4,38 +4,20 @@ import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { appURL } from "@/utilities/constants";
 import { ArrowBackRounded } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import NextLink from "next/link";
 import { useEffect, useState } from "react";
 
 export default function GetPage() {
   const [isClient, setIsClient] = useState(false);
 
-  const router = useRouter();
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
-
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
     <>
-      <Box
-        sx={{
-          py: 10,
-          backgroundColor:
-            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
-        }}
-      >
+      <Box sx={{ py: 10 }}>
         <Container maxWidth="md">
           <Stack
             sx={{ mb: 8 }}
@@ -46,7 +28,8 @@ export default function GetPage() {
           >
             <Button
               startIcon={<ArrowBackRounded />}
-              onClick={() => router.replace("/")}
+              LinkComponent={NextLink}
+              href="/"
             >
               Home
             </Button>
@@ -61,7 +44,7 @@ export default function GetPage() {
               borderRadius: 1,
               width: "100%",
               height: { xs: 200, sm: 300, md: 400 },
-              backgroundColor: palette.background.paper,
+              bgcolor: ({ palette }) => palette.background.paper,
               backgroundImage: `url(${appURL}/images/hero.png)`,
               backgroundSize: "cover",
               backgroundPosition: "center",

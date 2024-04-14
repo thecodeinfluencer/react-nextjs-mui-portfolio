@@ -1,4 +1,4 @@
-import ProjectsPageClient from "@/client/projects";
+import Projects from "@/app/projects/projects";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import { Metadata } from "next";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <main>
-      <ProjectsPageClient />
+      <Projects />
     </main>
   );
 }

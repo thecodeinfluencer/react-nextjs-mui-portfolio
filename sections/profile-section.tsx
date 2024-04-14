@@ -6,55 +6,36 @@ import { cardItem, textContainer } from "@/utilities/framer";
 import {
   Box,
   Container,
+  Paper,
   Stack,
   Typography,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { useTheme as useNextTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import SocialsSection from "./socials-section";
+import { useEffect, useState } from "react";
 
 const { name, tagline, description, gravatarUrl } = profile;
 
 export default function ProfileSection() {
   const [isClient, setIsClient] = useState(false);
 
-  const { palette } = useTheme();
-  const { resolvedTheme } = useNextTheme();
-
   const below600 = useMediaQuery("(max-width: 600px)");
-  const imageSize = below600 ? 180 : 280;
+  const imageSize = below600 ? 180 : 240;
 
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
-    <Box
-      component={motion.div}
-      sx={{
-        background:
-          resolvedTheme == "dark"
-            ? profile.primaryColor
-            : `${profile.primaryColor}22`,
-      }}
-    >
-      <Box
-        sx={{
-          py: 10,
-          background:
-            resolvedTheme == "dark"
-              ? `${palette.grey[900]}EE`
-              : `${palette.background.default}22`,
-        }}
-      >
+    <Paper square component={motion.div}>
+      <Box sx={{ py: 10 }}>
         <Container maxWidth="md">
           <Box sx={{ height: appBarHeight }} />
           <Stack spacing={2} alignItems="center">
             <Image
+              priority
               src={gravatarUrl}
               alt="Vercel Logo"
               width={imageSize}
@@ -70,7 +51,7 @@ export default function ProfileSection() {
               alignItems="center"
             >
               <Typography
-                variant="h4"
+                variant="h2"
                 sx={{ textAlign: "center" }}
                 component={motion.div}
                 variants={cardItem}
@@ -78,7 +59,8 @@ export default function ProfileSection() {
                 {name}
               </Typography>
               <Typography
-                variant="h6"
+                color="primary"
+                variant="h5"
                 sx={{ textAlign: "center" }}
                 component={motion.div}
                 variants={cardItem}
@@ -97,6 +79,6 @@ export default function ProfileSection() {
           </Stack>
         </Container>
       </Box>
-    </Box>
+    </Paper>
   );
 }

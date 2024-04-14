@@ -1,7 +1,7 @@
-import ViewTalkPageClient from "@/client/talks_slug";
 import { appURL } from "@/utilities/constants";
 import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
+import ViewTalk from "./talks_slug";
 
 export async function generateMetadata({ params }: SlugPage) {
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: SlugPage) {
 export default function ViewProjectPage({ params }: SlugPage) {
   return (
     <main>
-      <ViewTalkPageClient params={params} />
+      <ViewTalk params={params} />
     </main>
   );
 }

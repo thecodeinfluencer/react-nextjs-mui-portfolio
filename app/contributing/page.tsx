@@ -1,5 +1,7 @@
 "use client";
 
+import CTASection from "@/sections/cta-section";
+import FooterSection from "@/sections/footer-section";
 import { contributing } from "@/utilities/content";
 import { ArrowBackRounded, OpenInNewRounded } from "@mui/icons-material";
 import {
@@ -14,23 +16,16 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Paper,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import FooterSection from "@/sections/footer-section";
-import CTASection from "@/sections/cta-section";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function ContributingPage() {
   const [isClient, setIsClient] = useState(false);
-
-  const router = useRouter();
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
 
   const arrow = {
     initial: { scale: 1, rotate: 45, opacity: 0 },
@@ -39,17 +34,11 @@ export default function ContributingPage() {
 
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
     <>
-      <Box
-        sx={{
-          py: 10,
-          backgroundColor:
-            resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
-        }}
-      >
+      <Paper square sx={{ py: 10 }}>
         <Container maxWidth="md">
           <Stack
             sx={{ mb: 8 }}
@@ -60,7 +49,8 @@ export default function ContributingPage() {
           >
             <Button
               startIcon={<ArrowBackRounded />}
-              onClick={() => router.replace("/")}
+              LinkComponent={Link}
+              href="/"
             >
               Home
             </Button>
@@ -75,7 +65,7 @@ export default function ContributingPage() {
             I&apos;ve collaborated on various open-source repositories. These
             projects reflect my passion for community-driven development!
           </Typography>
-          <Card sx={{ mt: 2 }}>
+          <Card sx={{ mt: 2 }} variant="outlined">
             <CardContent>
               <List component={motion.div}>
                 {contributing.map(({ project, image, link }) => (
@@ -86,7 +76,7 @@ export default function ContributingPage() {
                     onClick={() => window.open(link, "_blank")}
                     sx={{
                       borderWidth: 1,
-                      borderColor: palette.divider,
+                      borderColor: ({ palette }) => palette.divider,
                       borderRadius: 1,
                     }}
                     secondaryAction={
@@ -110,7 +100,7 @@ export default function ContributingPage() {
             </CardContent>
           </Card>
         </Container>
-      </Box>
+      </Paper>
       <FooterSection />
       <CTASection />
     </>

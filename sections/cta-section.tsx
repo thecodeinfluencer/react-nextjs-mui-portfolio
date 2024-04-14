@@ -1,26 +1,22 @@
 "use client";
 
-import { Box, Container, Typography, useTheme } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { Container, Paper, Typography } from "@mui/material";
 import SocialsSection from "./socials-section";
+import { useEffect, useState } from "react";
 
 export default function CTASection() {
   const [isClient, setIsClient] = useState(false);
 
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
-
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
-    <Box
+    <Paper
+      square
       sx={{
         py: 10,
-        backgroundColor:
-          resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
       <Container maxWidth="md">
@@ -29,6 +25,6 @@ export default function CTASection() {
         </Typography>
         <SocialsSection />
       </Container>
-    </Box>
+    </Paper>
   );
 }

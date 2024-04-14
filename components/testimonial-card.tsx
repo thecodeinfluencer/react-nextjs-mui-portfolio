@@ -1,3 +1,5 @@
+"use client";
+
 import TestimonialsModal from "@/modals/testimonials-modal";
 import { Testimonial } from "@/utilities/definitions";
 import { OpenInNewRounded } from "@mui/icons-material";
@@ -14,21 +16,19 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useState } from "react";
-import { useTheme as useNextTheme } from "next-themes";
 
 type Props = { testimonial: Testimonial };
 
 export default function TestimonialCard({ testimonial }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const { resolvedTheme } = useNextTheme();
   const btnColumn = useMediaQuery("(max-width: 320px)");
 
   const { comment, linkedIn, name, role, image } = testimonial;
 
   return (
     <>
-      <Card elevation={resolvedTheme == "light" ? 0 : 4}>
+      <Card variant="outlined">
         <CardContent>
           <ListItem sx={{ px: 0 }}>
             <ListItemAvatar>

@@ -1,22 +1,29 @@
 import { profile } from "@/utilities/content";
 import { LinkedIn, Telegram, Twitter } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
+import Link from "next/link";
 
 export default function SocialsSection() {
   return (
     <Stack direction="row" sx={{ mt: 2 }} justifyContent="center">
       <IconButton
-        onClick={() => window.open(profile.socials.telegram, "_blank")}
+        LinkComponent={Link}
+        href={profile.socials.telegram}
+        target="_blank"
       >
         <Telegram />
       </IconButton>
       <IconButton
-        onClick={() => window.open(profile.socials.twitter, "_blank")}
+        LinkComponent={Link}
+        href={profile.socials.twitter}
+        target="_blank"
       >
         <Twitter />
       </IconButton>
       <IconButton
-        onClick={() => window.open(profile.socials.linkedIn, "_blank")}
+        LinkComponent={Link}
+        href={profile.socials.linkedIn}
+        target="_blank"
       >
         <LinkedIn />
       </IconButton>

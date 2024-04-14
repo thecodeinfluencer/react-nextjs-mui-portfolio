@@ -2,28 +2,26 @@
 
 import FeedCard from "@/components/feed-card";
 import { feed } from "@/utilities/content";
+import { cardContainer } from "@/utilities/framer";
 import { Masonry } from "@mui/lab";
-import { Box, Container, Typography, useTheme } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { Box, Container, Paper, Typography, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function FeedSection() {
   const [isClient, setIsClient] = useState(false);
 
-  const { resolvedTheme } = useNextTheme();
-  const { palette } = useTheme();
-
   useEffect(() => setIsClient(true), []);
 
-  if (!isClient) return null;
+  if (!isClient) return <div></div>;
 
   return (
-    <Box
+    <Paper
+      square
       sx={{
         py: 10,
-        backgroundColor:
-          resolvedTheme == "light" ? "#f8f8f8" : palette.background.paper,
+        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
       <Container maxWidth="md">
@@ -32,7 +30,14 @@ export default function FeedSection() {
           <SectionLink href="/blogs">Blogs</SectionLink>,{" "}
           <SectionLink href="/talks">Talks</SectionLink>,)
         </Typography>
-        <Masonry spacing={2} columns={{ xs: 1, sm: 2, md: 3 }}>
+        <Masonry
+          spacing={2}
+          columns={{ xs: 1, sm: 2, md: 3 }}
+          component={motion.div}
+          variants={cardContainer}
+          initial="hidden"
+          animate="visible"
+        >
           {feed
             .filter(({ featured }) => featured)
             .map((feed) => (
@@ -40,26 +45,26 @@ export default function FeedSection() {
             ))}
         </Masonry>
       </Container>
-    </Box>
+    </Paper>
   );
 }
 
 type Props = { href: string; children: React.ReactNode };
 
 const SectionLink = ({ href, children }: Props) => {
-  const router = useRouter();
   const { palette } = useTheme();
 
   return (
-    <span
-      style={{
+    <Box
+      sx={{
         textDecoration: "underline",
         color: palette.primary.main,
         cursor: "pointer",
       }}
-      onClick={() => router.replace(href)}
+      component={Link}
+      href={href}
     >
       {children}
-    </span>
+    </Box>
   );
 };
