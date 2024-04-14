@@ -1,3 +1,5 @@
+"use client";
+
 import WrongResource from "@/components/wrong-resource";
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
