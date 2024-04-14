@@ -2,42 +2,21 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* background-color: var(--cui-palette-background-paper); */
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-prompt), sans-serif !important;
+/* @media (prefers-color-scheme: light) {
+  html,
+  body {
+    color: #121212;
+    background-color: white;
+  }
 }
 
-.data-table .MuiDataGrid-columnHeadersInner {
-  font-family: var(--font-prompt), sans-serif !important;
-}
-
-.data-table .MuiDataGrid-virtualScrollerRenderZone {
-  font-family: var(--font-prompt), sans-serif !important;
-}
-
-#app-navbar * {
-  font-family: var(--font-prompt), sans-serif !important;
-  color: #262626;
-}
-
-#login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#login-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 550px;
-}
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    color: white;
+    background-color: #121212;
+  }
+} */
