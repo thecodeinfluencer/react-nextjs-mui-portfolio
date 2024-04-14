@@ -19,8 +19,7 @@ export const testimonials: Testimonial[] = [
     name: "Caroline Thuo",
     role: "Senior Agile Coach, Safaricom PLC",
     linkedIn: "https://www.linkedin.com/in/carolthuo/",
-    image:
-      "https://drive.google.com/uc?export=view&id=1Yq93CxfDe6jCBwotkH5DUfCT1CYslo48",
+    image: "https://lh3.google.com/u/0/d/1Yq93CxfDe6jCBwotkH5DUfCT1CYslo48",
     comment:
       "Mark is an outstanding, multi-talented developer. I have witnessed his technical excellence, servant leadership and business acumen lead to delivery of both business and customer value. He is passionate about writing code and solving problems through the development of creative and innovative software.  He is also keen on producing quality user experiences that go along with his aesthetically superior user interface designs. His aptitude in successfully engaging stakeholders regardless of hierarchy was a key propeller of our team's success. His ability to boldly and respectfully present innovative ideas makes him an invaluable part of any team he works in.",
   },
@@ -28,8 +27,7 @@ export const testimonials: Testimonial[] = [
     name: "Brian Kidya Asava",
     role: "Senior Solutions Architect, Safaricom PLC",
     linkedIn: "https://www.linkedin.com/in/brian-kidiya-asava-80438355/",
-    image:
-      "https://drive.google.com/uc?export=view&id=1xhTTYVNK1899bxUcnbrGi3OZ3hsq3-fs",
+    image: "https://lh3.google.com/u/0/d/1xhTTYVNK1899bxUcnbrGi3OZ3hsq3-fs",
     comment:
       "I worked closely with Mark Aloo and i was privileged to be assigned as his peer buddy. He had joined the organisation as a Solution Architect intern, however he was ready and willing to provide support with any other tasks assigned to him specifically in UI/UX design in which he exemplarily performed. He fully filled the gap of a UI designer resource that was lacking in the team. He delivered all the designs for the various use cases that we are working on. Namely - C2B callback URL Management solution, Incident Management Solution, Documentation UI revamp, etc. Additionally, he went over and beyond to support other squads within the tribe where he supported the team in developing the Mali Miniapp and Paypal-mpesa Miniapp. Mark also showed great potential as a web developer, he has experience working with ReactJS, GraphQl, TypeScript, NextJs etc. I would highly recommend him for any available opportunity. He has demonstrated a good attitude and excellent collaboration skills with the team.",
   },
@@ -40,10 +38,10 @@ export const profile: Profile = {
   url: "thecodeinfluencer.dev",
   name: "Mark Aloo",
   title: "Mark Aloo - Portfolio",
-  tagline: "Frontend developer and Designer",
+  tagline: "Frontend developer",
   work: "Frontend Engineer at Safaricom PLC",
   description:
-    "I design and create beautiful web and mobile apps, speak, tweet and blog a lot about tech",
+    "I create beautiful web and mobile apps, speak, tweet and blog a lot about tech",
   gravatarUrl:
     "https://gravatar.com/avatar/7a76f3703c41097061ed71d0139ba9396c8470c6e27c88bafd5c0190d50d3641?size=1024",
   spotify: {
@@ -68,22 +66,20 @@ export const profile: Profile = {
     { label: "Express.js", category: "frameworks" },
     { label: "React Native", category: "frameworks" },
     { label: "Expo", category: "frameworks" },
-    { label: "Apollo GraphQL", category: "frameworks" },
+    // { label: "Apollo GraphQL", category: "frameworks" },
 
     { label: "Git", category: "tools" },
     { label: "MongoDB", category: "tools" },
     { label: "Firebase", category: "tools" },
     { label: "OpenShift", category: "tools" },
     { label: "Docker", category: "tools" },
-    { label: "Figma", category: "tools" },
+    // { label: "Figma", category: "tools" },
     { label: "AWS", category: "tools" },
 
-    { label: "JavaScript", category: "languages" },
-    { label: "TypeScript", category: "languages" },
     { label: "HTML", category: "languages" },
     { label: "CSS", category: "languages" },
-    { label: "Java", category: "languages" },
-    { label: "Python", category: "languages" },
+    { label: "JavaScript", category: "languages" },
+    { label: "TypeScript", category: "languages" },
     { label: "Node.js", category: "languages" },
   ],
 };
@@ -222,8 +218,7 @@ export const feed: Feed[] = [
     description:
       "In today's technology-run world, digitisation has made a significant impact on the telecommunication industry. [Safaricom]() has fully embraced this direction and has developed a solution that will support how Field Engineers maintain the company's network landscape in order to achieve 99.9% network availability.\n\n The DigiSOC web app is a solution that will help Field Engineers and the NOC with network monitoring. The app will provide a platform for Field Engineers to view all alarms related to Sites Down, Sectors Down and environmental irregularities. The app will also provide a platform to manage the fiels engineers and site allocation details.\n\nThe web app complements an android app. Through the DigiSOC app, Safaricom's Field Engineers will have access to all of the following features:  \n- Visibility of all alarms related to Sites Down, Sectors Down and environmental irregularities.\n- Details outlining the specific cause of an alarm failure.   \n- Ability to check the alarm status; whether resolved or unresolved.   \n- Ability to enter and exit any site within the app.  \n- Access to the exact location of all sites through google maps.\n\n Overall, the DigiSOC suite of apps empower Field Engineers with real-time information, streamlined workflows, and enhanced tools to address and resolve network issues promptly.",
     type: "project",
-    image:
-      "https://drive.google.com/uc?export=view&id=1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
+    image: "https://lh3.google.com/u/0/d/1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -244,8 +239,7 @@ export const feed: Feed[] = [
     description:
       "The Change Enablement Portal is a powerful web application designed to revolutionize and streamline the change enablement process within organizations. Developed using cutting-edge technologies such as React, Next.js, Material-UI (MUI), and Node.js, this portal offers a robust and user-friendly platform for managing organizational changes efficiently. The portal provides a centralized location for managing all change requests, approvals, and rollbacks. It also offers a comprehensive dashboard for tracking the status of all changes and rollbacks. The portal is designed to enhance collaboration and communication between stakeholders, thereby ensuring that all changes are implemented successfully.",
     type: "project",
-    image:
-      "https://drive.google.com/uc?export=view&id=1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
+    image: "https://lh3.google.com/u/0/d/1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -266,8 +260,7 @@ export const feed: Feed[] = [
     description:
       "Mtandao Portal is a comprehensive web application designed to enhance the user's experience in understanding and interacting with network coverage data. The app provides a user-friendly interface that allows users to visualize network coverage on an interactive map. Users can easily identify areas with strong signals, weak signals, or dead zones, enabling them to make informed decisions about connectivity.\n\nOne of the key features of Mtandao Portal is its ability to display network Key Performance Indicators (KPIs) in a clear and understandable manner. Through intuitive charts and graphs, users can analyze data related to network performance, such as signal strength, data speed, and reliability. This empowers both consumers and network administrators to assess the quality of service and identify areas for improvement.\n\nAdditionally, Mtandao Portal serves as a centralized hub for customer complaints and feedback. Users can submit and track their connectivity-related issues, allowing network providers to address concerns promptly. The portal streamlines the customer support process, fostering improved communication between users and service providers.",
     type: "project",
-    image:
-      "https://drive.google.com/uc?export=view&id=1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
+    image: "https://lh3.google.com/u/0/d/1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -288,8 +281,7 @@ export const feed: Feed[] = [
     description:
       "The Gumzo AI Chat project is a sophisticated chat simulation built on OpenAI technology, offering users an interactive and personalized experience. Leveraging cutting-edge technologies such as React, JavaScript, TypeScript, MUI, Node, Firebase, Express, and Google Cloud, the application provides a seamless and responsive interface for users to engage with different AI chatbots. The utilization of React and MUI ensures a modern and visually appealing frontend, while JavaScript and TypeScript enable efficient and maintainable code. The backend, powered by Node and Express, facilitates the seamless communication between the user interface and the underlying AI engine. This project showcases a strong technical foundation, combining frontend and backend technologies to create a robust and interactive chat application.",
     type: "project",
-    image:
-      "https://drive.google.com/uc?export=view&id=1QkOs8BfqfG9MnttiJb_IkpOvzgQLWplq",
+    image: "https://lh3.google.com/u/0/d/1QkOs8BfqfG9MnttiJb_IkpOvzgQLWplq",
     links: [
       {
         label: "Gumzo Chat",
