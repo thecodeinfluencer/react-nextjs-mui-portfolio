@@ -12,6 +12,11 @@ export const contributing = [
       "https://raw.githubusercontent.com/thecodeinfluencer/react-nextjs-mui-portfolio/main/app/favicon.ico",
     link: "https://github.com/thecodeinfluencer/react-nextjs-mui-portfolio/commits?author=thecodeinfluencer",
   },
+  {
+    project: "payload",
+    image: "https://pbs.twimg.com/profile_images/1601300196255797248/T7zZuM0-_400x400.jpg",
+    link: "https://github.com/payloadcms/payload/commits?author=thecodeinfluencer",
+  },
 ];
 
 export const testimonials: Testimonial[] = [
