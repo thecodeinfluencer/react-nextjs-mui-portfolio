@@ -498,9 +498,40 @@ export const feed: Feed[] = [
     details: { date: "Jul 26, 2020" },
   },
   {
+    id: "dont-build-another-ai-chat-app",
+    bgTheme: "#238c0b",
+    featured: true,
+    title: "Please Don't Build Another AI Chat App!",
+    summary: "Think beyond the ubiquitous AI chat applications.",
+    description:
+      "This talk challenges developers to move beyond the ubiquitous AI chat applications and consider innovative AI solutions. Discover how to harness AI to tackle new challenges and create meaningful applications that push the boundaries of what AI can achieve in today's world.",
+    type: "talk",
+    slidesLink:
+      "https://docs.google.com/presentation/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0/edit?usp=sharing",
+    image:
+      "https://lh3.googleusercontent.com/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0?authuser=0",
+    tags: ["AI", "Gemini", "GPT", "Llama", "Claude"],
+    details: {
+      event: "Google I/O Extended - Mt. Kenya",
+      location: "Dedan Kimathi University, Nyeri, Kenya",
+      community: "Google Developer Groups, Mt. Kenya",
+      date: "Jul 27, 2024",
+    },
+    // links: [
+    //   {
+    //     label: "Wrap Up - LinkedIn",
+    //     url: "https://www.linkedin.com/posts/thecodeinfluencer_firebase-devfest2023-devfestmtkenya-activity-7129878745217126400-ulb4?utm_source=share&utm_medium=member_desktop",
+    //   },
+    //   {
+    //     label: "Wrap Up - Twitter (X)",
+    //     url: "https://twitter.com/codeinfluencer/status/1723780454103322654",
+    //   },
+    // ],
+  },
+  {
     id: "talk-firebase-data-modeling-101",
     bgTheme: "#F9AB00",
-    featured: true,
+    featured: false,
     title: "Firebase data modeling 101",
     summary: "Key strategies for structuring your data in Firebase.",
     description:
