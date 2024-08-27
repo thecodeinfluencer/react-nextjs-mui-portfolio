@@ -77,7 +77,7 @@ export default function FooterSection() {
           </Grid>
         </Grid>
         <Grid container spacing={1}>
-          <Grid item xs={12} sm={8} md={6} sx={{ my: 2 }}>
+          <Grid item xs={12} sx={{ my: 2 }}>
             <Card variant="outlined">
               <ListItem
                 button
@@ -103,8 +103,8 @@ export default function FooterSection() {
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                  primary={`${profile.spotify.album} - ${profile.spotify.artist}`}
-                  secondary="On Repeat"
+                  primary={profile.spotify.album}
+                  secondary={profile.spotify.artist}
                 />
               </ListItem>
             </Card>
