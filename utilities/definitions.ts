@@ -61,6 +61,7 @@ export type Testimonial = {
   comment: string;
   role: string;
   image: string;
+  date: string;
 };
 
 export type Profile = {
