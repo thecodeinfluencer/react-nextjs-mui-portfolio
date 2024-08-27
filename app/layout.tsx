@@ -1,9 +1,10 @@
+import { CssVarsProvider } from "@/providers/css-vars";
 import MUICacheProvider from "@/providers/mui-cache";
-import MUIThemeProvider from "@/providers/mui-theme";
-import { NextThemeProvider } from "@/providers/next-themes";
 import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
+import { CssBaseline } from "@mui/material";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -46,20 +47,15 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={prompt.className}>
+        <InitColorSchemeScript />
         <MUICacheProvider>
-          <NextThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <MUIThemeProvider>
-              <Analytics />
-              <SpeedInsights />
-              <GoogleTagManager gtmId={analyticsID} />
-              {children}
-            </MUIThemeProvider>
-          </NextThemeProvider>
+          <CssVarsProvider>
+            <CssBaseline />
+            <Analytics />
+            <SpeedInsights />
+            <GoogleTagManager gtmId={analyticsID} />
+            {children}
+          </CssVarsProvider>
         </MUICacheProvider>
       </body>
     </html>

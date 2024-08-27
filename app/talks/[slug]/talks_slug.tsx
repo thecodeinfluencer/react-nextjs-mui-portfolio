@@ -17,8 +17,10 @@ import {
   Grid,
   IconButton,
   ListItemText,
+  Paper,
   Stack,
   Typography,
+  useColorScheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -26,6 +28,7 @@ import { useEffect, useState } from "react";
 
 export default function ViewTalk({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
+  const { colorScheme } = useColorScheme();
 
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
 
@@ -37,7 +40,7 @@ export default function ViewTalk({ params }: SlugPage) {
 
   return (
     <>
-      <Box
+      <Paper
         sx={{
           py: 10,
           backgroundImage: `url(${thisFeed.image})`,
@@ -46,9 +49,7 @@ export default function ViewTalk({ params }: SlugPage) {
           background: ({ palette }) => `linear-gradient(to bottom, 
             ${thisFeed.bgTheme || profile.primaryColor}22,
           ${
-            palette.mode == "light"
-              ? "#f8f8f8"
-              : palette.background.paper + "dd"
+            colorScheme == "light" ? "#f8f8f8" : palette.background.paper + "dd"
           } )`,
         }}
       >
@@ -190,7 +191,7 @@ export default function ViewTalk({ params }: SlugPage) {
             )}
           </Container>
         </Box>
-      </Box>
+      </Paper>
       <FooterSection />
       <CTASection />
     </>

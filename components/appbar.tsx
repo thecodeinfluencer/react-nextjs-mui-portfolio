@@ -12,8 +12,8 @@ import {
   AppBar as MuiAppBar,
   Paper,
   Stack,
+  useColorScheme,
 } from "@mui/material";
-import { useTheme as useNextTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -21,7 +21,7 @@ export default function AppBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  const { resolvedTheme, setTheme } = useNextTheme();
+  const { colorScheme, setColorScheme } = useColorScheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,10 +81,10 @@ export default function AppBar() {
               </Button>
               <IconButton
                 onClick={() =>
-                  setTheme(resolvedTheme == "dark" ? "light" : "dark")
+                  setColorScheme(colorScheme == "dark" ? "light" : "dark")
                 }
               >
-                {resolvedTheme == "dark" ? (
+                {colorScheme == "dark" ? (
                   <LightModeOutlined />
                 ) : (
                   <DarkModeOutlined />
