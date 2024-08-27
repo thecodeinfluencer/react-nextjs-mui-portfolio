@@ -3,7 +3,7 @@ import { Experience, Feed, Profile, Testimonial } from "./definitions";
 export const contributing = [
   {
     project: "react-email",
-    image: "https://react.email/static/favicon.svg",
+    image: "https://react.email/meta/favicon.ico",
     link: "https://github.com/resend/react-email/commits?author=thecodeinfluencer",
   },
   {
@@ -14,17 +14,56 @@ export const contributing = [
   },
   {
     project: "payload",
-    image: "https://pbs.twimg.com/profile_images/1601300196255797248/T7zZuM0-_400x400.jpg",
+    image:
+      "https://pbs.twimg.com/profile_images/1601300196255797248/T7zZuM0-_400x400.jpg",
     link: "https://github.com/payloadcms/payload/commits?author=thecodeinfluencer",
   },
 ];
 
 export const testimonials: Testimonial[] = [
   {
+    name: "Doris Ratego",
+    role: "Technical Product Owner, Safaricom PLC",
+    linkedIn: "https://www.linkedin.com/in/dorisratego/",
+    image:
+      "https://lh3.googleusercontent.com/d/1n0PwxxZVeHWZOCev0-X7PYMWY73SZytA",
+    date: `July 16, 2024`,
+    comment: `
+    I have had the pleasure of working with Mark Aloo at Safaricom PLC for the past two years, and I can confidently say he is an invaluable asset to our team. As a software developer, Mark has consistently demonstrated exceptional expertise in full-stack development, particularly with React, Next.js, and Node.js. His technical skills have significantly improved our project delivery timelines and quality.
+
+    Mark has made substantial contributions to the development of various solutions, including the DigiSOC, Mtandao, and Change Enablement web apps. These projects showcase his innovative thinking and his ability to deliver high-quality solutions under tight deadlines. His proactive approach and leadership skills are evident in his efficient management of stand-ups and sprint planning sessions, where he consistently takes the initiative and drives the team forward.
+
+    One of Mark's standout qualities is his strong work ethic. He is dedicated, hardworking, and professional, always going above and beyond to ensure the success of our projects. His self-driven nature is evident in his eagerness to implement new and innovative ideas, continually pushing the boundaries of what we can achieve.
+
+    Mark's commitment to professional growth and community engagement is truly admirable. He actively shares his knowledge through tech talks and plays a leadership role in the Koding & Kahawa community. He even organized a highly successful Developers Conference focused on emerging topics in AI and Cloud Computing, which motivated and inspired our community members to explore new tools and technologies in the industry.
+
+    In addition to his technical prowess and leadership abilities, Mark's integrity and professionalism are second to none. He is honest, responsible, and reliable, consistently demonstrating these qualities in his interactions with team members, his decision-making, and his exceptional product delivery.
+
+    Mark Aloo is a remarkable software developer and a true asset to any team. I highly recommend him for any opportunity where his skills, dedication, and leadership can shine.`,
+  },
+  {
+    name: "Kepha Atika",
+    role: "Technical Tribe Lead, Safaricom PLC",
+    linkedIn: "https://www.linkedin.com/in/atikakepha/",
+    image:
+      "https://lh3.googleusercontent.com/d/1iOWhdAgnQygz-IHjuWAYl9UBL5d9LoIt",
+    date: `July 16, 2024`,
+    comment: `
+    I have had the pleasure of working closely with Mark over the past few years, and I can confidently say he is one of the most talented software developers I have come across. Mark has an exceptional ability to juggle multiple projects simultaneously while maintaining the highest quality standards. His reliability is impressive.
+
+    One of Mark's standout achievements is his significant contribution to the development of numerous web applications for Service Management. His technical expertise and attention to detail have been instrumental in delivering top-notch solutions that meet our needs. Additionally, Mark played a pivotal role in the development of the DigiSOC App, a cutting-edge field services management app that has received widespread acclaim.
+
+    Beyond his technical skills, Mark is a proactive leader in our Agile processes. He consistently brings fresh ideas to the table and ensures that our team stays on track to meet our goals. 
+
+    I highly recommend Mark for any software development role. His dedication to excellence makes him an invaluable asset to any team.`,
+  },
+  {
     name: "Caroline Thuo",
     role: "Senior Agile Coach, Safaricom PLC",
     linkedIn: "https://www.linkedin.com/in/carolthuo/",
-    image: "https://lh3.google.com/u/0/d/1Yq93CxfDe6jCBwotkH5DUfCT1CYslo48",
+    image:
+      "https://lh3.googleusercontent.com/d/1Yq93CxfDe6jCBwotkH5DUfCT1CYslo48",
+    date: `October 13, 2022`,
     comment:
       "Mark is an outstanding, multi-talented developer. I have witnessed his technical excellence, servant leadership and business acumen lead to delivery of both business and customer value. He is passionate about writing code and solving problems through the development of creative and innovative software.  He is also keen on producing quality user experiences that go along with his aesthetically superior user interface designs. His aptitude in successfully engaging stakeholders regardless of hierarchy was a key propeller of our team's success. His ability to boldly and respectfully present innovative ideas makes him an invaluable part of any team he works in.",
   },
@@ -32,7 +71,9 @@ export const testimonials: Testimonial[] = [
     name: "Brian Kidya Asava",
     role: "Senior Solutions Architect, Safaricom PLC",
     linkedIn: "https://www.linkedin.com/in/brian-kidiya-asava-80438355/",
-    image: "https://lh3.google.com/u/0/d/1xhTTYVNK1899bxUcnbrGi3OZ3hsq3-fs",
+    image:
+      "https://lh3.googleusercontent.com/d/1xhTTYVNK1899bxUcnbrGi3OZ3hsq3-fs",
+    date: `October 13, 2022`,
     comment:
       "I worked closely with Mark Aloo and i was privileged to be assigned as his peer buddy. He had joined the organisation as a Solution Architect intern, however he was ready and willing to provide support with any other tasks assigned to him specifically in UI/UX design in which he exemplarily performed. He fully filled the gap of a UI designer resource that was lacking in the team. He delivered all the designs for the various use cases that we are working on. Namely - C2B callback URL Management solution, Incident Management Solution, Documentation UI revamp, etc. Additionally, he went over and beyond to support other squads within the tribe where he supported the team in developing the Mali Miniapp and Paypal-mpesa Miniapp. Mark also showed great potential as a web developer, he has experience working with ReactJS, GraphQl, TypeScript, NextJs etc. I would highly recommend him for any available opportunity. He has demonstrated a good attitude and excellent collaboration skills with the team.",
   },
@@ -43,7 +84,7 @@ export const profile: Profile = {
   url: "thecodeinfluencer.dev",
   name: "Mark Aloo",
   title: "Mark Aloo - Portfolio",
-  tagline: "Frontend developer",
+  tagline: "Frontend Developer",
   work: "Frontend Engineer at Safaricom PLC",
   description:
     "I create beautiful web and mobile apps, speak, tweet and blog a lot about tech",
@@ -191,6 +232,41 @@ export const experience: Experience[] = [
 
 export const feed: Feed[] = [
   {
+    id: "dont-build-another-ai-chat-app",
+    bgTheme: "#F47D33",
+    featured: true,
+    title: "Please Don't Build Another AI Chat App!",
+    summary: "Think beyond AI chatbots applications.",
+    description:
+      "This talk challenges developers to move beyond the ubiquitous AI chat applications and consider innovative AI solutions. Discover how to harness AI to tackle new challenges and create meaningful applications that push the boundaries of what AI can achieve in today's world.",
+    type: "talk",
+    slidesLink:
+      "https://docs.google.com/presentation/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0/edit?usp=sharing",
+    image:
+      "https://lh3.googleusercontent.com/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0?authuser=0",
+    tags: ["AI", "Gemini", "GPT", "Llama", "Claude"],
+    details: {
+      event: "Google I/O Extended - Mt. Kenya",
+      location: "Dedan Kimathi University, Nyeri, Kenya",
+      community: "Google Developer Groups, Mt. Kenya",
+      date: "Jul 27, 2024",
+    },
+    links: [
+      {
+        label: "GDG Nyeri - LinkedIn",
+        url: "https://www.linkedin.com/posts/gdgnyeri_googleioextendedmtkenya-googleioextended-activity-7218882652903211008-0L_E",
+      },
+      {
+        label: "Wrap Up - LinkedIn",
+        url: "https://www.linkedin.com/posts/thecodeinfluencer_googleioextended-googleioextendedmtkenya-activity-7224476228395646976-r3Zr",
+      },
+      {
+        label: "Related Article",
+        url: "https://blog.thecodeinfluencer.dev/please-dont-build-another-ai-chat-app",
+      },
+    ],
+  },
+  {
     id: "project-portfolio-nextjs",
     bgTheme: "#dddddd",
     featured: true,
@@ -208,7 +284,7 @@ export const feed: Feed[] = [
       startDate: "Nov 2023",
       endDate: "Dec 2023",
       releasedDate: "Dec 2023",
-      projectType: "Workplace",
+      projectType: "Personal",
     },
   },
   {
@@ -223,7 +299,8 @@ export const feed: Feed[] = [
     description:
       "In today's technology-run world, digitisation has made a significant impact on the telecommunication industry. [Safaricom]() has fully embraced this direction and has developed a solution that will support how Field Engineers maintain the company's network landscape in order to achieve 99.9% network availability.\n\n The DigiSOC web app is a solution that will help Field Engineers and the NOC with network monitoring. The app will provide a platform for Field Engineers to view all alarms related to Sites Down, Sectors Down and environmental irregularities. The app will also provide a platform to manage the fiels engineers and site allocation details.\n\nThe web app complements an android app. Through the DigiSOC app, Safaricom's Field Engineers will have access to all of the following features:  \n- Visibility of all alarms related to Sites Down, Sectors Down and environmental irregularities.\n- Details outlining the specific cause of an alarm failure.   \n- Ability to check the alarm status; whether resolved or unresolved.   \n- Ability to enter and exit any site within the app.  \n- Access to the exact location of all sites through google maps.\n\n Overall, the DigiSOC suite of apps empower Field Engineers with real-time information, streamlined workflows, and enhanced tools to address and resolve network issues promptly.",
     type: "project",
-    image: "https://lh3.google.com/u/0/d/1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
+    image:
+      "https://lh3.googleusercontent.com/d/1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -244,7 +321,8 @@ export const feed: Feed[] = [
     description:
       "The Change Enablement Portal is a powerful web application designed to revolutionize and streamline the change enablement process within organizations. Developed using cutting-edge technologies such as React, Next.js, Material-UI (MUI), and Node.js, this portal offers a robust and user-friendly platform for managing organizational changes efficiently. The portal provides a centralized location for managing all change requests, approvals, and rollbacks. It also offers a comprehensive dashboard for tracking the status of all changes and rollbacks. The portal is designed to enhance collaboration and communication between stakeholders, thereby ensuring that all changes are implemented successfully.",
     type: "project",
-    image: "https://lh3.google.com/u/0/d/1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
+    image:
+      "https://lh3.googleusercontent.com/d/1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -265,7 +343,8 @@ export const feed: Feed[] = [
     description:
       "Mtandao Portal is a comprehensive web application designed to enhance the user's experience in understanding and interacting with network coverage data. The app provides a user-friendly interface that allows users to visualize network coverage on an interactive map. Users can easily identify areas with strong signals, weak signals, or dead zones, enabling them to make informed decisions about connectivity.\n\nOne of the key features of Mtandao Portal is its ability to display network Key Performance Indicators (KPIs) in a clear and understandable manner. Through intuitive charts and graphs, users can analyze data related to network performance, such as signal strength, data speed, and reliability. This empowers both consumers and network administrators to assess the quality of service and identify areas for improvement.\n\nAdditionally, Mtandao Portal serves as a centralized hub for customer complaints and feedback. Users can submit and track their connectivity-related issues, allowing network providers to address concerns promptly. The portal streamlines the customer support process, fostering improved communication between users and service providers.",
     type: "project",
-    image: "https://lh3.google.com/u/0/d/1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
+    image:
+      "https://lh3.googleusercontent.com/d/1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
     links: [],
     tags: ["React", "Next", "Typescript", "MUI", "Node"],
     details: {
@@ -286,7 +365,8 @@ export const feed: Feed[] = [
     description:
       "The Gumzo AI Chat project is a sophisticated chat simulation built on OpenAI technology, offering users an interactive and personalized experience. Leveraging cutting-edge technologies such as React, JavaScript, TypeScript, MUI, Node, Firebase, Express, and Google Cloud, the application provides a seamless and responsive interface for users to engage with different AI chatbots. The utilization of React and MUI ensures a modern and visually appealing frontend, while JavaScript and TypeScript enable efficient and maintainable code. The backend, powered by Node and Express, facilitates the seamless communication between the user interface and the underlying AI engine. This project showcases a strong technical foundation, combining frontend and backend technologies to create a robust and interactive chat application.",
     type: "project",
-    image: "https://lh3.google.com/u/0/d/1QkOs8BfqfG9MnttiJb_IkpOvzgQLWplq",
+    image:
+      "https://lh3.googleusercontent.com/d/1QkOs8BfqfG9MnttiJb_IkpOvzgQLWplq",
     links: [
       {
         label: "Gumzo Chat",
@@ -429,6 +509,19 @@ export const feed: Feed[] = [
     },
   },
   {
+    id: "blog-please-dont-build-another-ai-chat-app",
+    featured: false,
+    title: "Please Don't Build Another AI Chat App",
+    summary: "Think beyond AI chatbot applications.",
+    type: "blog",
+    image:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1723233082985/287396d1-8fb0-4268-a2d5-640e1f0e818c.png",
+    blogLink:
+      "https://blog.thecodeinfluencer.dev/please-dont-build-another-ai-chat-app",
+    tags: ["AI", "ChatGPT", "LLMs", "RAG", "GoogleIO2024"],
+    details: { date: "Aug 9, 2024" },
+  },
+  {
     id: "blog-nextjs-inflight-vulnerability",
     featured: false,
     title:
@@ -496,37 +589,6 @@ export const feed: Feed[] = [
       "https://medium.com/codeinfluence/could-youtube-videos-be-slowing-down-your-dev-career-aaf58d42cedc",
     tags: ["Productivity", "Development", "Programming", "Careers", "YouTube"],
     details: { date: "Jul 26, 2020" },
-  },
-  {
-    id: "dont-build-another-ai-chat-app",
-    bgTheme: "#238c0b",
-    featured: true,
-    title: "Please Don't Build Another AI Chat App!",
-    summary: "Think beyond the ubiquitous AI chat applications.",
-    description:
-      "This talk challenges developers to move beyond the ubiquitous AI chat applications and consider innovative AI solutions. Discover how to harness AI to tackle new challenges and create meaningful applications that push the boundaries of what AI can achieve in today's world.",
-    type: "talk",
-    slidesLink:
-      "https://docs.google.com/presentation/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0/edit?usp=sharing",
-    image:
-      "https://lh3.googleusercontent.com/d/1buk6EYobZNcfnWFjvA0cE49aWJHvSaxQVhf7e5ZHom0?authuser=0",
-    tags: ["AI", "Gemini", "GPT", "Llama", "Claude"],
-    details: {
-      event: "Google I/O Extended - Mt. Kenya",
-      location: "Dedan Kimathi University, Nyeri, Kenya",
-      community: "Google Developer Groups, Mt. Kenya",
-      date: "Jul 27, 2024",
-    },
-    // links: [
-    //   {
-    //     label: "Wrap Up - LinkedIn",
-    //     url: "https://www.linkedin.com/posts/thecodeinfluencer_firebase-devfest2023-devfestmtkenya-activity-7129878745217126400-ulb4?utm_source=share&utm_medium=member_desktop",
-    //   },
-    //   {
-    //     label: "Wrap Up - Twitter (X)",
-    //     url: "https://twitter.com/codeinfluencer/status/1723780454103322654",
-    //   },
-    // ],
   },
   {
     id: "talk-firebase-data-modeling-101",
@@ -648,7 +710,7 @@ export const feed: Feed[] = [
     slidesLink:
       "https://docs.google.com/presentation/d/1hkMxdwrd0lL_DibvCosydFhfB_eoV4NVrZHUivz6VRw/edit?usp=sharing",
     image:
-      "https://lh3.googleusercontent.com/d/1hkMxdwrd0lL_DibvCosydFhfB_eoV4NVrZHUivz6VRw=w640?authuser=0",
+      "https://lh3.googleusercontent.com/d/1hkMxdwrd0lL_DibvCosydFhfB_eoV4NVrZHUivz6VRw?authuser=0",
     tags: ["Web", "PWAs", "Perfomance", "JavaScript", "LightHouse"],
     details: {
       event: "IO Extended Kisii 2023",
@@ -708,7 +770,7 @@ export const feed: Feed[] = [
     slidesLink:
       "https://docs.google.com/presentation/d/1e75McrTqDjdTVaBIEl7-iUBuveawRX7lyzDrHMHEX0I/edit?usp=sharing",
     image:
-      "https://lh3.googleusercontent.com/d/1e75McrTqDjdTVaBIEl7-iUBuveawRX7lyzDrHMHEX0I=w640?authuser=0",
+      "https://lh3.googleusercontent.com/d/1e75McrTqDjdTVaBIEl7-iUBuveawRX7lyzDrHMHEX0I?authuser=0",
     tags: ["Firebase", "Google Cloud", "Databases", "NoSQL", "Firestore"],
     details: {
       event: "Devfest Nyeri",
