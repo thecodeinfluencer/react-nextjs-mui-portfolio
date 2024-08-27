@@ -3,9 +3,9 @@
 import { cardContainer } from "@/utilities/framer";
 import { Masonry } from "@mui/lab";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { ReactNode } from "react";
 
-type Props = { children: React.JSX };
+type Props = { children: NonNullable<ReactNode> };
 
 export default function MotionMasonry({ children }: Props) {
   return (
