@@ -38,7 +38,7 @@ export default function ProfileSection() {
             <Image
               priority
               src={gravatarUrl}
-              alt="Vercel Logo"
+              alt="Gravatar Image"
               width={imageSize}
               height={imageSize}
               style={{ borderRadius: "50%" }}
