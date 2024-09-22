@@ -64,6 +64,12 @@ export type Testimonial = {
   date: string;
 };
 
+export type Contribution = {
+  project: string;
+  image: string;
+  link: string;
+};
+
 export type Profile = {
   primaryColor: string;
   url: string;

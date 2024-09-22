@@ -30,3 +30,8 @@ export const cardPopup: Variants = {
     transition: { type: "spring", bounce: 0.4, duration: 0.8 },
   },
 };
+
+export const arrow = {
+  initial: { scale: 1, rotate: 45, opacity: 0 },
+  whileHover: { scale: 1.05, rotate: 0, opacity: 1 },
+};

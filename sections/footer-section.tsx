@@ -1,25 +1,9 @@
 "use client";
 
-import { spotifySVG } from "@/utilities/constants";
+import ListeningCard from "@/components/listening-card";
 import { profile } from "@/utilities/content";
-import {
-  ArrowForwardRounded,
-  OpenInNew,
-  OpenInNewRounded,
-} from "@mui/icons-material";
-import {
-  Avatar,
-  Card,
-  Container,
-  Grid,
-  IconButton,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Paper,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { ArrowForwardRounded, OpenInNew } from "@mui/icons-material";
+import { Card, Container, Grid, Paper, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -79,34 +63,7 @@ export default function FooterSection() {
         <Grid container spacing={1}>
           <Grid item xs={12} sx={{ my: 2 }}>
             <Card variant="outlined">
-              <ListItem
-                button
-                onClick={() => window.open(profile.spotify.track, "_blank")}
-                sx={{ borderWidth: 1, borderRadius: 1 }}
-                secondaryAction={
-                  <IconButton disabled aria-label="delete">
-                    <OpenInNewRounded />
-                  </IconButton>
-                }
-              >
-                <ListItemAvatar>
-                  <Avatar sx={{ background: "transparent" }}>
-                    <svg
-                      width="41"
-                      height="40"
-                      viewBox="0 0 41 40"
-                      fill={profile.primaryColor}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d={spotifySVG}></path>
-                    </svg>
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={profile.spotify.album}
-                  secondary={profile.spotify.artist}
-                />
-              </ListItem>
+              <ListeningCard />
             </Card>
           </Grid>
         </Grid>
@@ -122,7 +79,7 @@ type Props = {
   color?: boolean;
 };
 
-const TypoLink = ({ href, children, internal, color }: Props) => {
+export const TypoLink = ({ href, children, internal, color }: Props) => {
   const [isShown, setIsShown] = useState(false);
 
   return (

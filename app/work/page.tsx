@@ -1,4 +1,6 @@
 import Work from "@/app/work/work";
+import CTASection from "@/sections/cta-section";
+import FooterSection from "@/sections/footer-section";
 import { appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 
@@ -18,6 +20,8 @@ export default function WorkPage() {
   return (
     <main>
       <Work />
+      <FooterSection />
+      <CTASection />
     </main>
   );
 }

@@ -1,6 +1,12 @@
-import { Experience, Feed, Profile, Testimonial } from "./definitions";
+import {
+  Contribution,
+  Experience,
+  Feed,
+  Profile,
+  Testimonial,
+} from "./definitions";
 
-export const contributing = [
+export const contributing: Contribution[] = [
   {
     project: "react-email",
     image: "https://react.email/meta/favicon.ico",

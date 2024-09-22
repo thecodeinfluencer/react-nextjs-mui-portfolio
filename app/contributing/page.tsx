@@ -1,21 +1,17 @@
 "use client";
 
+import ContributionCard from "@/components/contribution-card";
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { contributing } from "@/utilities/content";
-import { ArrowBackRounded, OpenInNewRounded } from "@mui/icons-material";
+import { ArrowBackRounded } from "@mui/icons-material";
 import {
-  Avatar,
   Box,
   Button,
   Card,
   CardContent,
   Container,
-  IconButton,
   List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
   Paper,
   Stack,
   Typography,
@@ -26,11 +22,6 @@ import { useEffect, useState } from "react";
 
 export default function ContributingPage() {
   const [isClient, setIsClient] = useState(false);
-
-  const arrow = {
-    initial: { scale: 1, rotate: 45, opacity: 0 },
-    whileHover: { scale: 1.05, rotate: 0, opacity: 1 },
-  };
 
   useEffect(() => setIsClient(true), []);
 
@@ -68,33 +59,8 @@ export default function ContributingPage() {
           <Card sx={{ mt: 2 }} variant="outlined">
             <CardContent>
               <List component={motion.div}>
-                {contributing.map(({ project, image, link }) => (
-                  <ListItem
-                    button
-                    key={project}
-                    component={motion.div}
-                    onClick={() => window.open(link, "_blank")}
-                    sx={{
-                      borderWidth: 1,
-                      borderColor: ({ palette }) => palette.divider,
-                      borderRadius: 1,
-                    }}
-                    secondaryAction={
-                      <motion.div variants={arrow}>
-                        <IconButton edge="end" aria-label="delete">
-                          <OpenInNewRounded />
-                        </IconButton>
-                      </motion.div>
-                    }
-                  >
-                    <ListItemAvatar>
-                      <Avatar src={image}></Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={project}
-                      secondary={link?.slice(0, link?.search("/commits"))}
-                    />
-                  </ListItem>
+                {contributing.map((cbn) => (
+                  <ContributionCard key={cbn.project} contribution={cbn} />
                 ))}
               </List>
             </CardContent>
