@@ -1,13 +1,10 @@
 "use client";
 
 import { profile } from "@/utilities/content";
-import {
-  Experimental_CssVarsProvider as ExperimentalThemeProvider,
-  experimental_extendTheme as extendTheme,
-} from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const theme = extendTheme({
-  cssVarPrefix: "sui",
+const theme = createTheme({
+  cssVariables: { cssVarPrefix: "sui", colorSchemeSelector: "class" },
   colorSchemes: {
     dark: { palette: { primary: { main: profile.primaryColor } } },
     light: { palette: { primary: { main: profile.primaryColor } } },
@@ -25,8 +22,8 @@ type Props = { children: React.ReactNode };
 
 export function CssVarsProvider({ children, ...props }: Readonly<Props>) {
   return (
-    <ExperimentalThemeProvider theme={theme} {...props}>
+    <ThemeProvider theme={theme} {...props}>
       {children}
-    </ExperimentalThemeProvider>
+    </ThemeProvider>
   );
 }

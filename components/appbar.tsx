@@ -21,7 +21,7 @@ export default function AppBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  const { colorScheme, setColorScheme } = useColorScheme();
+  const { mode, setMode } = useColorScheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ export default function AppBar() {
   if (!isClient) return <div></div>;
 
   return (
-    <MuiAppBar sx={{ backgroundColor: "transparent" }} elevation={0}>
+    <Paper component={MuiAppBar} square sx={{ boxShadow: "none" }}>
       <Container maxWidth="md">
         <Paper
           sx={{
@@ -80,20 +80,14 @@ export default function AppBar() {
                 Work & CV
               </Button>
               <IconButton
-                onClick={() =>
-                  setColorScheme(colorScheme == "dark" ? "light" : "dark")
-                }
+                onClick={() => setMode(mode == "dark" ? "light" : "dark")}
               >
-                {colorScheme == "dark" ? (
-                  <LightModeOutlined />
-                ) : (
-                  <DarkModeOutlined />
-                )}
+                {mode == "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
               </IconButton>
             </Stack>
           </Stack>
         </Paper>
       </Container>
-    </MuiAppBar>
+    </Paper>
   );
 }

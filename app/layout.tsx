@@ -45,9 +45,9 @@ type Props = { children: React.ReactNode };
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={prompt.className}>
-        <InitColorSchemeScript />
+        <InitColorSchemeScript attribute="class" />
         <MUICacheProvider>
           <CssVarsProvider>
             <CssBaseline />

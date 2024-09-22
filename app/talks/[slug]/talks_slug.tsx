@@ -28,7 +28,7 @@ import { useEffect, useState } from "react";
 
 export default function ViewTalk({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
-  const { colorScheme } = useColorScheme();
+  const { mode } = useColorScheme();
 
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
 
@@ -48,9 +48,7 @@ export default function ViewTalk({ params }: SlugPage) {
           backgroundBlendMode: "multiply",
           background: ({ palette }) => `linear-gradient(to bottom, 
             ${thisFeed.bgTheme || profile.primaryColor}22,
-          ${
-            colorScheme == "light" ? "#f8f8f8" : palette.background.paper + "dd"
-          } )`,
+          ${mode == "light" ? "#f8f8f8" : palette.background.paper + "dd"} )`,
         }}
       >
         <Box
