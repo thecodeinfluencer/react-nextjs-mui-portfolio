@@ -5,7 +5,7 @@ import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import { CssBaseline } from "@mui/material";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -53,7 +53,8 @@ export default function RootLayout({ children }: Props) {
             <CssBaseline />
             <Analytics />
             <SpeedInsights />
-            <GoogleTagManager gtmId={analyticsID} />
+            {/* <GoogleTagManager gtmId={s} /> */}
+            <GoogleAnalytics gaId={analyticsID} />
             {children}
           </CssVarsProvider>
         </MUICacheProvider>
