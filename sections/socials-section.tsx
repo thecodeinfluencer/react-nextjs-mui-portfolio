@@ -8,6 +8,7 @@ export default function SocialsSection() {
     <Stack direction="row" sx={{ mt: 2 }} justifyContent="center">
       <IconButton
         LinkComponent={Link}
+        aria-label={profile.socials.telegram}
         href={profile.socials.telegram}
         target="_blank"
       >
@@ -15,6 +16,7 @@ export default function SocialsSection() {
       </IconButton>
       <IconButton
         LinkComponent={Link}
+        aria-label={profile.socials.twitter}
         href={profile.socials.twitter}
         target="_blank"
       >
@@ -22,6 +24,7 @@ export default function SocialsSection() {
       </IconButton>
       <IconButton
         LinkComponent={Link}
+        aria-label={profile.socials.linkedIn}
         href={profile.socials.linkedIn}
         target="_blank"
       >

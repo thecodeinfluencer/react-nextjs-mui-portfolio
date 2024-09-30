@@ -41,13 +41,16 @@ export default function ViewTalk({ params }: SlugPage) {
   return (
     <>
       <Paper
+        square
         sx={{
           py: 10,
           backgroundImage: `url(${thisFeed.image})`,
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
           background: ({ palette }) => `linear-gradient(to bottom, 
-            ${thisFeed.bgTheme || profile.primaryColor}22,
+            ${
+              thisFeed.bgTheme || profile.primaryColor[mode as "dark" | "light"]
+            }22,
           ${mode == "light" ? "#f8f8f8" : palette.background.paper + "dd"} )`,
         }}
       >

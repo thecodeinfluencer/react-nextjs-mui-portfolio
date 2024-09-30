@@ -80,6 +80,7 @@ export default function AppBar() {
                 Work & CV
               </Button>
               <IconButton
+                aria-label="Change Color Mode"
                 onClick={() => setMode(mode == "dark" ? "light" : "dark")}
               >
                 {mode == "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}

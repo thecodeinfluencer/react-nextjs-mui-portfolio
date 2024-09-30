@@ -86,7 +86,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const profile: Profile = {
-  primaryColor: "#22C55E",
+  primaryColor: { light: "#0C642F", dark: "#22C55E" },
   url: "thecodeinfluencer.dev",
   name: "Mark Aloo",
   title: "Mark Aloo - Portfolio",

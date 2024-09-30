@@ -71,7 +71,7 @@ export type Contribution = {
 };
 
 export type Profile = {
-  primaryColor: string;
+  primaryColor: { light: string; dark: string };
   url: string;
   name: string;
   title: string;

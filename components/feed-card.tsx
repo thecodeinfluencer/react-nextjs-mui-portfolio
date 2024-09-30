@@ -8,6 +8,7 @@ import {
   CardActionArea,
   CardContent,
   Chip,
+  List,
   ListItem,
   ListItemText,
   Stack,
@@ -66,9 +67,11 @@ export default function FeedCard({ feed, ...other }: Props) {
               <OpenInNewRounded />
             </motion.div>
           </Stack>
-          <ListItem sx={{ px: 0, py: 0 }}>
-            <ListItemText primary={title} secondary={`${summary}`} />
-          </ListItem>
+          <List>
+            <ListItem sx={{ px: 0, py: 0 }}>
+              <ListItemText primary={title} secondary={`${summary}`} />
+            </ListItem>
+          </List>
           <Typography variant="body2" color="GrayText">
             {type != "project"
               ? details.date

@@ -41,7 +41,7 @@ export default function TestimonialsModal({
         <Container maxWidth="md">
           <ListItem sx={{ px: 0 }}>
             <ListItemAvatar>
-              <Avatar src={image} />
+              <Avatar src={image} alt={image} />
             </ListItemAvatar>
             <ListItemText primary={name} secondary={role} />
           </ListItem>

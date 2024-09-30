@@ -8,6 +8,7 @@ import {
   Button,
   Card,
   CardContent,
+  List,
   ListItem,
   ListItemAvatar,
   ListItemText,
@@ -30,12 +31,14 @@ export default function TestimonialCard({ testimonial }: Props) {
     <>
       <Card variant="outlined">
         <CardContent>
-          <ListItem sx={{ px: 0 }}>
-            <ListItemAvatar>
-              <Avatar src={image} />
-            </ListItemAvatar>
-            <ListItemText primary={name} secondary={role} />
-          </ListItem>
+          <List>
+            <ListItem sx={{ px: 0 }}>
+              <ListItemAvatar>
+                <Avatar src={image} alt={image} />
+              </ListItemAvatar>
+              <ListItemText primary={name} secondary={role} />
+            </ListItem>
+          </List>
           <Typography>{comment.slice(0, 200)}...</Typography>
           <Stack
             direction={btnColumn ? "column" : "row"}

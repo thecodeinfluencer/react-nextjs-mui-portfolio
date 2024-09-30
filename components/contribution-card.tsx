@@ -37,7 +37,7 @@ export default function ContributionCard({ contribution }: Props) {
         }
       >
         <ListItemAvatar>
-          <Avatar src={image}></Avatar>
+          <Avatar src={image} alt={image}></Avatar>
         </ListItemAvatar>
         <ListItemText
           primary={project}

@@ -20,6 +20,7 @@ import {
   ListItemText,
   Stack,
   Typography,
+  useColorScheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -28,6 +29,7 @@ import Markdown from "react-markdown";
 
 export default function ViewProject({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
+  const { mode } = useColorScheme();
 
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
 
@@ -46,7 +48,9 @@ export default function ViewProject({ params }: SlugPage) {
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
           background: ({ palette }) => `linear-gradient(to bottom, 
-            ${thisFeed.bgTheme || profile.primaryColor}22,
+            ${
+              thisFeed.bgTheme || profile.primaryColor[mode as "dark" | "light"]
+            }22,
           ${
             palette.mode == "light"
               ? "#f8f8f8"

@@ -92,6 +92,7 @@ export const TypoLink = ({ href, children, internal, color }: Props) => {
       <Typography
         href={href}
         component={Link}
+        aria-label={href}
         sx={{ cursor: "pointer" }}
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}

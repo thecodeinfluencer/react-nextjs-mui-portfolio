@@ -6,24 +6,22 @@ import { OpenInNewRounded } from "@mui/icons-material";
 import {
   Avatar,
   CardActionArea,
-  IconButton,
   ListItem,
   ListItemAvatar,
   ListItemText,
+  useColorScheme,
 } from "@mui/material";
 
 export default function ListeningCard() {
+  const { mode } = useColorScheme();
   return (
     <CardActionArea
       onClick={() => window.open(profile.spotify.track, "_blank")}
     >
       <ListItem
+        component="span"
         sx={{ borderWidth: 1, borderRadius: 1 }}
-        secondaryAction={
-          <IconButton disabled aria-label="delete">
-            <OpenInNewRounded />
-          </IconButton>
-        }
+        secondaryAction={<OpenInNewRounded />}
       >
         <ListItemAvatar>
           <Avatar sx={{ background: "transparent" }}>
@@ -31,7 +29,7 @@ export default function ListeningCard() {
               width="41"
               height="40"
               viewBox="0 0 41 40"
-              fill={profile.primaryColor}
+              fill={profile.primaryColor[mode as "dark" | "light"]}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d={spotifySVG}></path>
@@ -42,7 +40,7 @@ export default function ListeningCard() {
           primary={profile.spotify.album}
           secondary={profile.spotify.artist}
         />
-      </ListItem>{" "}
+      </ListItem>
     </CardActionArea>
   );
 }

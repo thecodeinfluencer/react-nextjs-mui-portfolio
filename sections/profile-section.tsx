@@ -13,21 +13,14 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import HeaderAvatar from "./header-avatar";
 import SocialsSection from "./socials-section";
-import { useEffect, useState } from "react";
 
-const { name, tagline, description, gravatarUrl } = profile;
+const { name, tagline, description } = profile;
 
 export default function ProfileSection() {
-  const [isClient, setIsClient] = useState(false);
-
   const below600 = useMediaQuery("(max-width: 600px)");
   const imageSize = below600 ? 180 : 240;
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
 
   return (
     <Paper square component={motion.div}>
@@ -35,14 +28,7 @@ export default function ProfileSection() {
         <Container maxWidth="md">
           <Box sx={{ height: appBarHeight }} />
           <Stack spacing={2} alignItems="center">
-            <Image
-              priority
-              src={gravatarUrl}
-              alt="Gravatar Image"
-              width={imageSize}
-              height={imageSize}
-              style={{ borderRadius: "50%" }}
-            />
+            <HeaderAvatar imageSize={imageSize} />
             <Stack
               component={motion.div}
               variants={textContainer}
