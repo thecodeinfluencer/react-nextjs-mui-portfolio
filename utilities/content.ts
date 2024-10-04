@@ -544,7 +544,7 @@ export const feed: Feed[] = [
   },
   {
     id: "blog-nextjs-envs",
-    featured: true,
+    featured: false,
     title: "Next JS might be exposing your backend environment variables.",
     summary: "Find out if you are exposed!",
     type: "blog",
@@ -626,6 +626,28 @@ export const feed: Feed[] = [
         url: "https://twitter.com/codeinfluencer/status/1723780454103322654",
       },
     ],
+  },
+  {
+    id: "talk-rendercon-gen-ui",
+    bgTheme: "#3D1F5B",
+    featured: true,
+    title: "Generative UI with Vercel AI SDK",
+    summary: "Get adaptive user interfaces by leveraging Generative AI.",
+    description:
+      "In this session, we will learn how to enhance the user experience by leveraging Generative AI to dynamically create and adapt user interfaces in real-time.",
+    type: "talk",
+    slidesLink:
+      "https://docs.google.com/presentation/d/1-BSvOdEEvSQnguoFZ0l6msMh8g_1nBsAgcrOXizssV0/edit?usp=sharing",
+    image:
+      "https://lh3.googleusercontent.com/d/1-BSvOdEEvSQnguoFZ0l6msMh8g_1nBsAgcrOXizssV0=w640?authuser=0",
+    tags: ["RSC", "Next.js", "UI", "UI/UX", "GenUI", "GenAI", "AI"],
+    details: {
+      date: "Oct 04, 2024",
+      event: "RenderCON KE 2024",
+      location: "Catholic University (CUEA), Nairobi, Kenya",
+      community: "React Devs KE, Nairobi",
+    },
+    links: [{ label: "RenderCON Website", url: "https://www.rendercon.org/" }],
   },
   {
     id: "talk-power-of-pwas-arusha",
