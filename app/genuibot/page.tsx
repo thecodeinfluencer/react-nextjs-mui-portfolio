@@ -38,7 +38,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <Container maxWidth="sm" ref={messagesContainerRef}>
+      <Container maxWidth="md" ref={messagesContainerRef}>
         <Toolbar />
         {messages.length === 0 && (
           <Alert severity="info">
@@ -54,7 +54,7 @@ export default function Portfolio() {
       </Container>
 
       <Box sx={{ position: "fixed", bottom: 20, left: 0, width: "100%" }}>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Grid2 container spacing={1} sx={{ mb: 1 }}>
             {messages.length === 0 &&
               suggestedActions.map((action, index) => (
