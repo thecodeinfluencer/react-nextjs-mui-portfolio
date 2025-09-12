@@ -4,10 +4,19 @@ import FeedCard from "@/components/feed-card";
 import { feed } from "@/utilities/content";
 import { cardContainer } from "@/utilities/framer";
 import { Masonry } from "@mui/lab";
-import { Box, Container, Paper, Typography, useTheme } from "@mui/material";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Container,
+  Grid2,
+  Paper,
+  Typography,
+} from "@mui/material";
 import { motion } from "framer-motion";
+import { Book, Element4, Microphone2 } from "iconsax-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function FeedSection() {
   const [isClient, setIsClient] = useState(false);
@@ -26,9 +35,7 @@ export default function FeedSection() {
     >
       <Container maxWidth="md">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
-          Featured (<SectionLink href="/projects">Projects</SectionLink>,{" "}
-          <SectionLink href="/blogs">Blogs</SectionLink>,{" "}
-          <SectionLink href="/talks">Talks</SectionLink>,)
+          Featured
         </Typography>
         <Masonry
           spacing={2}
@@ -40,31 +47,30 @@ export default function FeedSection() {
         >
           {feed
             .filter(({ featured }) => featured)
-            .map((feed) => (
+            .map(feed => (
               <FeedCard key={feed.title} feed={feed} />
             ))}
         </Masonry>
+
+        <Grid2 container spacing={2} sx={{ mt: 4 }}>
+          {[
+            { link: "/projects", label: "All Projects", Icon: Element4 },
+            { link: "/blogs", label: "All Blogs", Icon: Book },
+            { link: "/talks", label: "All Talks", Icon: Microphone2 },
+          ].map(({ link, label, Icon }) => (
+            <Grid2 key={link} size={{ xs: 12, sm: 6, md: 4 }}>
+              <Card variant="outlined">
+                <CardActionArea component={Link} href={link}>
+                  <CardContent>
+                    <Icon />
+                    <Typography sx={{ mt: 1 }}>{label}</Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid2>
+          ))}
+        </Grid2>
       </Container>
     </Paper>
   );
 }
-
-type Props = { href: string; children: React.ReactNode };
-
-const SectionLink = ({ href, children }: Props) => {
-  const { palette } = useTheme();
-
-  return (
-    <Box
-      sx={{
-        textDecoration: "underline",
-        color: palette.primary.main,
-        cursor: "pointer",
-      }}
-      component={Link}
-      href={href}
-    >
-      {children}
-    </Box>
-  );
-};
