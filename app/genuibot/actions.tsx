@@ -1,6 +1,6 @@
 import { TextStreamMessage } from "@/components/message";
 import { profile } from "@/utilities/content";
-import { openai } from "@ai-sdk/openai";
+import { createOpenAI } from "@ai-sdk/openai";
 import { CoreMessage, generateId } from "ai";
 import {
   createAI,
@@ -10,6 +10,7 @@ import {
 } from "ai/rsc";
 import { ReactNode } from "react";
 import {
+  switchTheme,
   viewBlogs,
   viewContributions,
   viewListening,
@@ -27,6 +28,11 @@ export interface Hub {
   locks: Array<{ name: string; isLocked: boolean }>;
 }
 
+const groq = createOpenAI({
+  baseURL: "https://api.groq.com/openai/v1",
+  apiKey: process.env.GROQ_API_KEY,
+});
+
 const sendMessage = async (message: string) => {
   "use server";
 
@@ -41,7 +47,7 @@ const sendMessage = async (message: string) => {
   const textComponent = <TextStreamMessage content={contentStream.value} />;
 
   const { value: stream } = await streamUI({
-    model: openai("gpt-4o"),
+    model: groq("llama-3.1-8b-instant"),
     system: `\
       - you are a friendly digital version of  ${profile.name}
       - be a bit sarcastic
@@ -69,6 +75,7 @@ const sendMessage = async (message: string) => {
 
       return textComponent;
     },
+
     tools: {
       viewWork: viewWork(messages),
       viewSkills: viewSkills(messages),
@@ -79,6 +86,8 @@ const sendMessage = async (message: string) => {
       viewContributions: viewContributions(messages),
       viewSocials: viewSocials(messages),
       viewListening: viewListening(messages),
+
+      switchTheme: switchTheme(messages),
 
       // updateHub: {
       //   description: "update the hub with new values",
