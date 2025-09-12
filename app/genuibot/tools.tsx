@@ -3,6 +3,7 @@ import FeedCard from "@/components/feed-card";
 import ListeningCard from "@/components/listening-card";
 import { Message } from "@/components/message";
 import TestimonialCard from "@/components/testimonial-card";
+import ThemeSwitcher from "@/components/theme-switcher";
 import WorkTimeline from "@/components/work-timeline";
 import { TypoLink } from "@/sections/footer-section";
 import { contributing, feed, profile, testimonials } from "@/utilities/content";
@@ -10,9 +11,9 @@ import { Card, Chip, Grid2, Paper, Stack } from "@mui/material";
 import { CoreMessage, generateId } from "ai";
 import { z } from "zod";
 
-const projects = feed.filter((feed) => feed.type == "project");
-const talks = feed.filter((feed) => feed.type == "talk");
-const blogs = feed.filter((feed) => feed.type == "blog");
+const projects = feed.filter(feed => feed.type == "project");
+const talks = feed.filter(feed => feed.type == "talk");
+const blogs = feed.filter(feed => feed.type == "blog");
 
 export const viewWork = (messages: any) => ({
   description: "view work history",
@@ -93,7 +94,7 @@ export const viewProjects = (messages: any) => ({
         role="assistant"
         content={
           <Grid2 container spacing={1}>
-            {projects.map((feed) => (
+            {projects.map(feed => (
               <Grid2 key={feed?.title} size={{ xs: 12, md: 6 }}>
                 <FeedCard feed={feed} />
               </Grid2>
@@ -139,7 +140,7 @@ export const viewTalks = (messages: any) => ({
         role="assistant"
         content={
           <Grid2 container spacing={1}>
-            {talks.map((feed) => (
+            {talks.map(feed => (
               <Grid2 key={feed?.title} size={{ xs: 12, md: 6 }}>
                 <FeedCard feed={feed} />
               </Grid2>
@@ -185,7 +186,7 @@ export const viewBlogs = (messages: any) => ({
         role="assistant"
         content={
           <Grid2 container spacing={1}>
-            {blogs.map((feed) => (
+            {blogs.map(feed => (
               <Grid2 key={feed?.title} size={{ xs: 12, md: 6 }}>
                 <FeedCard feed={feed} />
               </Grid2>
@@ -236,7 +237,7 @@ export const viewTestimonials = (messages: any) => ({
         role="assistant"
         content={
           <Grid2 container spacing={1}>
-            {testimonials.map((tmn) => (
+            {testimonials.map(tmn => (
               <Grid2 key={tmn?.name} size={{ xs: 12, lg: 6 }}>
                 <TestimonialCard testimonial={tmn} />
               </Grid2>
@@ -287,7 +288,7 @@ export const viewContributions = (messages: any) => ({
         role="assistant"
         content={
           <Grid2 container spacing={1}>
-            {contributing.map((cbn) => (
+            {contributing.map(cbn => (
               <Grid2 key={cbn.project} size={{ xs: 12, lg: 6 }}>
                 <Card variant="outlined">
                   <ContributionCard contribution={cbn} />
@@ -305,7 +306,7 @@ export const viewSkills = (messages: any) => ({
   description: `
         - view a list of ${profile.name}'s skills. 
         - infer them from my work history, projects, talks, blogs and testimonials and from these: ${profile.skills
-          .map((s) => `${s.label}`)
+          .map(s => `${s.label}`)
           .join(", ")}
       `,
   parameters: z.object({ skills: z.array(z.string()) }),
@@ -430,6 +431,37 @@ export const viewListening = (messages: any) => ({
           </Card>
         }
       />
+    );
+  },
+});
+
+export const switchTheme = (messages: any) => ({
+  description: `change the app theme to either dark or light`,
+  parameters: z.object({ theme: z.enum(["dark", "light"]) }),
+  generate: async function* ({ theme }) {
+    const toolCallId = generateId();
+
+    messages.done([
+      ...(messages.get() as CoreMessage[]),
+      {
+        role: "assistant",
+        content: [
+          {
+            type: "tool-call",
+            toolCallId,
+            toolName: "switchTheme",
+            args: {},
+          },
+        ],
+      },
+      {
+        role: "tool",
+        content: [{ type: "tool-result", toolName: "switchTheme", toolCallId }],
+      },
+    ]);
+
+    return (
+      <Message role="assistant" content={<ThemeSwitcher theme={theme} />} />
     );
   },
 });
