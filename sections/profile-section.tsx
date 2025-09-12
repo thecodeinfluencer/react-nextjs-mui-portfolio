@@ -5,7 +5,6 @@ import { profile } from "@/utilities/content";
 import { cardItem, textContainer } from "@/utilities/framer";
 import {
   Box,
-  Chip,
   Container,
   Paper,
   Stack,
@@ -37,11 +36,11 @@ export default function ProfileSection() {
               spacing={0.5}
               alignItems="center"
             >
-              <Chip
+              {/* <Chip
                 label={tagline}
                 component={motion.div}
                 variants={cardItem}
-              />
+              /> */}
               <Typography
                 variant="h4"
                 sx={{ textAlign: "center" }}
@@ -51,6 +50,16 @@ export default function ProfileSection() {
                 {name}
               </Typography>
               <Typography
+                variant="h6"
+                color="textSecondary"
+                sx={{ textAlign: "center" }}
+                component={motion.div}
+                variants={cardItem}
+              >
+                {tagline}
+              </Typography>
+              <Typography
+                color="textSecondary"
                 sx={{ maxWidth: 500, textAlign: "center" }}
                 component={motion.div}
                 variants={cardItem}
