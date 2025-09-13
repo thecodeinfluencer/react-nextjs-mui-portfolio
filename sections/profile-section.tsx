@@ -24,7 +24,7 @@ export default function ProfileSection() {
   return (
     <Paper square component={motion.div}>
       <Box sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Box sx={{ height: appBarHeight }} />
           <Stack spacing={2} alignItems="center">
             <HeaderAvatar imageSize={imageSize} />

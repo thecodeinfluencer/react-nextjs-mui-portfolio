@@ -23,7 +23,7 @@ export default function Work() {
   return (
     <>
       <Paper square sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"

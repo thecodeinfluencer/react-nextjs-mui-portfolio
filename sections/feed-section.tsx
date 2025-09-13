@@ -33,7 +33,7 @@ export default function FeedSection() {
         borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
           Featured
         </Typography>

@@ -18,7 +18,7 @@ export default function GetPage() {
   return (
     <>
       <Box sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"
@@ -50,7 +50,7 @@ export default function GetPage() {
               backgroundPosition: "center",
             }}
           />
-          <Typography sx={{ mt: 2 }} >
+          <Typography sx={{ mt: 2 }}>
             Feel free to <b></b>fork this template on <b></b>GitHub! Just a
             gentle request to give it a <b></b>star. I&apos;d be delighted if
             you added your{" "}
@@ -79,7 +79,6 @@ const Link = ({ href, children }: Props) => {
 
   return (
     <Typography
- 
       color="primary.main"
       component="span"
       sx={{ cursor: "pointer", textDecoration: isShown ? "underline" : "none" }}

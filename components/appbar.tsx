@@ -40,7 +40,7 @@ export default function AppBar() {
 
   return (
     <Paper component={MuiAppBar} square sx={{ boxShadow: "none" }}>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Paper
           sx={{
             mt: 2,

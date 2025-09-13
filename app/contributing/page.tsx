@@ -30,7 +30,7 @@ export default function ContributingPage() {
   return (
     <>
       <Paper square sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"
@@ -59,7 +59,7 @@ export default function ContributingPage() {
           <Card sx={{ mt: 2 }} variant="outlined">
             <CardContent>
               <List component={motion.div}>
-                {contributing.map((cbn) => (
+                {contributing.map(cbn => (
                   <ContributionCard key={cbn.project} contribution={cbn} />
                 ))}
               </List>

@@ -29,7 +29,7 @@ export default function Blogs() {
   return (
     <>
       <Paper sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"
@@ -58,8 +58,8 @@ export default function Blogs() {
             columns={{ xs: 1, sm: 2, md: 3 }}
           >
             {feed
-              .filter((feed) => feed.type == "blog")
-              .map((feed) => (
+              .filter(feed => feed.type == "blog")
+              .map(feed => (
                 <motion.div key={feed.title} variants={cardItem}>
                   <FeedCard feed={feed} />
                 </motion.div>

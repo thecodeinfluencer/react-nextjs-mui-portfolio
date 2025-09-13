@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <>
       <Paper square sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"
@@ -58,8 +58,8 @@ export default function Projects() {
             columns={{ xs: 1, sm: 2, md: 3 }}
           >
             {feed
-              .filter((feed) => feed.type == "project")
-              .map((feed) => (
+              .filter(feed => feed.type == "project")
+              .map(feed => (
                 <motion.div key={feed.title} variants={cardItem}>
                   <FeedCard key={feed.title} feed={feed} />
                 </motion.div>

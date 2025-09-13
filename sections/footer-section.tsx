@@ -19,7 +19,7 @@ export default function FooterSection() {
       square
       sx={{ py: 5, borderTop: ({ palette }) => `2px solid ${palette.divider}` }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
             <Stack sx={{ px: 2 }}>

@@ -20,12 +20,12 @@ export default function TestimonialSection() {
         borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
           Testimonials
         </Typography>
         <Grid container spacing={1}>
-          {testimonials.map((testimonial) => (
+          {testimonials.map(testimonial => (
             <Grid key={testimonial.name} item xs={12} md={6}>
               <TestimonialCard testimonial={testimonial} />
             </Grid>

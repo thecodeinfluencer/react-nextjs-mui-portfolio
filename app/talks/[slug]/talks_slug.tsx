@@ -30,7 +30,7 @@ export default function ViewTalk({ params }: SlugPage) {
   const [isClient, setIsClient] = useState(false);
   const { mode } = useColorScheme();
 
-  const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
+  const thisFeed = feed.find(feed => `${feed.id}` == params.slug);
 
   useEffect(() => setIsClient(true), []);
 
@@ -60,7 +60,7 @@ export default function ViewTalk({ params }: SlugPage) {
             WebkitBackdropFilter: "blur(20px)",
           }}
         >
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Stack direction="row" spacing={2} justifyContent="space-between">
               <Button
                 startIcon={<ArrowBackRounded />}
@@ -105,7 +105,7 @@ export default function ViewTalk({ params }: SlugPage) {
               }}
             />
             <Box sx={{ mt: 2 }}>
-              {thisFeed?.tags?.map((tag) => (
+              {thisFeed?.tags?.map(tag => (
                 <Chip
                   variant="outlined"
                   key={tag}
@@ -175,7 +175,7 @@ export default function ViewTalk({ params }: SlugPage) {
                     <Typography variant="h6" sx={{ mb: 2 }}>
                       Associated Links
                     </Typography>
-                    {thisFeed.links?.map((link) => (
+                    {thisFeed.links?.map(link => (
                       <Button
                         key={link.label}
                         onClick={() => window.open(link.url)}

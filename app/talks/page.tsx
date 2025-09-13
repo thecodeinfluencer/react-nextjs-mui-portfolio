@@ -28,7 +28,7 @@ export default function TalksPage() {
   return (
     <main>
       <Paper sx={{ py: 10 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ mb: 8 }}
             direction="row"
@@ -50,8 +50,8 @@ export default function TalksPage() {
           </Stack>
           <MotionMasonry>
             {feed
-              .filter((feed) => feed.type == "talk")
-              .map((feed) => (
+              .filter(feed => feed.type == "talk")
+              .map(feed => (
                 <MotionItem key={feed.id}>
                   <FeedCard feed={feed} />
                 </MotionItem>

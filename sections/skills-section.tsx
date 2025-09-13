@@ -27,7 +27,7 @@ export default function SkillsSection() {
         borderTop: ({ palette }) => `2px solid ${palette.divider}`,
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography sx={{ textAlign: "center", mb: 8 }} variant="h5">
           Skills
         </Typography>
@@ -39,8 +39,8 @@ export default function SkillsSection() {
                   Languages
                 </Typography>
                 {profile.skills
-                  .filter((skill) => skill.category == "languages")
-                  .map((skill) => (
+                  .filter(skill => skill.category == "languages")
+                  .map(skill => (
                     <Chip
                       key={skill.label}
                       label={skill.label}
@@ -58,8 +58,8 @@ export default function SkillsSection() {
                   Frameworks and Libraries
                 </Typography>
                 {profile.skills
-                  .filter((skill) => skill.category == "frameworks")
-                  .map((skill) => (
+                  .filter(skill => skill.category == "frameworks")
+                  .map(skill => (
                     <Chip
                       key={skill.label}
                       label={skill.label}
@@ -77,8 +77,8 @@ export default function SkillsSection() {
                   Tools and Databases
                 </Typography>
                 {profile.skills
-                  .filter((skill) => skill.category == "tools")
-                  .map((skill) => (
+                  .filter(skill => skill.category == "tools")
+                  .map(skill => (
                     <Chip
                       key={skill.label}
                       label={skill.label}

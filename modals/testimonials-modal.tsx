@@ -38,7 +38,7 @@ export default function TestimonialsModal({
             <CloseRounded />
           </IconButton>
         </Stack>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <ListItem sx={{ px: 0 }}>
             <ListItemAvatar>
               <Avatar src={image} alt={image} />
