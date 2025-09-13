@@ -74,10 +74,14 @@ export default function Projects() {
                   Nov: 10,
                   Dec: 11,
                 };
-                function parseStartDate(dateStr) {
+                function parseStartDate(dateStr: string) {
                   if (!dateStr) return 0;
                   const [month, year] = dateStr.split(" ");
-                  return new Date(Number(year), monthMap[month], 1).getTime();
+                  return new Date(
+                    Number(year),
+                    monthMap[month as keyof typeof monthMap],
+                    1
+                  ).getTime();
                 }
                 const aDate = parseStartDate(a.details?.startDate);
                 const bDate = parseStartDate(b.details?.startDate);
