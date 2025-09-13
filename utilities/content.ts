@@ -407,11 +407,11 @@ export const feed: Feed[] = [
     id: "project-dream-ai",
     bgTheme: "#A25AFF",
     featured: false,
-    title: "DreamAI: AI Art Generator",
+    title: "DreamAI: AI Dream Interpreter",
     summary:
-      "The ultimate AI art generator that transforms your words into stunning works of art.",
+      "An AI-powered app that helps users interpret their dreams via symbol analysis.",
     description:
-      "DreamAI is an AI-powered art generator that allows users to create stunning digital art from simple text prompts. It can generate anything from futuristic cyberpunk scenes to dreamy fantasy landscapes. The app features various AI models and art styles for users to choose from to fine-tune their creations. Users can also upload their own photos to transform them into AI-generated art. The app is perfect for artists, designers, or anyone who wants to explore the world of AI art without any prior drawing skills.",
+      "DreamAI is a mobile app that uses advanced AI algorithms combined with a comprehensive dream dictionary to help users explore meanings behind dreams—symbols like flying, falling, snakes etc.—and gain insight into their emotions, fears, and subconscious. It includes a personal dream journal, history tracking, symbol interpretation, and global perspectives on dream symbolism.",
     type: "project",
     image:
       "https://play-lh.googleusercontent.com/o-YRcZ-iRxmjbAfJSSPuX-sdpt6WMySGekuzSj-VFXq9NOBZLLyajoPas-DWNx1Arlw=w832-h470-rw",
@@ -424,7 +424,7 @@ export const feed: Feed[] = [
     tags: ["AI", "Image Generation", "Art", "Android"],
     productLink:
       "https://play.google.com/store/apps/details?id=com.razor.dreamai",
-    githubLink: "https://github.com/hlo-hlo/DreamAI",
+    githubLink: "",
     details: {
       startDate: "Apr 2025",
       endDate: "Apr 2025",
