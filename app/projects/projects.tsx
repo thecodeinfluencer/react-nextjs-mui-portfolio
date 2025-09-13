@@ -57,8 +57,32 @@ export default function Projects() {
             spacing={2}
             columns={{ xs: 1, sm: 2, md: 3 }}
           >
-            {feed
-              .filter(feed => feed.type == "project")
+            {[...feed]
+              .filter(feed => feed.type === "project")
+              .sort((a, b) => {
+                const monthMap = {
+                  Jan: 0,
+                  Feb: 1,
+                  Mar: 2,
+                  Apr: 3,
+                  May: 4,
+                  Jun: 5,
+                  Jul: 6,
+                  Aug: 7,
+                  Sep: 8,
+                  Oct: 9,
+                  Nov: 10,
+                  Dec: 11,
+                };
+                function parseStartDate(dateStr) {
+                  if (!dateStr) return 0;
+                  const [month, year] = dateStr.split(" ");
+                  return new Date(Number(year), monthMap[month], 1).getTime();
+                }
+                const aDate = parseStartDate(a.details?.startDate);
+                const bDate = parseStartDate(b.details?.startDate);
+                return bDate - aDate;
+              })
               .map(feed => (
                 <motion.div key={feed.title} variants={cardItem}>
                   <FeedCard key={feed.title} feed={feed} />
