@@ -9,9 +9,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Jost } from "next/font/google";
 
-const prompt = Nunito({
+const prompt = Jost({
   variable: "--font-prompt",
   weight: ["400", "700"],
   style: ["normal", "italic"],
