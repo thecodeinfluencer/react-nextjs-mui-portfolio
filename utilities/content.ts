@@ -275,7 +275,7 @@ export const feed: Feed[] = [
   {
     id: "project-portfolio-nextjs",
     bgTheme: "#dddddd",
-    featured: true,
+    featured: false,
     title: "Next.js Portfolio",
     githubLink: "",
     productLink: "",
@@ -294,76 +294,9 @@ export const feed: Feed[] = [
     },
   },
   {
-    id: "project-digisoc-web",
-    bgTheme: "#3CB54F",
-    featured: false,
-    title: "DigiSOC Portal",
-    githubLink: "",
-    productLink: "",
-    summary:
-      "A web app to help field engineers and the NOC with network monitoring.",
-    description:
-      "In today's technology-run world, digitisation has made a significant impact on the telecommunication industry. [Safaricom]() has fully embraced this direction and has developed a solution that will support how Field Engineers maintain the company's network landscape in order to achieve 99.9% network availability.\n\n The DigiSOC web app is a solution that will help Field Engineers and the NOC with network monitoring. The app will provide a platform for Field Engineers to view all alarms related to Sites Down, Sectors Down and environmental irregularities. The app will also provide a platform to manage the fiels engineers and site allocation details.\n\nThe web app complements an android app. Through the DigiSOC app, Safaricom's Field Engineers will have access to all of the following features:  \n- Visibility of all alarms related to Sites Down, Sectors Down and environmental irregularities.\n- Details outlining the specific cause of an alarm failure.   \n- Ability to check the alarm status; whether resolved or unresolved.   \n- Ability to enter and exit any site within the app.  \n- Access to the exact location of all sites through google maps.\n\n Overall, the DigiSOC suite of apps empower Field Engineers with real-time information, streamlined workflows, and enhanced tools to address and resolve network issues promptly.",
-    type: "project",
-    image:
-      "https://lh3.googleusercontent.com/d/1LzwLqDidIZYzCBFVarhC9XrSsgZQ5BGK",
-    links: [],
-    tags: ["React", "Next", "Typescript", "MUI", "Node"],
-    details: {
-      startDate: "Jan 2023",
-      endDate: "Ongoing",
-      releasedDate: "",
-      projectType: "Workplace",
-    },
-  },
-  {
-    id: "project-change-web",
-    bgTheme: "#3CB54F",
-    featured: false,
-    title: "Change Enablement Portal",
-    githubLink: "",
-    productLink: "",
-    summary: "A web app to digitize the change enablement process.",
-    description:
-      "The Change Enablement Portal is a powerful web application designed to revolutionize and streamline the change enablement process within organizations. Developed using cutting-edge technologies such as React, Next.js, Material-UI (MUI), and Node.js, this portal offers a robust and user-friendly platform for managing organizational changes efficiently. The portal provides a centralized location for managing all change requests, approvals, and rollbacks. It also offers a comprehensive dashboard for tracking the status of all changes and rollbacks. The portal is designed to enhance collaboration and communication between stakeholders, thereby ensuring that all changes are implemented successfully.",
-    type: "project",
-    image:
-      "https://lh3.googleusercontent.com/d/1Y5s31qOifBRELVPLvDpvikGS4s9aCH_6",
-    links: [],
-    tags: ["React", "Next", "Typescript", "MUI", "Node"],
-    details: {
-      startDate: "Apr 2023",
-      endDate: "Ongoing",
-      releasedDate: "",
-      projectType: "Workplace",
-    },
-  },
-  {
-    id: "project-mtandao-web",
-    bgTheme: "#3CB54F",
-    featured: false,
-    title: "Mtandao Portal",
-    githubLink: "",
-    productLink: "",
-    summary: "A web app to show network coverage and complaints.",
-    description:
-      "Mtandao Portal is a comprehensive web application designed to enhance the user's experience in understanding and interacting with network coverage data. The app provides a user-friendly interface that allows users to visualize network coverage on an interactive map. Users can easily identify areas with strong signals, weak signals, or dead zones, enabling them to make informed decisions about connectivity.\n\nOne of the key features of Mtandao Portal is its ability to display network Key Performance Indicators (KPIs) in a clear and understandable manner. Through intuitive charts and graphs, users can analyze data related to network performance, such as signal strength, data speed, and reliability. This empowers both consumers and network administrators to assess the quality of service and identify areas for improvement.\n\nAdditionally, Mtandao Portal serves as a centralized hub for customer complaints and feedback. Users can submit and track their connectivity-related issues, allowing network providers to address concerns promptly. The portal streamlines the customer support process, fostering improved communication between users and service providers.",
-    type: "project",
-    image:
-      "https://lh3.googleusercontent.com/d/1aSaTopdxJt-UD44p0iNwD8N07DIiXwZ6",
-    links: [],
-    tags: ["React", "Next", "Typescript", "MUI", "Node"],
-    details: {
-      startDate: "Jun 2023",
-      endDate: "Ongoing",
-      releasedDate: "",
-      projectType: "Workplace",
-    },
-  },
-  {
     id: "project-gumzo-ai",
     bgTheme: "#008b8b",
-    featured: true,
+    featured: false,
     title: "Gumzo AI",
     githubLink: "",
     productLink: "https://gumzoai.web.app/",
@@ -424,31 +357,107 @@ export const feed: Feed[] = [
     tags: ["React Native", "JavaScript", "Typescript", "Android", "Expo"],
     details: {
       startDate: "Nov 2023",
-      endDate: "Ongoing",
-      releasedDate: "",
+      endDate: "Nov 2023",
+      releasedDate: "Nov 2023",
       projectType: "Personal",
     },
   },
   {
-    id: "project-crib-hunt",
-    bgTheme: "#DDDDDD",
-    featured: false,
-    title: "Crib Hunt",
+    id: "project-olivia",
+    bgTheme: "#A1BB9B",
+    featured: true,
+    title: "Olivia AI: Chat, Search, Tools",
     summary:
-      "An android app built with React Native to find houses to rent or buy.",
+      "An AIO AI assistant that allows you to chat, search, and use various tools. It features models from multiple providers.",
     description:
-      "This app is in development and will be released soon. This is an android app built with React Native to find houses to rent. It has two modes, one for the landlord and one for the tenant. The landlord can post houses for rent or sale and the tenant can search for houses to rent or buy. The major tech stack associated with the app is React Native, Expo, Firebase, and Typescript.",
+      "The app is an AI chatbot that gives fast and accurate responses to any question. It allows users to switch between different AI models such as DeepSeek, Claude, and Gemini to get various perspectives and enhanced creativity. The app can be used for various purposes including studying and learning (solving homework, learning new topics), writing assistance (generating blog posts, social media captions), emotional support, lifestyle and everyday help (fashion tips, recipe ideas), and AI-powered object recognition for plants, animals, and products.",
     type: "project",
     image:
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    links: [],
-    tags: ["React Native", "Firebase", "Expo", "Typescript", "Android"],
-    productLink: "",
+      "https://play-lh.googleusercontent.com/yb7RsgbYQZdHNCBS3buLNkKGUT8xJc6yz9K3C99QvLLM8efh3hcI-B__niWOv4fWrXg=w832-h470-rw",
+    links: [
+      {
+        label: "Google Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.razor.deepchat",
+      },
+    ],
+    tags: [
+      "React Native",
+      "JavaScript",
+      "Typescript",
+      "Android",
+      "Expo",
+      "DeepSeek",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "Mistral",
+      "Llama",
+    ],
+    productLink:
+      "https://play.google.com/store/apps/details?id=com.razor.deepchat",
     githubLink: "",
     details: {
-      startDate: "Oct 2023",
-      endDate: "Ongoing",
-      releasedDate: "",
+      startDate: "Mar 2025",
+      endDate: "Mar 2025",
+      releasedDate: "Mar 2025",
+      projectType: "Personal",
+    },
+  },
+  {
+    id: "project-dream-ai",
+    bgTheme: "#A25AFF",
+    featured: false,
+    title: "DreamAI: AI Art Generator",
+    summary:
+      "The ultimate AI art generator that transforms your words into stunning works of art.",
+    description:
+      "DreamAI is an AI-powered art generator that allows users to create stunning digital art from simple text prompts. It can generate anything from futuristic cyberpunk scenes to dreamy fantasy landscapes. The app features various AI models and art styles for users to choose from to fine-tune their creations. Users can also upload their own photos to transform them into AI-generated art. The app is perfect for artists, designers, or anyone who wants to explore the world of AI art without any prior drawing skills.",
+    type: "project",
+    image:
+      "https://play-lh.googleusercontent.com/o-YRcZ-iRxmjbAfJSSPuX-sdpt6WMySGekuzSj-VFXq9NOBZLLyajoPas-DWNx1Arlw=w832-h470-rw",
+    links: [
+      {
+        label: "Google Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.razor.dreamai",
+      },
+    ],
+    tags: ["AI", "Image Generation", "Art", "Android"],
+    productLink:
+      "https://play.google.com/store/apps/details?id=com.razor.dreamai",
+    githubLink: "https://github.com/hlo-hlo/DreamAI",
+    details: {
+      startDate: "Apr 2025",
+      endDate: "Apr 2025",
+      releasedDate: "Apr 2025",
+      projectType: "Personal",
+    },
+  },
+  {
+    id: "project-sebule",
+    bgTheme: "#008b8b",
+    featured: true,
+    title: "Sebule: Fresh Apartments",
+    summary:
+      "Find newly built apartments in Nairobi, focusing on clean, modern updated listings. It helps users avoid high viewing fees and outdated advertisements.",
+    description:
+      "The Sebule app helps users find newly built apartments in Nairobi, Kenya. It supports a wide range of needs, from bedsitters for students to spacious 3- and 4-bedroom homes for families. The app focuses exclusively on new construction, ensuring modern apartments with minimal maintenance issues. Listings are regularly updated, with old or full apartments removed to simplify the house-hunting process. It provides direct access to apartment contacts and location details, eliminating the need for expensive agent fees.",
+    type: "project",
+    image:
+      "https://play-lh.googleusercontent.com/_GUT1F0_37jYTm-oRYPZLT0vlINIohWzOCmlRGw0-mi5ebudIjOWholgFcErtIfZTSg=w832-h470-rw",
+    links: [
+      {
+        label: "Google Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.razor.sebule",
+      },
+    ],
+    tags: ["React Native", "Supabase", "Expo", "Typescript", "Android"],
+    productLink:
+      "https://play.google.com/store/apps/details?id=com.razor.sebule",
+    githubLink: "",
+    details: {
+      startDate: "Jul 2025",
+      endDate: "Jul 2025",
+      releasedDate: "Jul 2025",
       projectType: "Personal",
     },
   },
@@ -483,34 +492,6 @@ export const feed: Feed[] = [
       startDate: "Sep 2022",
       endDate: "Sep 2023",
       releasedDate: "Sep 2023",
-      projectType: "Client",
-    },
-  },
-  {
-    id: "project-my-kanisa",
-    bgTheme: "#0d6efd",
-    featured: false,
-    title: "My kanisa",
-    summary: "Church app with feed, services, payments, crusades and more.",
-    description:
-      "Discover churches and ministers, interact with video, audio and image devotional posts, listen to live virtual crusade, have your own personal bible, register and login to your church account. Experiencing fellowship and devotion is faster and easier than ever. Join and follow churches and online ministers respectively, like and share your my Kanisa App favorite devotional contents and stay connected to your church",
-    type: "project",
-    image:
-      "https://play-lh.googleusercontent.com/R-nST0ebJhCbpKWm_zozVpp2kTaUq5-JXGgxm-Z7asVyVtKErOHiTHeypG3pjTY2YCGq=w416-h235-rw",
-    links: [
-      {
-        label: "myKanisa on PlayStore ",
-        url: "https://play.google.com/store/apps/details?id=com.morfie.kanisa",
-      },
-    ],
-    tags: ["React", "PWA", "Firebase", "JavaScript", "Typescript"],
-    productLink:
-      "https://play.google.com/store/apps/details?id=com.morfie.kanisa",
-    githubLink: "",
-    details: {
-      startDate: "Mar 2021",
-      endDate: "Nov 2022",
-      releasedDate: "Jun 2021",
       projectType: "Client",
     },
   },
