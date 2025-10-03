@@ -578,6 +578,28 @@ export const feed: Feed[] = [
     details: { date: "Jul 26, 2020" },
   },
   {
+    id: "talk-rendercon-spec-kit",
+    bgTheme: "#3D1F5B",
+    featured: true,
+    title: "GitHub Spec-Kit tool",
+    summary: "Vibe code high-quality software faster with GitHub Spec-Kit",
+    description:
+      "An effort to allow organizations to focus on product scenarios rather than writing undifferentiated code with the help of Spec-Driven Development.",
+    type: "talk",
+    slidesLink:
+      "https://docs.google.com/presentation/d/1xo6lyWTVKDVhGvkXIFWs82yRiQr8L9wEaAPQNm1VDSc/edit?usp=sharing",
+    image:
+      "https://lh3.googleusercontent.com/d/1-1xo6lyWTVKDVhGvkXIFWs82yRiQr8L9wEaAPQNm1VDSc=w640?authuser=0",
+    tags: ["Vibe Coding", "Spec-Kit", "SDD", "AI", "Tools"],
+    details: {
+      date: "Oct 04, 2025",
+      event: "RenderCON KE 2025",
+      location: "Pride Inn Azure, Westlands, Nairobi, Kenya",
+      community: "React Devs KE, Nairobi",
+    },
+    links: [{ label: "RenderCON Website", url: "https://www.rendercon.org/" }],
+  },
+  {
     id: "talk-firebase-data-modeling-101",
     bgTheme: "#F9AB00",
     featured: false,
@@ -633,7 +655,7 @@ export const feed: Feed[] = [
   {
     id: "talk-power-of-pwas-arusha",
     bgTheme: "#4285F4",
-    featured: true,
+    featured: false,
     title: "How powerful are PWAs?",
     summary: "Explore the power and potential of Progressive Web Applications.",
     description:
