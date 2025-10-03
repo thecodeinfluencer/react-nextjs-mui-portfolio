@@ -589,7 +589,7 @@ export const feed: Feed[] = [
     slidesLink:
       "https://docs.google.com/presentation/d/1xo6lyWTVKDVhGvkXIFWs82yRiQr8L9wEaAPQNm1VDSc/edit?usp=sharing",
     image:
-      "https://lh3.googleusercontent.com/d/1-1xo6lyWTVKDVhGvkXIFWs82yRiQr8L9wEaAPQNm1VDSc=w640?authuser=0",
+      "https://lh3.googleusercontent.com/d/1xo6lyWTVKDVhGvkXIFWs82yRiQr8L9wEaAPQNm1VDSc=w640?authuser=0",
     tags: ["Vibe Coding", "Spec-Kit", "SDD", "AI", "Tools"],
     details: {
       date: "Oct 04, 2025",
