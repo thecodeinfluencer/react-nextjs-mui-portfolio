@@ -19,7 +19,7 @@ export default function Icon() {
       // JSX element to render your icon
       <div
         style={{
-          fontSize: dimension,
+          fontSize: dimension * 0.8,
           background: "white",
           width: "100%",
           height: "100%",
@@ -28,6 +28,7 @@ export default function Icon() {
           justifyContent: "center",
           color: "black",
           borderRadius: "0%",
+          fontFamily: "Jost, Arial, sans-serif",
         }}
       >
         M
