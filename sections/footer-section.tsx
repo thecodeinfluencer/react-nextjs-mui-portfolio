@@ -21,7 +21,7 @@ export default function FooterSection() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={1}>
-          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+          <Grid sx={{ my: 2 }} size={{ xs: 12, sm: 6, md: 4 }}>
             <Stack sx={{ px: 2 }}>
               <TypoLink internal href="/projects">
                 Projects
@@ -40,7 +40,7 @@ export default function FooterSection() {
               </TypoLink>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+          <Grid sx={{ my: 2 }} size={{ xs: 12, sm: 6, md: 4 }}>
             <Stack sx={{ px: 2 }}>
               <TypoLink href={profile.socials.twitter}>X (Twitter)</TypoLink>
               <TypoLink href={profile.socials.linkedIn}>LinkedIn</TypoLink>
@@ -48,7 +48,7 @@ export default function FooterSection() {
               <TypoLink href={profile.socials.figma}>Figma</TypoLink>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} sx={{ my: 2 }}>
+          <Grid sx={{ my: 2 }} size={{ xs: 12, sm: 6, md: 4 }}>
             <Stack sx={{ px: 2 }}>
               <TypoLink href={profile.socials.devto}>Dev.to</TypoLink>
               <TypoLink href={profile.socials.medium}>Medium</TypoLink>
@@ -61,7 +61,7 @@ export default function FooterSection() {
           </Grid>
         </Grid>
         <Grid container spacing={1}>
-          <Grid item xs={12} sx={{ my: 2 }}>
+          <Grid sx={{ my: 2 }} size={12}>
             <Card variant="outlined">
               <ListeningCard />
             </Card>

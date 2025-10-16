@@ -131,25 +131,25 @@ export default function ViewTalk({ params }: SlugPage) {
               >
                 <CardContent sx={{ backgroundColor: "transparent" }}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ListItemText
                         primary={thisFeed.details?.event}
                         secondary="Event"
                       />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ListItemText
                         primary={thisFeed.details?.location}
                         secondary="Location"
                       />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ListItemText
                         primary={thisFeed.details?.community}
                         secondary="Community"
                       />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ListItemText
                         primary={thisFeed.details.date}
                         secondary="Date"

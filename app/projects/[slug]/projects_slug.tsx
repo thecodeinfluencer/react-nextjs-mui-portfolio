@@ -141,27 +141,27 @@ export default function ViewProject({ params }: SlugPage) {
             >
               <CardContent>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <ListItemText
                       primary={thisFeed.details?.startDate}
                       secondary="Start Date"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <ListItemText
                       primary={thisFeed.details?.endDate}
                       secondary="End Date"
                     />
                   </Grid>
                   {thisFeed.details?.releasedDate && (
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ListItemText
                         primary={thisFeed.details?.releasedDate}
                         secondary="Released"
                       />
                     </Grid>
                   )}
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <ListItemText
                       primary={thisFeed.details?.projectType + " Project"}
                       secondary="Type"

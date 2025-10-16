@@ -26,7 +26,7 @@ export default function TestimonialSection() {
         </Typography>
         <Grid container spacing={1}>
           {testimonials.map(testimonial => (
-            <Grid key={testimonial.name} item xs={12} md={6}>
+            <Grid key={testimonial.name} size={{ xs: 12, md: 6 }}>
               <TestimonialCard testimonial={testimonial} />
             </Grid>
           ))}

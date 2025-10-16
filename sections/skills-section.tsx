@@ -32,7 +32,7 @@ export default function SkillsSection() {
           Skills
         </Typography>
         <Grid container spacing={1}>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Card variant="outlined">
               <CardContent>
                 <Typography sx={{ fontWeight: "bold", mb: 2 }}>
@@ -51,7 +51,7 @@ export default function SkillsSection() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Card variant="outlined">
               <CardContent>
                 <Typography sx={{ fontWeight: "bold", mb: 2 }}>
@@ -70,7 +70,7 @@ export default function SkillsSection() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Card variant="outlined">
               <CardContent>
                 <Typography sx={{ fontWeight: "bold", mb: 2 }}>
