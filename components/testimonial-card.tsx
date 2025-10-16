@@ -16,6 +16,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import Link from "next/link";
 import { useState } from "react";
 
 type Props = { testimonial: Testimonial };
@@ -46,7 +47,12 @@ export default function TestimonialCard({ testimonial }: Props) {
             spacing={1}
           >
             <Button onClick={() => setModalOpen(true)}>Read More</Button>
-            <Button onClick={() => window.open(linkedIn, "_blank")}>
+            <Button
+              LinkComponent={Link}
+              href={linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View on LinkedIn <OpenInNewRounded />
             </Button>
           </Stack>

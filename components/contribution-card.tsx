@@ -8,6 +8,7 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
+import Link from "next/link";
 
 type Props = { contribution: Contribution };
 
@@ -15,7 +16,7 @@ export default function ContributionCard({ contribution }: Props) {
   const { project, image, link } = contribution;
 
   return (
-    <CardActionArea onClick={() => window.open(link, "_blank")}>
+    <CardActionArea LinkComponent={Link} href={link} target="_blank">
       <ListItem
         key={project}
         sx={{ borderWidth: 1, borderColor: "divider", borderRadius: 1 }}

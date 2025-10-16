@@ -66,7 +66,10 @@ export default function ViewTalk({ params }: { params: { slug: string } }) {
                 <Button
                   variant="outlined"
                   endIcon={<OpenInNew />}
-                  onClick={() => window.open(thisFeed.slidesLink, "_blank")}
+                  LinkComponent={Link}
+                  href={thisFeed.slidesLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Slides
                 </Button>
@@ -171,7 +174,10 @@ export default function ViewTalk({ params }: { params: { slug: string } }) {
                     {thisFeed.links?.map(link => (
                       <Button
                         key={link.label}
-                        onClick={() => window.open(link.url)}
+                        LinkComponent={Link}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         endIcon={<OpenInNew />}
                         sx={{ mr: 1, mb: 1 }}
                         variant="outlined"

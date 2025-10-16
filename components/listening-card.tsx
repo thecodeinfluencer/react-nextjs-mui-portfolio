@@ -11,12 +11,16 @@ import {
   ListItemText,
   useColorScheme,
 } from "@mui/material";
+import Link from "next/link";
 
 export default function ListeningCard() {
   const { mode } = useColorScheme();
   return (
     <CardActionArea
-      onClick={() => window.open(profile.spotify.track, "_blank")}
+      LinkComponent={Link}
+      href={profile.spotify.track}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <ListItem
         component="span"

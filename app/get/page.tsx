@@ -74,9 +74,11 @@ const Link = ({ href, children }: Props) => {
   return (
     <Typography
       color="primary.main"
-      component="span"
+      component={NextLink}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       sx={{ cursor: "pointer", textDecoration: isShown ? "underline" : "none" }}
-      onClick={() => window.open(href, "_blank")}
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >

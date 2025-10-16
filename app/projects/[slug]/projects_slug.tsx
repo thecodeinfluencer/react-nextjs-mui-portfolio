@@ -63,7 +63,10 @@ export default function ViewProject({ params }: { params: { slug: string } }) {
                 <Button
                   variant="outlined"
                   endIcon={<OpenInNew />}
-                  onClick={() => window.open(thisFeed.productLink)}
+                  LinkComponent={Link}
+                  href={thisFeed.productLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   View
                 </Button>
@@ -179,7 +182,10 @@ export default function ViewProject({ params }: { params: { slug: string } }) {
                   </Typography>
                   {thisFeed.githubLink && (
                     <Button
-                      onClick={() => window.open(thisFeed.githubLink)}
+                      LinkComponent={Link}
+                      href={thisFeed.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       endIcon={<OpenInNew />}
                       sx={{ mr: 1, mb: 1 }}
                       variant="outlined"
@@ -190,7 +196,10 @@ export default function ViewProject({ params }: { params: { slug: string } }) {
                   {thisFeed.links?.map(link => (
                     <Button
                       key={link.label}
-                      onClick={() => window.open(link.url)}
+                      LinkComponent={Link}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       endIcon={<OpenInNew />}
                       sx={{ mr: 1, mb: 1 }}
                       variant="outlined"
