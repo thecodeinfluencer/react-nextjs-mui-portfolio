@@ -1,6 +1,5 @@
 import { CssVarsProvider } from "@/providers/css-vars";
 import MUICacheProvider from "@/providers/mui-cache";
-import "@/styles/global.css";
 import { analyticsID, appURL } from "@/utilities/constants";
 import { profile } from "@/utilities/content";
 import { CssBaseline } from "@mui/material";
