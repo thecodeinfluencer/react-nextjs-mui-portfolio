@@ -9,7 +9,7 @@ import {
   CardActionArea,
   CardContent,
   Container,
-  Grid2,
+  Grid,
   Paper,
   Typography,
 } from "@mui/material";
@@ -52,13 +52,13 @@ export default function FeedSection() {
             ))}
         </Masonry>
 
-        <Grid2 container spacing={2} sx={{ mt: 4 }}>
+        <Grid container spacing={2} sx={{ mt: 4 }}>
           {[
             { link: "/projects", label: "All Projects", Icon: Element4 },
             { link: "/blogs", label: "All Blogs", Icon: Book },
             { link: "/talks", label: "All Talks", Icon: Microphone2 },
           ].map(({ link, label, Icon }) => (
-            <Grid2 key={link} size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid key={link} size={{ xs: 12, sm: 6, md: 4 }}>
               <Card variant="outlined">
                 <CardActionArea component={Link} href={link}>
                   <CardContent>
@@ -67,9 +67,9 @@ export default function FeedSection() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </Grid2>
+            </Grid>
           ))}
-        </Grid2>
+        </Grid>
       </Container>
     </Paper>
   );

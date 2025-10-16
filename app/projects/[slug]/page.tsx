@@ -3,7 +3,8 @@ import { feed, profile } from "@/utilities/content";
 import { SlugPage } from "@/utilities/definitions";
 import ViewProject from "./projects_slug";
 
-export async function generateMetadata({ params }: SlugPage) {
+export async function generateMetadata(props: SlugPage) {
+  const params = await props.params;
   const thisFeed = feed.find((feed) => `${feed.id}` == params.slug);
 
   return {
@@ -15,7 +16,8 @@ export async function generateMetadata({ params }: SlugPage) {
   };
 }
 
-export default function ViewProjectPage({ params }: SlugPage) {
+export default async function ViewProjectPage(props: SlugPage) {
+  const params = await props.params;
   return (
     <main>
       <ViewProject params={params} />

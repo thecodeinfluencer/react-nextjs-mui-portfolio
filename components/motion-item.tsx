@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
 
-type Props = { children: ReactElement };
+type Props = { children: ReactElement<any> };
 
 export default function MotionItem({ children }: Props) {
   return (
