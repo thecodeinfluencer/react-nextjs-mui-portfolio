@@ -24,18 +24,12 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 export default function ViewProject({ params }: SlugPage) {
-  const [isClient, setIsClient] = useState(false);
   const { mode } = useColorScheme();
 
   const thisFeed = feed.find(feed => `${feed.id}` == params.slug);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
 
   if (thisFeed?.type != "project") return <WrongResource resource="project" />;
 
@@ -47,14 +41,12 @@ export default function ViewProject({ params }: SlugPage) {
           backgroundImage: `url(${thisFeed.image})`,
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
-          background: ({ palette }) => `linear-gradient(to bottom, 
+          background: ({ vars }) => `linear-gradient(to bottom, 
             ${
               thisFeed.bgTheme || profile.primaryColor[mode as "dark" | "light"]
             }22,
           ${
-            palette.mode == "light"
-              ? "#f8f8f8"
-              : palette.background.paper + "dd"
+            mode == "light" ? "#f8f8f8" : vars?.palette?.background.paper + "dd"
           } )`,
         }}
       >
@@ -98,7 +90,7 @@ export default function ViewProject({ params }: SlugPage) {
               borderRadius: 1,
               width: "100%",
               height: { xs: 200, sm: 300, md: 400 },
-              bgcolor: ({ palette }) => palette.background.paper,
+              bgcolor: "background.paper",
               backgroundImage: `url(${thisFeed?.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -135,8 +127,7 @@ export default function ViewProject({ params }: SlugPage) {
             <Card
               component={motion.div}
               variants={cardPopup}
-              // elevation={colorScheme == "light" ? 0 : 4}
-              elevation={0}
+              elevation={mode == "light" ? 0 : 4}
               sx={{ mt: 2 }}
             >
               <CardContent>
@@ -180,7 +171,7 @@ export default function ViewProject({ params }: SlugPage) {
               <Card
                 component={motion.div}
                 variants={cardPopup}
-                elevation={0}
+                elevation={mode == "light" ? 0 : 4}
                 sx={{ mt: 2 }}
               >
                 <CardContent>

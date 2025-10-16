@@ -17,15 +17,8 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Blogs() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <>
       <Paper sx={{ py: 10 }}>

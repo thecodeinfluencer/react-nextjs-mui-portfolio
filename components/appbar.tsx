@@ -19,7 +19,6 @@ import { useEffect, useState } from "react";
 
 export default function AppBar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   const { mode, setMode } = useColorScheme();
 
@@ -34,10 +33,6 @@ export default function AppBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <Paper component={MuiAppBar} square sx={{ boxShadow: "none" }}>
       <Container maxWidth="lg">
@@ -47,8 +42,7 @@ export default function AppBar() {
             py: 2,
             px: 3,
             borderRadius: 24,
-            bgcolor: ({ palette }) =>
-              !isScrolled ? "transparent" : palette.background.paper,
+            bgcolor: !isScrolled ? "transparent" : "background.paper",
           }}
           elevation={isScrolled ? 4 : 0}
         >

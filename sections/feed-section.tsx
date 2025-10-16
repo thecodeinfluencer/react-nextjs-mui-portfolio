@@ -16,21 +16,16 @@ import {
 import { motion } from "framer-motion";
 import { Book, Element4, Microphone2 } from "iconsax-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function FeedSection() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <Paper
       square
       sx={{
         py: 10,
-        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
+        borderTopColor: "divider",
+        borderTopStyle: "solid",
+        borderTopWidth: 2,
       }}
     >
       <Container maxWidth="lg">

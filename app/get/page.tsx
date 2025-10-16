@@ -6,15 +6,9 @@ import { appURL } from "@/utilities/constants";
 import { ArrowBackRounded } from "@mui/icons-material";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import NextLink from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function GetPage() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <>
       <Box sx={{ py: 10 }}>

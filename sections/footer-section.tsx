@@ -1,23 +1,18 @@
-"use client";
-
 import ListeningCard from "@/components/listening-card";
+import { TypoLink } from "@/components/typo-link";
 import { profile } from "@/utilities/content";
-import { ArrowForwardRounded, OpenInNew } from "@mui/icons-material";
-import { Card, Container, Grid, Paper, Stack, Typography } from "@mui/material";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Card, Container, Grid, Paper, Stack } from "@mui/material";
 
 export default function FooterSection() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <Paper
       square
-      sx={{ py: 5, borderTop: ({ palette }) => `2px solid ${palette.divider}` }}
+      sx={{
+        py: 5,
+        borderTopColor: "divider",
+        borderTopStyle: "solid",
+        borderTopWidth: 2,
+      }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={1}>
@@ -71,47 +66,3 @@ export default function FooterSection() {
     </Paper>
   );
 }
-
-type Props = {
-  href: string;
-  children: React.ReactNode;
-  internal?: boolean;
-  color?: boolean;
-};
-
-export const TypoLink = ({ href, children, internal, color }: Props) => {
-  const [isShown, setIsShown] = useState(false);
-
-  return (
-    <Stack
-      direction="row"
-      alignItems="center"
-      spacing={1}
-      sx={{ mb: 1, textDecoration: isShown ? "underline" : "none" }}
-    >
-      <Typography
-        href={href}
-        component={Link}
-        aria-label={href}
-        sx={{ cursor: "pointer" }}
-        onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}
-        target={internal ? undefined : "_blank"}
-        color={color ? "primary.main" : "text.primary"}
-      >
-        {children}
-      </Typography>
-      {internal ? (
-        <ArrowForwardRounded
-          sx={{
-            width: 20,
-            height: 20,
-            color: color ? "primary.main" : "inherit",
-          }}
-        />
-      ) : (
-        <OpenInNew sx={{ width: 16, height: 16 }} />
-      )}
-    </Stack>
-  );
-};

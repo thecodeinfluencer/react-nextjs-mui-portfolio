@@ -24,19 +24,13 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function ViewTalk({ params }: SlugPage) {
-  const [isClient, setIsClient] = useState(false);
   const { mode } = useColorScheme();
 
   const thisFeed = feed.find(feed => `${feed.id}` == params.slug);
 
-  useEffect(() => setIsClient(true), []);
-
   if (thisFeed?.type != "talk") return <WrongResource resource="talk" />;
-
-  if (!isClient) return <div></div>;
 
   return (
     <>

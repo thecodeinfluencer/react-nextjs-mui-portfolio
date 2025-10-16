@@ -16,17 +16,9 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function ContributingPage() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <>
       <Paper square sx={{ py: 10 }}>
@@ -58,7 +50,7 @@ export default function ContributingPage() {
           </Typography>
           <Card sx={{ mt: 2 }} variant="outlined">
             <CardContent>
-              <List component={motion.div}>
+              <List>
                 {contributing.map(cbn => (
                   <ContributionCard key={cbn.project} contribution={cbn} />
                 ))}

@@ -52,7 +52,7 @@ export default function WorkTimeline() {
           </Button>
         </TimelineContent>
       </TimelineItem>
-      {experience.map((exp) => (
+      {experience.map(exp => (
         <TimelineItem key={exp.startDate}>
           <TimelineOppositeContent
             color="textSecondary"
@@ -80,19 +80,19 @@ export default function WorkTimeline() {
             </Typography>
             <Typography color="textSecondary">{exp.location}</Typography>
             <ul style={{ paddingLeft: 20 }}>
-              {exp.highlights.map((h) => (
+              {exp.highlights.map(h => (
                 <li key={h}>
                   <Typography variant="body2">{h}</Typography>
                 </li>
               ))}
             </ul>
             <Box sx={{ my: 1.5 }}>
-              {exp.tags.map((t) => (
+              {exp.tags.map(t => (
                 <Chip key={t} label={t} sx={{ mr: 0.5, mb: 0.5 }} />
               ))}
             </Box>
             <Box sx={{ mb: 2.5 }}>
-              {exp.links.map((link) => (
+              {exp.links.map(link => (
                 <Button
                   key={link.url}
                   variant="outlined"

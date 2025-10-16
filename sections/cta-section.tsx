@@ -1,22 +1,15 @@
-"use client";
-
 import { Container, Paper, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 import SocialsSection from "./socials-section";
 
 export default function CTASection() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <Paper
       square
       sx={{
         py: 10,
-        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
+        borderTopColor: "divider",
+        borderTopStyle: "solid",
+        borderTopWidth: 2,
       }}
     >
       <Container maxWidth="lg">

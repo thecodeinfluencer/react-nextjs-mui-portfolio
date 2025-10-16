@@ -1,7 +1,4 @@
-"use client";
-
 import { Contribution } from "@/utilities/definitions";
-import { arrow } from "@/utilities/framer";
 import { OpenInNewRounded } from "@mui/icons-material";
 import {
   Avatar,
@@ -11,7 +8,6 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
-import { motion } from "framer-motion";
 
 type Props = { contribution: Contribution };
 
@@ -22,18 +18,11 @@ export default function ContributionCard({ contribution }: Props) {
     <CardActionArea onClick={() => window.open(link, "_blank")}>
       <ListItem
         key={project}
-        component={motion.div}
-        sx={{
-          borderWidth: 1,
-          borderColor: ({ palette }) => palette.divider,
-          borderRadius: 1,
-        }}
+        sx={{ borderWidth: 1, borderColor: "divider", borderRadius: 1 }}
         secondaryAction={
-          <motion.div variants={arrow}>
-            <IconButton edge="end" aria-label="delete">
-              <OpenInNewRounded />
-            </IconButton>
-          </motion.div>
+          <IconButton edge="end" aria-label="open">
+            <OpenInNewRounded />
+          </IconButton>
         }
       >
         <ListItemAvatar>

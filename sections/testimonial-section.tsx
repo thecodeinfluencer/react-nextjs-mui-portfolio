@@ -1,23 +1,16 @@
-"use client";
-
 import TestimonialCard from "@/components/testimonial-card";
 import { testimonials } from "@/utilities/content";
 import { Container, Grid, Paper, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 
 export default function TestimonialSection() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  if (!isClient) return <div></div>;
-
   return (
     <Paper
       square
       sx={{
         py: 10,
-        borderTop: ({ palette }) => `2px solid ${palette.divider}`,
+        borderTopColor: "divider",
+        borderTopStyle: "solid",
+        borderTopWidth: 2,
       }}
     >
       <Container maxWidth="lg">
