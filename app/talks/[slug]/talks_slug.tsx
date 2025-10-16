@@ -4,7 +4,6 @@ import WrongResource from "@/components/wrong-resource";
 import CTASection from "@/sections/cta-section";
 import FooterSection from "@/sections/footer-section";
 import { feed, profile } from "@/utilities/content";
-import { SlugPage } from "@/utilities/definitions";
 import { cardPopup } from "@/utilities/framer";
 import { ArrowBackRounded, OpenInNew, ShareRounded } from "@mui/icons-material";
 import {
@@ -25,7 +24,7 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function ViewTalk({ params }: SlugPage) {
+export default function ViewTalk({ params }: { params: { slug: string } }) {
   const { mode } = useColorScheme();
 
   const thisFeed = feed.find(feed => `${feed.id}` == params.slug);

@@ -95,7 +95,7 @@ export type Profile = {
 };
 
 export type SlugPage = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export type ExpLink = { label: string; url: string };
